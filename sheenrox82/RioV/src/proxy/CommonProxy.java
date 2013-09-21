@@ -24,9 +24,4 @@ public class CommonProxy
 	{
 
 	}
-
-	public Minecraft getClient()
-	{
-		return FMLClientHandler.instance().getClient();
-	}
 }
