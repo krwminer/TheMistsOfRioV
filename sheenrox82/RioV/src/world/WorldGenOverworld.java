@@ -17,7 +17,6 @@ import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGenOverworld implements IWorldGenerator 
 {
-
 	public int i;
 	public int Xcoord;
 	public int Ycoord;

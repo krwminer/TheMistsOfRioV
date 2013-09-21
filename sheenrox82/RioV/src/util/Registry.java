@@ -54,7 +54,6 @@ public class Registry
 
 	public static void preInit(FMLPreInitializationEvent initEvent)
 	{		
-		/**Inits and Regs**/
 		TheMistsOfRioV.commonProxy.init();
 		TheMistsOfRioV.commonProxy.cape();
 		ModMetadata data = initEvent.getModMetadata();
