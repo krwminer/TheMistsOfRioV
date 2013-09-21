@@ -1,0 +1,231 @@
+package sheenrox82.RioV.src.item;
+
+import java.util.List;
+
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.item.EnumAction;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBow;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
+import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.ArrowLooseEvent;
+import net.minecraftforge.event.entity.player.ArrowNockEvent;
+import sheenrox82.RioV.src.base.Config;
+import sheenrox82.RioV.src.base.TheMistsOfRioV;
+import sheenrox82.RioV.src.content.Enchantments;
+import sheenrox82.RioV.src.content.Sound;
+import sheenrox82.RioV.src.util.Util;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+public class ItemLongBow extends ItemBow
+{
+	public EntityArrow arrow = new EntityArrow(null);
+	public static final String[] bowPullIconNameArray = new String[] {Util.MOD_ID + ":" + "longBow_pull_0", Util.MOD_ID + ":" + "longBow_pull_1", Util.MOD_ID + ":" + "longBow_pull_2"};
+	@SideOnly(Side.CLIENT)
+	private Icon[] iconArray;
+
+	public ItemLongBow(int par1)
+	{
+		super(par1 - 256);
+		this.maxStackSize = 1;
+		this.setMaxDamage(600);
+		this.setCreativeTab(TheMistsOfRioV.tab);
+	}
+
+	/**
+	 * called when the player releases the use item button. Args: itemstack, world, entityplayer, itemInUseCount
+	 */
+	@Override
+	public void onPlayerStoppedUsing(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer, int par4)
+	{
+		int j = this.getMaxItemUseDuration(par1ItemStack) - par4;
+
+		ArrowLooseEvent event = new ArrowLooseEvent(par3EntityPlayer, par1ItemStack, j);
+		MinecraftForge.EVENT_BUS.post(event);
+		if (event.isCanceled())
+		{
+			return;
+		}
+		j = event.charge;
+
+		boolean flag = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
+
+		if (flag || par3EntityPlayer.inventory.hasItem(Item.arrow.itemID))
+		{
+			float f = (float)j / 20.0F;
+			f = (f * f + f * 2.0F) / 3.0F;
+
+			if ((double)f < 0.1D)
+			{
+				return;
+			}
+
+			if (f > 1.0F)
+			{
+				f = 1.0F;
+			}
+
+			EntityArrow entityarrow = new EntityArrow(par2World, par3EntityPlayer, f * 2.0F);
+			entityarrow.setDamage(4.0F);
+
+			if (f == 1.0F)
+			{
+				entityarrow.setIsCritical(true);
+			}
+
+			int k = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, par1ItemStack);
+
+			if (k > 0)
+			{
+				entityarrow.setDamage(5.0F);
+			}
+
+			int l = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, par1ItemStack);
+
+			if (l > 0)
+			{
+				entityarrow.setKnockbackStrength(l);
+			}
+
+			if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, par1ItemStack) > 0)
+			{
+				entityarrow.setFire(100);
+			}
+			
+			if (EnchantmentHelper.getEnchantmentLevel(Enchantments.vicious.effectId, par1ItemStack) > 0)
+			{
+				entityarrow.setDamage(arrow.damage * 1.4);	
+			}
+			
+			par1ItemStack.damageItem(1, par3EntityPlayer);
+			par2World.playSoundAtEntity(par3EntityPlayer, Sound.bow, 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+
+			if (flag)
+			{
+				entityarrow.canBePickedUp = 2;
+			}
+			else
+			{
+				par3EntityPlayer.inventory.consumeInventoryItem(Item.arrow.itemID);
+			}
+
+			if (!par2World.isRemote)
+			{
+				par2World.spawnEntityInWorld(entityarrow);
+			}
+		}
+	}
+
+	public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+	{
+		return par1ItemStack;
+	}
+
+	/**
+	 * How long it takes to use or consume an item
+	 */
+	public int getMaxItemUseDuration(ItemStack par1ItemStack)
+	{
+		return 72000;
+	}
+
+	/**
+	 * returns the action that specifies what animation to play when the items is being used
+	 */
+	public EnumAction getItemUseAction(ItemStack par1ItemStack)
+	{
+		return EnumAction.bow;
+	}
+
+	/**
+	 * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
+	 */
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+	{
+		ArrowNockEvent event = new ArrowNockEvent(par3EntityPlayer, par1ItemStack);
+		MinecraftForge.EVENT_BUS.post(event);
+		if (event.isCanceled())
+		{
+			return event.result;
+		}
+
+		if (par3EntityPlayer.capabilities.isCreativeMode || par3EntityPlayer.inventory.hasItem(Item.arrow.itemID))
+		{
+			par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
+		}
+
+		return par1ItemStack;
+	}
+
+	/**
+	 * Return the enchantability factor of the item, most of the time is based on material.
+	 */
+	public int getItemEnchantability()
+	{
+		return 1;
+	}
+
+
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister)
+	{
+		this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "longbow");
+		this.iconArray = new Icon[bowPullIconNameArray.length];
+
+		for (int i = 0; i < this.iconArray.length; ++i)
+		{
+			this.iconArray[i] = par1IconRegister.registerIcon(bowPullIconNameArray[i]);
+		}
+	}
+
+	@Override
+	public Icon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining)
+	{
+		if(player.getItemInUse() == null) return this.itemIcon;
+		int var4 = stack.getMaxItemUseDuration() - useRemaining;
+		if (var4 > 18)
+		{
+			return iconArray[2];
+		}
+		else if (var4 > 13)
+		{
+			return iconArray[1];
+		}
+		else if (var4 > 0)
+		{
+			return iconArray[0];
+		}
+		return iconArray[0];
+	}
+
+	public Icon getItemIconForUseDuration(int par1)
+	{
+		return this.iconArray[par1];
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack var1, EntityPlayer var2, List var3, boolean var4)
+	{
+		if(Config.showToolInfo)
+		{
+			var3.add(var1.getMaxDamage() - var1.getItemDamage() + " Uses");
+			
+			if (EnchantmentHelper.getEnchantmentLevel(Enchantments.vicious.effectId, var1) > 0)
+			{
+				var3.add("Damage: " + arrow.damage * 1.4);
+			}
+			else
+			{
+				var3.add("Damage: " + arrow.damage);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,25 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+/cpw
+/ibxm
+/net/minecraft
+/net/minecraftforge
+/mods
+/net/aetherteam
+/assets/natura
+/assets/aether
+/assets/forge
+/com
+/paulscode
+*.cfg
+fmlversion.properties
+forge_logo.png
+mcp.png
+mcpmod.info
+Start.java
+*.lzma

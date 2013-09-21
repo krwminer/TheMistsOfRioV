@@ -1,0 +1,121 @@
+package sheenrox82.RioV.src.entity.mob.passive;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.entity.mob.core.EntityMobDeadBody;
+
+public class EntityAngel extends EntityMobDeadBody
+{
+	public static final ItemStack defaultHeldItem;
+
+	public EntityAngel(World par1World) {
+
+		super(par1World);
+		this.isImmuneToFire = true;
+		this.getNavigator().setCanSwim(true);
+		this.tasks.addTask(1, new EntityAISwimming(this));
+		this.tasks.addTask(5, new EntityAIWander(this, 0.56D));
+		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
+		tasks.addTask(4, new EntityAIAttackOnCollide(this, 0.56D, true));
+	}
+
+	protected void entityInit()
+	{
+		super.entityInit();
+		this.dataWatcher.addObject(16, new Byte((byte)0));
+	}
+
+	protected boolean isValidLightLevel()
+	{
+		return true;
+	}
+
+	public void onLivingUpdate()
+	{
+		if (this.rand.nextInt(24) == 0)
+		{
+			this.worldObj.playSoundEffect(this.posX + 0.5D, this.posY + 0.5D, this.posZ + 0.5D, "fire.fire", 1.0F + this.rand.nextFloat(), this.rand.nextFloat() * 0.7F + 0.3F);
+		}
+
+
+		for (int i = 0; i < 2; ++i)
+		{
+			this.worldObj.spawnParticle("enchantmenttable", this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D);
+		}
+
+		super.onLivingUpdate();
+	}
+
+	public boolean isAIEnabled()
+	{
+		return true;
+	}
+
+	public ItemStack getHeldItem()
+	{
+		return defaultHeldItem;
+	}
+
+	static
+	{
+		defaultHeldItem = new ItemStack(Items.skywoodSword);
+	}
+
+	protected void applyEntityAttributes()
+	{
+		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(20.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(4.0D);
+	}
+
+	protected void dropFewItems(boolean par1, int par2)
+	{
+		int var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
+		int var4;
+
+		for (var4 = 0; var4 < var3; ++var4)
+		{
+			this.dropItem(Item.feather.itemID, 1);
+		}
+	}
+	
+	@Override
+	public boolean attackEntityAsMob(Entity par1Entity)
+	{
+		if (super.attackEntityAsMob(par1Entity))
+        {
+            if (par1Entity instanceof EntityLivingBase)
+            {
+                byte b0 = 0;
+
+                if (this.worldObj.difficultySetting > 1)
+                {
+                    if (this.worldObj.difficultySetting == 2)
+                    {
+                        b0 = 7;
+                    }
+                    else if (this.worldObj.difficultySetting == 3)
+                    {
+                        b0 = 15;
+                    }
+                }
+            }
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+	}
+}
