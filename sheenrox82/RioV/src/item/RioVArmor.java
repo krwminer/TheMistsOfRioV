@@ -376,6 +376,18 @@ public class RioVArmor extends ItemArmor
 			if (itemID == Items.paladinLeggings.itemID)this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paladinLeggings");
 			if (itemID == Items.paladinBoots.itemID)this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paladinBoots");
 		}
+		
+		if (TheMistsOfRioV.aether)
+		{
+			if (itemID == Items.infusedZaniteHelmet.itemID)this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Helmet");
+			if (itemID == Items.infusedZaniteChestplate.itemID)this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Chestplate");
+			if (itemID == Items.infusedZaniteLeggings.itemID)this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Leggings");
+			if (itemID == Items.infusedZaniteBoots.itemID)this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Boots");
+			if (itemID == Items.infusedGravititeHelmet.itemID)this.itemIcon = par1IconRegister.registerIcon("Aether:Gravitite Helmet");
+			if (itemID == Items.infusedGravititeChestplate.itemID)this.itemIcon = par1IconRegister.registerIcon("Aether:Gravitite Chestplate");
+			if (itemID == Items.infusedGravititeLeggings.itemID)this.itemIcon = par1IconRegister.registerIcon("Aether:Gravitite Leggings");
+			if (itemID == Items.infusedGravititeBoots.itemID)this.itemIcon = par1IconRegister.registerIcon("Aether:Gravitite Boots");
+		}
 	}
 
 	@Override

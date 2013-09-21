@@ -41,7 +41,7 @@ public class HudHandler extends Container implements ITickHandler
 					{
 						mc.mcProfiler.startSection("debug");
 						GL11.glPushMatrix();
-						fontrenderer.drawStringWithShadow(Util.MOD_NAME + " - " + Util.VERSION, 2, 2, 16777215);
+						fontrenderer.drawStringWithShadow(Config.color + Util.MOD_NAME + " - " + Util.VERSION, 2, 2, 16777215);
 						GL11.glPopMatrix();
 					}
 				}

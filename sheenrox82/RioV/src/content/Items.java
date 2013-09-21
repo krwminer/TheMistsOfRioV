@@ -402,6 +402,9 @@ public class Items
 	public static Item raspBerry = (new RioVConsumable(Config.addItem("Raspberry"), 3, 0, false)).setUnlocalizedName("raspBerry");
 	public static Item bloodBerry = (new RioVConsumable(Config.addItem("Bloodberry"), 6, 0, false)).setUnlocalizedName("bloodBerry");
 	public static Item strawBerry = (new RioVConsumable(Config.addItem("Strawberry"), 3, 0, false)).setUnlocalizedName("strawBerry");
+	public static Item chain = (new RioVItem(Config.addItem("Chain"))).setUnlocalizedName("chain");
+	public static Item theAwakening = (new RioVMusicDisk(Config.addItem("The Awakening"), Sound.theAwakening, "NiT GriT", "The Awakening")).setUnlocalizedName("theAwakening");
+	public static Item frozen = (new RioVMusicDisk(Config.addItem("Frozen"), Sound.frozen, "Celldweller", "Frozen")).setUnlocalizedName("frozen");
 
 	/**PALADIN**/
 	public static Item paladinHelmet;
@@ -412,6 +415,9 @@ public class Items
 
 	public static void add()
 	{		
+		Registry.registerItem(frozen, "Frozen");
+		Registry.registerItem(theAwakening, "The Awakening");
+		Registry.registerItem(chain, "Chain");
 		Registry.registerItem(blackBerry, "Blackberry");
 		Registry.registerItem(raspBerry, "Raspberry");
 		Registry.registerItem(bloodBerry, "Bloodberry");
@@ -733,6 +739,182 @@ public class Items
 		if(TheMistsOfRioV.riovTrees)
 		{
 
+		}
+	}
+
+	public static Item infusedBloodwoodPickaxe;
+	public static Item infusedBloodwoodAxe;
+	public static Item infusedBloodwoodShovel;
+	public static Item infusedBloodwoodSword;
+	public static Item infusedGhostwoodSword;
+	public static Item infusedGhostwoodPickaxe;
+	public static Item infusedGhostwoodShovel;
+	public static Item infusedGhostwoodAxe;
+	public static Item infusedDarkwoodSword;
+	public static Item infusedDarkwoodPickaxe;
+	public static Item infusedDarkwoodShovel;
+	public static Item infusedDarkwoodAxe;
+	public static Item infusedFusewoodSword;
+	public static Item infusedFusewoodPickaxe;
+	public static Item infusedFusewoodShovel;
+	public static Item infusedFusewoodAxe;
+	public static Item infusedNetherquartzSword;
+	public static Item infusedNetherquartzPickaxe;
+	public static Item infusedNetherquartzShovel;
+	public static Item infusedNetherquartzAxe;
+
+	public static void addNatura()
+	{
+		if(TheMistsOfRioV.natura)
+		{
+			EnumToolMaterial InfusedBloodwood = EnumHelper.addToolMaterial("InfusedBloodwood", 3, 500, 8.0F, 4.0F, 25);
+			EnumToolMaterial InfusedGhostwood = EnumHelper.addToolMaterial("InfusedGhostwood", 3, 500, 8.0F, 4.0F, 25);
+
+			infusedBloodwoodPickaxe = (new RioVPickaxe(Config.addItem("Infused Bloodwood Pickaxe"), InfusedBloodwood, true)).setUnlocalizedName("infusedBloodwoodPickaxe");
+			infusedBloodwoodAxe = (new RioVAxe(Config.addItem("Infused Bloodwood Axe"), InfusedBloodwood, true)).setUnlocalizedName("infusedBloodwoodAxe");
+			infusedBloodwoodShovel = (new RioVSpade(Config.addItem("Infused Bloodwood Shovel"), InfusedBloodwood, true)).setUnlocalizedName("infusedBloodwoodShovel");
+			infusedBloodwoodSword = (new RioVWeapon(Config.addItem("Infused Bloodwood Sword"), InfusedBloodwood, true)).setUnlocalizedName("infusedBloodwoodSword");
+
+			Registry.registerItem(infusedBloodwoodPickaxe, "Infused Bloodwood Pickaxe");
+			Registry.registerItem(infusedBloodwoodAxe, "Infused Bloodwood Axe");
+			Registry.registerItem(infusedBloodwoodShovel, "Infused Bloodwood Shovel");
+			Registry.registerItem(infusedBloodwoodSword, "Infused Bloodwood Sword");
+
+			InfuserRecipes.getInfuser().addAltarRecipe(NContent.bloodwoodPickaxe.itemID, new ItemStack(Items.infusedBloodwoodPickaxe, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(NContent.bloodwoodAxe.itemID, new ItemStack(Items.infusedBloodwoodAxe, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(NContent.bloodwoodShovel.itemID, new ItemStack(Items.infusedBloodwoodShovel, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(NContent.bloodwoodSword.itemID, new ItemStack(Items.infusedBloodwoodSword, 1));
+		}
+	}
+
+	public static Item infusedSkyrootPickaxe;
+	public static Item infusedSkyrootAxe;
+	public static Item infusedSkyrootShovel;
+	public static Item infusedSkyrootSword;
+	public static Item infusedHolystonePickaxe;
+	public static Item infusedHolystoneAxe;
+	public static Item infusedHolystoneShovel;
+	public static Item infusedHolystoneSword;
+	public static Item infusedZanitePickaxe;
+	public static Item infusedZaniteAxe;
+	public static Item infusedZaniteShovel;
+	public static Item infusedZaniteSword;
+	public static Item darkenedInfusedZaniteSword;
+	public static Item darkenedZaniteSword;
+	public static Item infusedGravititePickaxe;
+	public static Item infusedGravititeAxe;
+	public static Item infusedGravititeShovel;
+	public static Item infusedGravititeSword;
+	public static Item darkenedGravititeSword;
+	public static Item darkenedInfusedGravititeSword;
+	public static Item infusedZaniteHelmet;
+	public static Item infusedZaniteChestplate;
+	public static Item infusedZaniteLeggings;
+	public static Item infusedZaniteBoots;
+	public static Item infusedGravititeHelmet;
+	public static Item infusedGravititeChestplate;
+	public static Item infusedGravititeLeggings;
+	public static Item infusedGravititeBoots;
+	public static Item magicalBlueBerry;
+
+	public static void addAether()
+	{
+		if(TheMistsOfRioV.aether)
+		{
+			EnumToolMaterial InfusedSkyroot = EnumHelper.addToolMaterial("InfusedSkyroot", 1, 159, 3.0F, 1.0F, 16);
+			EnumToolMaterial InfusedHolystone = EnumHelper.addToolMaterial("InfusedHolystone", 2, 231, 5.0F, 2.0F, 6);
+			EnumToolMaterial InfusedZanite = EnumHelper.addToolMaterial("InfusedZanite", 3, 350, 7.0F, 3.0F, 15);
+			EnumToolMaterial InfusedGravitite = EnumHelper.addToolMaterial("InfusedGravitite", 4, 1661, 9.0F, 4.0F, 11);
+			EnumToolMaterial DarkenedInfusedZanite = EnumHelper.addToolMaterial("DarkenedInfusedZanite", 4, 450, 8.0F, 5.0F, 17);
+			EnumToolMaterial DarkenedInfusedGravitite = EnumHelper.addToolMaterial("DarkenedInfusedGravitite", 5, 1761, 10.0F, 6.0F, 13);
+
+			EnumArmorMaterial InfusedZaniteArmor = EnumHelper.addArmorMaterial("InfusedZaniteArmor", 17, new int[]{3, 6, 5, 3}, 11);
+			EnumArmorMaterial InfusedGravititeArmor = EnumHelper.addArmorMaterial("InfusedGravititeArmor", 35, new int[]{4, 8, 6, 4}, 12);
+
+			infusedSkyrootPickaxe = (new RioVPickaxe(Config.addItem("Infused Skyroot Pickaxe"), InfusedSkyroot, true)).setUnlocalizedName("infusedSkyrootPickaxe");
+			infusedSkyrootAxe = (new RioVAxe(Config.addItem("Infused Skyroot Axe"), InfusedSkyroot, true)).setUnlocalizedName("infusedSkyrootAxe");
+			infusedSkyrootShovel = (new RioVSpade(Config.addItem("Infused Skyroot Shovel"), InfusedSkyroot, true)).setUnlocalizedName("infusedSkyrootShovel");
+			infusedSkyrootSword = (new RioVWeapon(Config.addItem("Infused Skyroot Sword"), InfusedSkyroot, true)).setUnlocalizedName("infusedSkyrootSword");
+			infusedHolystonePickaxe = (new RioVPickaxe(Config.addItem("Infused Holystone Pickaxe"), InfusedHolystone, true)).setUnlocalizedName("infusedHolystonePickaxe");
+			infusedHolystoneAxe = (new RioVAxe(Config.addItem("Infused Holystone Axe"), InfusedHolystone, true)).setUnlocalizedName("infusedHolystoneAxe");
+			infusedHolystoneShovel = (new RioVSpade(Config.addItem("Infused Holystone Shovel"), InfusedHolystone, true)).setUnlocalizedName("infusedHolystoneShovel");
+			infusedHolystoneSword = (new RioVWeapon(Config.addItem("Infused Holystone Sword"), InfusedHolystone, true)).setUnlocalizedName("infusedHolystoneSword");
+			infusedZanitePickaxe = (new RioVPickaxe(Config.addItem("Infused Zanite Pickaxe"), InfusedZanite, true)).setUnlocalizedName("infusedZanitePickaxe");
+			infusedZaniteAxe = (new RioVAxe(Config.addItem("Infused Zanite Axe"), InfusedZanite, true)).setUnlocalizedName("infusedZaniteAxe");
+			infusedZaniteShovel = (new RioVSpade(Config.addItem("Infused Zanite Shovel"), InfusedZanite, true)).setUnlocalizedName("infusedZaniteShovel");
+			infusedZaniteSword = (new RioVWeapon(Config.addItem("Infused Zanite Sword"), InfusedZanite, true)).setUnlocalizedName("infusedZaniteSword");
+			darkenedInfusedZaniteSword = (new RioVWeapon(Config.addItem("Darkened Infused Zanite Sword"), DarkenedInfusedZanite, true)).setUnlocalizedName("darkenedInfusedZaniteSword");
+			darkenedZaniteSword = (new RioVWeapon(Config.addItem("Darkened Zanite Sword"), InfusedZanite, false)).setUnlocalizedName("darkenedZaniteSword");
+			infusedGravititePickaxe = (new RioVPickaxe(Config.addItem("Infused Gravitite Pickaxe"), InfusedGravitite, true)).setUnlocalizedName("infusedGravititePickaxe");
+			infusedGravititeAxe = (new RioVAxe(Config.addItem("Infused Gravitite Axe"), InfusedGravitite, true)).setUnlocalizedName("infusedGravititeAxe");
+			infusedGravititeShovel = (new RioVSpade(Config.addItem("Infused Gravitite Shovel"), InfusedGravitite, true)).setUnlocalizedName("infusedGravititeShovel");
+			infusedGravititeSword = (new RioVWeapon(Config.addItem("Infused Gravitite Sword"), InfusedGravitite, true)).setUnlocalizedName("infusedGravititeSword");
+			infusedZaniteHelmet = (new RioVArmor(Config.addItem("Infused Zanite Helmet"), InfusedZaniteArmor, render, 0, "Zanite", true)).setUnlocalizedName("infusedZaniteHelmet");
+			infusedZaniteChestplate = (new RioVArmor(Config.addItem("Infused Zanite Chestplate"), InfusedZaniteArmor, render, 1, "Zanite", true)).setUnlocalizedName("infusedZaniteChestplate");
+			infusedZaniteLeggings = (new RioVArmor(Config.addItem("Infused Zanite Leggings"), InfusedZaniteArmor, render, 2, "Zanite", true)).setUnlocalizedName("infusedZaniteLeggings");
+			infusedZaniteBoots = (new RioVArmor(Config.addItem("Infused Zanite Boots"), InfusedZaniteArmor, render, 3, "Zanite", true)).setUnlocalizedName("infusedZaniteBoots");
+			infusedGravititeHelmet = (new RioVArmor(Config.addItem("Infused Gravitite Helmet"), InfusedGravititeArmor, render, 0, "Gravitite", true)).setUnlocalizedName("infusedGravitieHelmet");
+			infusedGravititeChestplate = (new RioVArmor(Config.addItem("Infused Gravitite Chestplate"), InfusedGravititeArmor, render, 1, "Gravitite", true)).setUnlocalizedName("infusedGravitieChestplate");
+			infusedGravititeLeggings = (new RioVArmor(Config.addItem("Infused Gravitite Leggings"), InfusedGravititeArmor, render, 2, "Gravitite", true)).setUnlocalizedName("infusedGravitieLeggings");
+			infusedGravititeBoots = (new RioVArmor(Config.addItem("Infused Gravitite Boots"), InfusedGravititeArmor, render, 3, "Gravitite", true)).setUnlocalizedName("infusedGravitieBoots");
+			darkenedInfusedGravititeSword = (new RioVWeapon(Config.addItem("Darkened Infused Gravitite Sword"), DarkenedInfusedZanite, true)).setUnlocalizedName("darkenedInfusedGravititeSword");
+			darkenedGravititeSword = (new RioVWeapon(Config.addItem("Darkened Gravitite Sword"), InfusedZanite, false)).setUnlocalizedName("darkenedGravititeSword");
+			magicalBlueBerry = (new RioVConsumable(Config.addItem("Magical Blue Berry"), 6, 0, true)).setUnlocalizedName("magicalBlueBerry");
+
+			Registry.registerItem(darkenedInfusedGravititeSword, "Darkened Infused Gravitite Sword");
+			Registry.registerItem(darkenedGravititeSword, "Darkened Gravitite Sword");
+			Registry.registerItem(darkenedInfusedZaniteSword, "Darkened Infused Zanite Sword");
+			Registry.registerItem(darkenedZaniteSword, "Darkened Zanite Sword");
+			Registry.registerItem(infusedZaniteHelmet, "Infused Zanite Helmet");
+			Registry.registerItem(infusedZaniteChestplate, "Infused Zanite Chestplate");
+			Registry.registerItem(infusedZaniteLeggings, "Infused Zanite Leggings");
+			Registry.registerItem(infusedZaniteBoots, "Infused Zanite Boots");
+			Registry.registerItem(infusedGravititeHelmet, "Infused Gravitite Helmet");
+			Registry.registerItem(infusedGravititeChestplate, "Infused Gravitite Chestplate");
+			Registry.registerItem(infusedGravititeLeggings, "Infused Gravitite Leggings");
+			Registry.registerItem(infusedGravititeBoots, "Infused Gravitite Boots");
+			Registry.registerItem(infusedSkyrootPickaxe, "Infused Skyroot Pickaxe");
+			Registry.registerItem(infusedSkyrootAxe, "Infused Skyroot Axe");
+			Registry.registerItem(infusedSkyrootShovel, "Infused Skyroot Shovel");
+			Registry.registerItem(infusedSkyrootSword, "Infused Skyroot Sword");
+			Registry.registerItem(infusedHolystonePickaxe, "Infused Holystone Pickaxe");
+			Registry.registerItem(infusedHolystoneAxe, "Infused Holystone Axe");
+			Registry.registerItem(infusedHolystoneShovel, "Infused Holystone Shovel");
+			Registry.registerItem(infusedHolystoneSword, "Infused Holystone Sword");
+			Registry.registerItem(infusedZanitePickaxe, "Infused Zanite Pickaxe");
+			Registry.registerItem(infusedZaniteAxe, "Infused Zanite Axe");
+			Registry.registerItem(infusedZaniteShovel, "Infused Zanite Shovel");
+			Registry.registerItem(infusedZaniteSword, "Infused Zanite Sword");
+			Registry.registerItem(infusedGravititePickaxe, "Infused Gravitite Pickaxe");
+			Registry.registerItem(infusedGravititeAxe, "Infused Gravitite Axe");
+			Registry.registerItem(infusedGravititeShovel, "Infused Gravitite Shovel");
+			Registry.registerItem(infusedGravititeSword, "Infused Gravitite Sword");
+			Registry.registerItem(magicalBlueBerry, "Magical Blue Berry");
+
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.SkyrootPickaxe.itemID, new ItemStack(Items.infusedSkyrootPickaxe, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.SkyrootAxe.itemID, new ItemStack(Items.infusedSkyrootAxe, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.SkyrootShovel.itemID, new ItemStack(Items.infusedSkyrootShovel, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.SkyrootSword.itemID, new ItemStack(Items.infusedSkyrootSword, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.HolystonePickaxe.itemID, new ItemStack(Items.infusedHolystonePickaxe, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.HolystoneAxe.itemID, new ItemStack(Items.infusedHolystoneAxe, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.HolystoneShovel.itemID, new ItemStack(Items.infusedHolystoneShovel, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.HolystoneSword.itemID, new ItemStack(Items.infusedHolystoneSword, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.ZanitePickaxe.itemID, new ItemStack(Items.infusedZanitePickaxe, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.ZaniteAxe.itemID, new ItemStack(Items.infusedZaniteAxe, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.ZaniteShovel.itemID, new ItemStack(Items.infusedZaniteShovel, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.ZaniteSword.itemID, new ItemStack(Items.infusedZaniteSword, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(Items.darkenedZaniteSword.itemID, new ItemStack(Items.darkenedInfusedZaniteSword, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.GravititePickaxe.itemID, new ItemStack(Items.infusedGravititePickaxe, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.GravititeAxe.itemID, new ItemStack(Items.infusedGravititeAxe, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.GravititeShovel.itemID, new ItemStack(Items.infusedGravititeShovel, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.GravititeSword.itemID, new ItemStack(Items.infusedGravititeSword, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(Items.darkenedGravititeSword.itemID, new ItemStack(Items.darkenedInfusedGravititeSword, 1));
+			InfuserRecipes.getInfuser().addAltarRecipe(AetherItems.BlueBerry.itemID, new ItemStack(Items.magicalBlueBerry, 1));
+
+			DarkenerRecipes.recipe().addAltarRecipe(Items.infusedZaniteSword.itemID, new ItemStack(Items.darkenedInfusedZaniteSword, 1));
+			DarkenerRecipes.recipe().addAltarRecipe(AetherItems.ZaniteSword.itemID, new ItemStack(Items.darkenedZaniteSword, 1));
+			DarkenerRecipes.recipe().addAltarRecipe(Items.infusedGravititeSword.itemID, new ItemStack(Items.darkenedInfusedGravititeSword, 1));
+			DarkenerRecipes.recipe().addAltarRecipe(AetherItems.GravititeSword.itemID, new ItemStack(Items.darkenedGravititeSword, 1));
 		}
 	}
 }

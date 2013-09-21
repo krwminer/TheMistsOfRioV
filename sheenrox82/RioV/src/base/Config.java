@@ -7,7 +7,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class Config
 {
 
-	public static Configuration config;	
+	public static Configuration config;
+	
+	public static String color;
+	
 	public static int blockID = 1000;
 	public static int itemID = 7000;
 	public static int biomeBlockID = 200;
@@ -34,6 +37,7 @@ public class Config
 	{
 		config = new Configuration(event.getSuggestedConfigurationFile());
 
+		color = config.get("HUD", "The Mists of RioV - vX.X.X Color", "\u00A7f").getString();
 		blindOasisID = config.get("Dimension IDs", "Blind Oasis Dimension ID", 11).getInt();
 		vaerynID = config.get("Dimension IDs", "Vaeryn Dimension ID", 12).getInt();
 		flamonorID = config.get("Dimension IDs", "Flamonor Dimension ID", 13).getInt();

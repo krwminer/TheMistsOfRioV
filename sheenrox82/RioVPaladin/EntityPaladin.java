@@ -24,6 +24,7 @@ import sheenrox82.RioV.src.entity.mob.hostile.EntityTerron;
 import sheenrox82.RioV.src.entity.mob.passive.EntityAdv;
 import sheenrox82.RioV.src.entity.mob.passive.EntityAltruEssence;
 
+
 public class EntityPaladin extends EntityMobDeadBody implements IBossDisplayData
 {
 	public static final ItemStack defaultHeldItem;
@@ -94,8 +95,11 @@ public class EntityPaladin extends EntityMobDeadBody implements IBossDisplayData
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
+		// Max Health - default 20.0D - min 0.0D - max Double.MAX_VALUE
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(100.0D);
+		// Movement Speed - default 0.699D - min 0.0D - max Double.MAX_VALUE
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.56D);
+		// Attack Damage - default 2.0D - min 0.0D - max Doubt.MAX_VALUE
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(10.0D);
 	}
 	

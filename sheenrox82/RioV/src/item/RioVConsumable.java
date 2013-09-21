@@ -52,6 +52,21 @@ public class RioVConsumable extends ItemFood
 			this.onFoodEaten(itemStack, world, entityPlayer);
 			return itemStack;
 		}
+		
+		if(TheMistsOfRioV.aether)
+		{
+			if(itemStack.itemID == Items.magicalBlueBerry.itemID)
+			{
+				--itemStack.stackSize;
+				entityPlayer.getFoodStats().addStats(this);
+				world.playSoundAtEntity(entityPlayer, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
+
+				entityPlayer.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 500, 3));//again, sets effect an time
+				entityPlayer.addPotionEffect(new PotionEffect(Potion.jump.id, 300, 3));
+				this.onFoodEaten(itemStack, world, entityPlayer);
+				return itemStack;
+			}
+		}
 
 		--itemStack.stackSize;
 		entityPlayer.getFoodStats().addStats(this);
@@ -76,6 +91,14 @@ public class RioVConsumable extends ItemFood
 		{
 			return true;
 		}
+		
+		if(TheMistsOfRioV.aether)
+		{
+			if(itemID == Items.magicalBlueBerry.itemID)
+			{
+				return true;
+			}
+		}
 
 		return false;
 	}
@@ -85,6 +108,14 @@ public class RioVConsumable extends ItemFood
 	public void registerIcons(IconRegister par1IconRegister)
 	{
 		this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
+
+		if(TheMistsOfRioV.aether)
+		{
+			if(itemID == Items.magicalBlueBerry.itemID)
+			{
+				this.itemIcon = par1IconRegister.registerIcon("Aether:Blue Berry");
+			}
+		}
 	}
 
 	public String getName()

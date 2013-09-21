@@ -4,12 +4,14 @@ import java.util.Random;
 
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenEnd;
 import net.minecraft.world.biome.BiomeGenForest;
 import net.minecraft.world.biome.BiomeGenPlains;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.world.feature.WorldGenCherryBlossomTree;
+import sheenrox82.RioV.src.world.feature.WorldGenClouds;
 import sheenrox82.RioV.src.world.mineable.WorldGenBalance;
 import sheenrox82.RioV.src.world.mineable.WorldGenEndMineable;
 import sheenrox82.RioV.src.world.mineable.WorldGenNetherMineable;
@@ -17,6 +19,7 @@ import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGenOverworld implements IWorldGenerator 
 {
+
 	public int i;
 	public int Xcoord;
 	public int Ycoord;
@@ -91,6 +94,14 @@ public class WorldGenOverworld implements IWorldGenerator
 			new WorldGenBalance(Blocks.raspBerryBush.blockID).generate(world, rand, var6, var7, var8);
 			new WorldGenBalance(Blocks.strawberryBush.blockID).generate(world, rand, var6, var7, var8);
 			new WorldGenBalance(Blocks.shortGrass.blockID).generate(world, rand, var6, var7, var8);
+		}
+
+		if (world.rand.nextInt(25) == 0)
+		{
+			d = blockX + rand.nextInt(16);
+			y = rand.nextInt(256);
+			int biomeGenBase = blockZ + rand.nextInt(16);
+			(new WorldGenClouds(false)).generate(world, rand, d, y, biomeGenBase);
 		}
 
 		if((biome instanceof BiomeGenForest)) 

@@ -6,11 +6,11 @@ import net.minecraft.item.crafting.IRecipe;
 
 public class AnvilRecipeSorter implements Comparator
 {
-	final AnvilCraftingManager anvil;
+	final AnvilCraftingManager betterCraftingManager;
 
-	public AnvilRecipeSorter(AnvilCraftingManager anvil)
+	public AnvilRecipeSorter(AnvilCraftingManager par1BetterCraftingManager)
 	{
-		this.anvil = anvil;
+		this.betterCraftingManager = par1BetterCraftingManager;
 	}
 
 	public int compareRecipes(IRecipe par1IRecipe, IRecipe par2IRecipe)

@@ -14,6 +14,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.MapGenBase;
+import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.MapGenScatteredFeature;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -23,8 +25,11 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import sheenrox82.RioV.src.content.Biomes;
 import sheenrox82.RioV.src.content.Blocks;
+import sheenrox82.RioV.src.world.feature.WorldGenClouds;
 import sheenrox82.RioV.src.world.feature.WorldGenLakesSanctuatite;
+import sheenrox82.RioV.src.world.mineable.WorldGenFlamonorMineable;
 import sheenrox82.RioV.src.world.mineable.WorldGenSanctuatiteMineable;
+import sheenrox82.RioV.src.world.mineable.WorldGenVaerynMineable;
 
 public class ChunkProviderSanctuatite implements IChunkProvider
 {
@@ -413,6 +418,14 @@ public class ChunkProviderSanctuatite implements IChunkProvider
 			int i2 = l + this.rand.nextInt(16) + 8;
 			(new WorldGenLakesSanctuatite(Blocks.sanctuatiteStill.blockID)).generate(this.worldObj, this.rand, k1, l1, i2);
 		}
+
+		if (this.rand.nextInt(25) == 0)
+        {
+            d = k + this.rand.nextInt(16);
+            y = this.rand.nextInt(256);
+            int biomeGenBase = l + this.rand.nextInt(16);
+            (new WorldGenClouds(false)).generate(this.worldObj, this.rand, d, y, biomeGenBase);
+        }
 
 		biomegenbase.decorate(this.worldObj, this.rand, k, l);
 		SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase, k + 8, l + 8, 16, 16, this.rand);

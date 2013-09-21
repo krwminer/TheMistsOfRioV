@@ -19,6 +19,7 @@ import net.minecraft.world.gen.feature.MapGenScatteredFeature;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import sheenrox82.RioV.src.content.Biomes;
 import sheenrox82.RioV.src.content.Blocks;
+import sheenrox82.RioV.src.world.feature.WorldGenClouds;
 import sheenrox82.RioV.src.world.feature.WorldGenLakesFlamonor;
 import sheenrox82.RioV.src.world.mineable.WorldGenBalance;
 import sheenrox82.RioV.src.world.mineable.WorldGenFlamonorMineable;
@@ -399,6 +400,14 @@ public class ChunkProviderFlamonor implements IChunkProvider
 			int i2 = l + this.rand.nextInt(16) + 8;
 			(new WorldGenLakesFlamonor(Blocks.steamingBloodStill.blockID)).generate(this.worldObj, this.rand, k1, l1, i2);
 		}
+		
+		if (this.rand.nextInt(25) == 0)
+        {
+            d = k + this.rand.nextInt(16);
+            y = this.rand.nextInt(256);
+            int biomeGenBase = l + this.rand.nextInt(16);
+            (new WorldGenClouds(false)).generate(this.worldObj, this.rand, d, y, biomeGenBase);
+        }
 		
 		biomegenbase.decorate(this.worldObj, this.rand, k, l);
 		SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase, k + 8, l + 8, 16, 16, this.rand);

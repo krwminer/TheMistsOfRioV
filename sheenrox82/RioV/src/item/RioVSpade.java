@@ -112,6 +112,22 @@ public class RioVSpade extends ItemSpade
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisShovel");
 		}
+		
+		if(TheMistsOfRioV.natura)
+		{
+			if(itemID == Items.infusedBloodwoodShovel.itemID)
+			{
+				this.itemIcon = par1IconRegister.registerIcon("Natura:bloodwood_shovel");
+			}	
+		}
+		
+		if(TheMistsOfRioV.aether)
+		{
+			if(itemID == Items.infusedSkyrootShovel.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Skyroot Shovel");
+			if(itemID == Items.infusedHolystoneShovel.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Holystone Shovel");
+			if(itemID == Items.infusedZaniteShovel.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Shovel");
+			if(itemID == Items.infusedGravititeShovel.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Gravitite Shovel");
+		}
 	}
 
 	@SideOnly(Side.CLIENT)

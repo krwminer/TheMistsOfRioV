@@ -103,6 +103,22 @@ public class RioVAxe extends ItemAxe
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisAxe");
 		}
+		
+		if(TheMistsOfRioV.natura)
+		{
+			if(itemID == Items.infusedBloodwoodAxe.itemID)
+			{
+				this.itemIcon = par1IconRegister.registerIcon("Natura:bloodwood_hatchet");
+			}	
+		}
+		
+		if(TheMistsOfRioV.aether)
+		{
+			if(itemID == Items.infusedSkyrootAxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Skyroot Axe");	
+			if(itemID == Items.infusedHolystoneAxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Holystone Axe");	
+			if(itemID == Items.infusedZaniteAxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Axe");	
+			if(itemID == Items.infusedGravititeAxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Gravitite Axe");	
+		}
 	}
 
 	@Override

@@ -116,5 +116,21 @@ public class RioVPickaxe extends ItemPickaxe
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisPickaxe");
 		}
+		
+		if(TheMistsOfRioV.natura)
+		{
+			if(itemID == Items.infusedBloodwoodPickaxe.itemID)
+			{
+				this.itemIcon = par1IconRegister.registerIcon("Natura:bloodwood_pickaxe");
+			}	
+		}
+		
+		if(TheMistsOfRioV.aether)
+		{
+			if(itemID == Items.infusedSkyrootPickaxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Skyroot Pickaxe");
+			if(itemID == Items.infusedHolystonePickaxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Holystone Pickaxe");
+			if(itemID == Items.infusedZanitePickaxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Pickaxe");
+			if(itemID == Items.infusedGravititePickaxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Gravitite Pickaxe");
+		}
 	}
 }

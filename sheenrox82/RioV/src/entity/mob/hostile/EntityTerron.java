@@ -98,6 +98,12 @@ public class EntityTerron extends EntityMobDeadBody implements IBossDisplayData
 	}
 	
 	@Override
+	protected void dropRareDrop(int par1)
+	{
+		this.dropItem(Items.theAwakening.itemID, 1);
+	}
+	
+	@Override
 	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.writeEntityToNBT(par1NBTTagCompound);

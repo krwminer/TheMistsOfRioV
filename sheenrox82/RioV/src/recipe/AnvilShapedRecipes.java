@@ -8,10 +8,19 @@ import net.minecraft.world.World;
 
 public class AnvilShapedRecipes implements IRecipe
 {
+	/** How many horizontal slots this recipe is wide. */
 	public final int recipeWidth;
+
+	/** How many vertical slots this recipe uses. */
 	public final int recipeHeight;
+
+	/** Is a array of ItemStack that composes the recipe. */
 	public final ItemStack[] recipeItems;
+
+	/** Is the ItemStack that you get when craft the recipe. */
 	private ItemStack recipeOutput;
+
+	/** Is the itemID of the output item that you get when craft the recipe. */
 	public final int recipeOutputItemID;
 	private boolean field_92101_f = false;
 
@@ -53,6 +62,9 @@ public class AnvilShapedRecipes implements IRecipe
 		return false;
 	}
 
+	/**
+	 * Checks if the region of a crafting inventory is match for the recipe.
+	 */
 	private boolean checkMatch(InventoryCrafting par1InventoryCrafting, int par2, int par3, boolean par4)
 	{
 		for (int k = 0; k < 5; ++k)
@@ -100,6 +112,9 @@ public class AnvilShapedRecipes implements IRecipe
 		return true;
 	}
 
+	/**
+	 * Returns an Item that is the result of this recipe
+	 */
 	public ItemStack getCraftingResult(InventoryCrafting par1InventoryCrafting)
 	{
 		ItemStack itemstack = this.getRecipeOutput().copy();
@@ -120,6 +135,9 @@ public class AnvilShapedRecipes implements IRecipe
 		return itemstack;
 	}
 
+	/**
+	 * Returns the size of the recipe area
+	 */
 	public int getRecipeSize()
 	{
 		return this.recipeWidth * this.recipeHeight;

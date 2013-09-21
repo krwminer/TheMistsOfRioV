@@ -22,4 +22,5 @@ public class Paladin
 		ModMetadata data = initEvent.getModMetadata();
 		data.parent = "RioV";
 	}
+
 }

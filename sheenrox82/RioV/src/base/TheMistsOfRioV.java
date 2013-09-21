@@ -49,6 +49,8 @@ public class TheMistsOfRioV
 	public static boolean riovPaladin;
 	public static boolean riovValis;
 	public static boolean riovTrees;
+	public static boolean natura;
+	public static boolean aether;
 	
 	public static TheMistsOfRioV getInstance()
 	{

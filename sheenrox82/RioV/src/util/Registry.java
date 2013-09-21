@@ -54,6 +54,7 @@ public class Registry
 
 	public static void preInit(FMLPreInitializationEvent initEvent)
 	{		
+		/**Inits and Regs**/
 		TheMistsOfRioV.commonProxy.init();
 		TheMistsOfRioV.commonProxy.cape();
 		ModMetadata data = initEvent.getModMetadata();
@@ -293,6 +294,38 @@ public class Registry
 		{
 			FMLLog.info(Util.MOD_NAME + ": Trees wasn't detected, not initializing.");
 			TheMistsOfRioV.riovTrees = false;
+		}
+
+		try
+		{
+			Class.forName("mods.natura.Natura");
+			FMLLog.info("Natura detected! You get the Natura Expansion for RioV! :)");
+			TheMistsOfRioV.natura = true;
+			if(TheMistsOfRioV.natura = true)
+			{
+				Items.addNatura();
+			}
+		}
+		catch (Throwable var11)
+		{
+			FMLLog.info("Natura wasn't detected... No Natura Expansion for you. :(");
+			TheMistsOfRioV.natura = false;
+		}
+
+		try
+		{
+			Class.forName("net.aetherteam.aether.Aether");
+			FMLLog.info("Aether II detected! You get the Aether II Expansion for RioV! :)");
+			TheMistsOfRioV.aether = true;
+			if(TheMistsOfRioV.aether = true)
+			{
+				Items.addAether();
+			}
+		}
+		catch (Throwable var11)
+		{
+			FMLLog.info("Aether II wasn't detected... No Aether II Expansion for you. :(");
+			TheMistsOfRioV.aether = false;
 		}
 	}
 
