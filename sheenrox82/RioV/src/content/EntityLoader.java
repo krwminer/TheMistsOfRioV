@@ -6,6 +6,9 @@ import net.minecraft.world.biome.SpawnListEntry;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
+import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntityChickenBoss;
+import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntityCowBoss;
+import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntityPigBoss;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTun;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTunBodyguard;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTunMinion;
@@ -31,66 +34,77 @@ import sheenrox82.RioV.src.entity.mob.passive.EntityOrc;
 import sheenrox82.RioV.src.entity.mob.passive.EntityRabbit;
 import sheenrox82.RioV.src.entity.mob.passive.EntitySkeletalHorse;
 import sheenrox82.RioV.src.entity.mob.passive.EntitySoverianOfficer;
+import sheenrox82.RioV.src.entity.mob.passive.EntityWoodElf;
 import sheenrox82.RioV.src.entity.projectile.EntityDarknessArrow;
 import sheenrox82.RioV.src.entity.projectile.EntityVraviniteArrow;
-import sheenrox82.RioV.src.util.Registry;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioVPaladin.EntityPaladin;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class EntityLoader 
 {
-
 	public static void add()
 	{
-		Registry.registerEntity(EntityAdv.class, "Adventurer");
-		Registry.registerEntity(EntityAltruEssence.class, "Altru Essence");
-		Registry.registerEntity(EntityAunTun.class, "Aun'Tun");
-		Registry.registerEntity(EntityAunTunBodyguard.class, "Aun'Tun Bodyguard");
-		Registry.registerEntity(EntityAunTunMinion.class, "Aun'Tun Minion");
-		Registry.registerEntity(EntityDarkElf.class, "Dark Elf");
-		Registry.registerEntity(EntityDemonAngel.class, "Demon Angel");
-		Registry.registerEntity(EntityMage.class, "Mage");
-		Registry.registerEntity(EntityNizonian.class, "Nizonian");
-		Registry.registerEntity(EntitySkeletalHorse.class, "Skeletal Horse");
-		Registry.registerEntity(EntityTerron.class, "Terron");
-		Registry.registerEntity(EntityGalokin.class, "Galokin");
-		Registry.registerEntity(EntityOrc.class, "Orc");
-		Registry.registerEntity(EntityFairy.class, "Fairy");
-		Registry.registerEntity(EntityDarkEssence.class, "The Darkness");
-		Registry.registerEntity(EntityHellhound.class, "Hellhound");
-		Registry.registerEntity(EntityDarknessArrow.class, "Darkness Arrow");
-		Registry.registerEntity(EntityTef.class, "Tef");
-		Registry.registerEntity(EntityTefGuard.class, "Tef Guard");
-		Registry.registerEntity(EntityShadow.class, "The Shadow");
-		Registry.registerEntity(EntityVravinite.class, "Vravinite");
-		Registry.registerEntity(EntityVraviniteArrow.class, "Vravinite Arrow");
-		Registry.registerEntity(EntityBloodGhoul.class, "Blood Ghoul");
-		Registry.registerEntity(EntityDove.class, "Dove");
-		Registry.registerEntity(EntityAngel.class, "Angel");
-		Registry.registerEntity(EntityRabbit.class, "Rabbit");
-		Registry.registerEntity(EntitySoverianOfficer.class, "Soverian Officer");
+		MethodUtil.registerEntity(EntityAdv.class, "Adventurer");
+		MethodUtil.registerEntity(EntityAltruEssence.class, "Altru Essence");
+		MethodUtil.registerEntity(EntityAunTun.class, "Aun'Tun");
+		MethodUtil.registerEntity(EntityAunTunBodyguard.class, "Aun'Tun Bodyguard");
+		MethodUtil.registerEntity(EntityAunTunMinion.class, "Aun'Tun Minion");
+		MethodUtil.registerEntity(EntityDarkElf.class, "Dark Elf");
+		MethodUtil.registerEntity(EntityDemonAngel.class, "Demon Angel");
+		MethodUtil.registerEntity(EntityMage.class, "Mage");
+		MethodUtil.registerEntity(EntityNizonian.class, "Nizonian");
+		MethodUtil.registerEntity(EntitySkeletalHorse.class, "Skeletal Horse");
+		MethodUtil.registerEntity(EntityTerron.class, "Terron");
+		MethodUtil.registerEntity(EntityGalokin.class, "Galokin");
+		MethodUtil.registerEntity(EntityOrc.class, "Orc");
+		MethodUtil.registerEntity(EntityFairy.class, "Fairy");
+		MethodUtil.registerEntity(EntityDarkEssence.class, "The Darkness");
+		MethodUtil.registerEntity(EntityHellhound.class, "Hellhound");
+		MethodUtil.registerEntity(EntityDarknessArrow.class, "Darkness Arrow");
+		MethodUtil.registerEntity(EntityTef.class, "Tef");
+		MethodUtil.registerEntity(EntityTefGuard.class, "Tef Guard");
+		MethodUtil.registerEntity(EntityShadow.class, "The Shadow");
+		MethodUtil.registerEntity(EntityVravinite.class, "Vravinite");
+		MethodUtil.registerEntity(EntityVraviniteArrow.class, "Vravinite Arrow");
+		MethodUtil.registerEntity(EntityBloodGhoul.class, "Blood Ghoul");
+		MethodUtil.registerEntity(EntityDove.class, "Dove");
+		MethodUtil.registerEntity(EntityAngel.class, "Angel");
+		MethodUtil.registerEntity(EntityRabbit.class, "Rabbit");
+		MethodUtil.registerEntity(EntitySoverianOfficer.class, "Soverian Officer");
+		MethodUtil.registerEntity(EntityChickenBoss.class, "Chicken - Boss");
+		MethodUtil.registerEntity(EntityPigBoss.class, "Pig - Boss");
+		MethodUtil.registerEntity(EntityWoodElf.class, "Dark Wood Elf Assassin");
+		MethodUtil.registerEntity(EntityCowBoss.class, "Cow - Boss");
 
-		Registry.registerEgg(EntityAdv.class);
-		Registry.registerEgg(EntityMage.class);
-		Registry.registerEgg(EntityAltruEssence.class);
-		Registry.registerEgg(EntityAunTunBodyguard.class);
-		Registry.registerEgg(EntityAunTunMinion.class);
-		Registry.registerEgg(EntityDarkElf.class);
-		Registry.registerEgg(EntitySkeletalHorse.class);
-		Registry.registerEgg(EntityNizonian.class);
-		Registry.registerEgg(EntityGalokin.class);
-		Registry.registerEgg(EntityOrc.class);
-		Registry.registerEgg(EntityFairy.class);
-		Registry.registerEgg(EntityHellhound.class);
-		Registry.registerEgg(EntityTef.class);
-		Registry.registerEgg(EntityTefGuard.class);
-		Registry.registerEgg(EntityShadow.class);
-		Registry.registerEgg(EntityVravinite.class);
-		Registry.registerEgg(EntityBloodGhoul.class);
-		Registry.registerEgg(EntityDove.class);
-		Registry.registerEgg(EntityAngel.class);
-		Registry.registerEgg(EntityRabbit.class);
-		Registry.registerEgg(EntitySoverianOfficer.class);
+		MethodUtil.registerEgg(EntityAdv.class);
+		MethodUtil.registerEgg(EntityMage.class);
+		MethodUtil.registerEgg(EntityAltruEssence.class);
+		MethodUtil.registerEgg(EntityAunTunBodyguard.class);
+		MethodUtil.registerEgg(EntityAunTunMinion.class);
+		MethodUtil.registerEgg(EntityDarkElf.class);
+		MethodUtil.registerEgg(EntitySkeletalHorse.class);
+		MethodUtil.registerEgg(EntityNizonian.class);
+		MethodUtil.registerEgg(EntityGalokin.class);
+		MethodUtil.registerEgg(EntityOrc.class);
+		MethodUtil.registerEgg(EntityFairy.class);
+		MethodUtil.registerEgg(EntityHellhound.class);
+		MethodUtil.registerEgg(EntityTef.class);
+		MethodUtil.registerEgg(EntityTefGuard.class);
+		MethodUtil.registerEgg(EntityShadow.class);
+		MethodUtil.registerEgg(EntityVravinite.class);
+		MethodUtil.registerEgg(EntityBloodGhoul.class);
+		MethodUtil.registerEgg(EntityDove.class);
+		MethodUtil.registerEgg(EntityAngel.class);
+		MethodUtil.registerEgg(EntityRabbit.class);
+		MethodUtil.registerEgg(EntitySoverianOfficer.class);
+		MethodUtil.registerEgg(EntityChickenBoss.class);
+		MethodUtil.registerEgg(EntityPigBoss.class);
+		MethodUtil.registerEgg(EntityWoodElf.class);
+		MethodUtil.registerEgg(EntityTerron.class);
+		MethodUtil.registerEgg(EntityDemonAngel.class);
+		MethodUtil.registerEgg(EntityDarkEssence.class);
+		MethodUtil.registerEgg(EntityCowBoss.class);
 	}
 
 	public static void addOverworldSpawning()
@@ -109,6 +123,9 @@ public class EntityLoader
 		SpawnListEntry galokinSpawn = new SpawnListEntry(EntityGalokin.class, 2, 4, 8);
 		SpawnListEntry orcSpawn = new SpawnListEntry(EntityOrc.class, 2, 4, 8);
 		SpawnListEntry sovSpawn = new SpawnListEntry(EntitySoverianOfficer.class, 1, 2, 6);
+		SpawnListEntry chickBossSpawn = new SpawnListEntry(EntityChickenBoss.class, 1, 2, 4);
+		SpawnListEntry pigBossSpawn = new SpawnListEntry(EntityPigBoss.class, 1, 2, 4);
+		SpawnListEntry cowBossSpawn = new SpawnListEntry(EntityCowBoss.class, 1, 2, 3);
 
 		for(int i = 0; i < plains.length; i++)
 		{
@@ -118,6 +135,9 @@ public class EntityLoader
 			plains[i].getSpawnableList(EnumCreatureType.creature).add(galokinSpawn);
 			plains[i].getSpawnableList(EnumCreatureType.creature).add(orcSpawn);
 			plains[i].getSpawnableList(EnumCreatureType.creature).add(sovSpawn);
+			plains[i].getSpawnableList(EnumCreatureType.creature).add(chickBossSpawn);
+			plains[i].getSpawnableList(EnumCreatureType.creature).add(pigBossSpawn);
+			plains[i].getSpawnableList(EnumCreatureType.creature).add(cowBossSpawn);
 		}
 		
 		for(int i = 0; i < mountain.length; i++)
@@ -128,6 +148,8 @@ public class EntityLoader
 			mountain[i].getSpawnableList(EnumCreatureType.creature).add(galokinSpawn);
 			mountain[i].getSpawnableList(EnumCreatureType.creature).add(orcSpawn);
 			mountain[i].getSpawnableList(EnumCreatureType.creature).add(sovSpawn);
+			mountain[i].getSpawnableList(EnumCreatureType.creature).add(pigBossSpawn);
+			mountain[i].getSpawnableList(EnumCreatureType.creature).add(cowBossSpawn);
 		}
 		
 		for(int i = 0; i < frozen.length; i++)
@@ -169,6 +191,7 @@ public class EntityLoader
 			desert[i].getSpawnableList(EnumCreatureType.creature).add(galokinSpawn);
 			desert[i].getSpawnableList(EnumCreatureType.creature).add(orcSpawn);
 			desert[i].getSpawnableList(EnumCreatureType.creature).add(sovSpawn);
+			desert[i].getSpawnableList(EnumCreatureType.creature).add(cowBossSpawn);
 		}
 	}
 
@@ -208,6 +231,8 @@ public class EntityLoader
 	{
 		EntityRegistry.addSpawn(EntityShadow.class, 1, 2, 6, EnumCreatureType.creature, Biomes.blindOasis);
 		EntityRegistry.addSpawn(EntityShadow.class, 1, 2, 6, EnumCreatureType.monster, Biomes.blindOasis);
+		EntityRegistry.addSpawn(EntityWoodElf.class, 1, 2, 4, EnumCreatureType.creature, Biomes.blindOasis);
+		EntityRegistry.addSpawn(EntityWoodElf.class, 1, 2, 4, EnumCreatureType.monster, Biomes.blindOasis);
 		EntityRegistry.addSpawn(EntityVravinite.class, 1, 2, 6, EnumCreatureType.creature, Biomes.glimmerwood);
 		EntityRegistry.addSpawn(EntityVravinite.class, 1, 2, 6, EnumCreatureType.monster, Biomes.glimmerwood);
 		EntityRegistry.addSpawn(EntityBloodGhoul.class, 1, 2, 6, EnumCreatureType.creature, Biomes.flamonor);
@@ -215,7 +240,6 @@ public class EntityLoader
 		EntityRegistry.addSpawn(EntityDove.class, 1, 1, 3, EnumCreatureType.creature, Biomes.sanctuatite);
 		EntityRegistry.addSpawn(EntityAngel.class, 1, 1, 3, EnumCreatureType.creature, Biomes.sanctuatite);
 		EntityRegistry.addSpawn(EntityRabbit.class, 1, 1, 3, EnumCreatureType.creature, Biomes.sanctuatite);
-
 	}
 
 	public static void addNightSpawning()
@@ -230,12 +254,12 @@ public class EntityLoader
 	}
 	public static void addPMobs()
 	{
-		if(TheMistsOfRioV.riovPaladin)
+		if(TheMistsOfRioV.getInstance().riovPaladin)
 		{
-			Registry.registerEntity(EntityPaladin.class, "Paladin");
+			MethodUtil.registerEntity(EntityPaladin.class, "Paladin");
 			EntityRegistry.addSpawn(EntityPaladin.class, 2, 1, 1, EnumCreatureType.creature, BiomeGenBase.plains,BiomeGenBase.jungle,BiomeGenBase.extremeHills,BiomeGenBase.desert, BiomeGenBase.desertHills,BiomeGenBase.taiga, BiomeGenBase.taigaHills,BiomeGenBase.jungleHills,BiomeGenBase.beach,BiomeGenBase.extremeHillsEdge,BiomeGenBase.forest,BiomeGenBase.forestHills,BiomeGenBase.frozenOcean,BiomeGenBase.frozenRiver,BiomeGenBase.iceMountains,BiomeGenBase.icePlains,BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore,BiomeGenBase.swampland);
 
-			Registry.registerEgg(EntityPaladin.class);
+			MethodUtil.registerEgg(EntityPaladin.class);
 		}
 		else
 		{

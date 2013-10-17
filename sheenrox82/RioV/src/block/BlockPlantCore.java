@@ -2,6 +2,7 @@ package sheenrox82.RioV.src.block;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -12,17 +13,12 @@ import sheenrox82.RioV.src.util.Util;
 
 public class BlockPlantCore extends BlockFlower
 {
-	public BlockPlantCore(int par1, Material par2Material)
+	public BlockPlantCore(int par1)
 	{
-		super(par1, par2Material);
+		super(par1, Material.plants);
 		setCreativeTab(null);
 		setHardness(0.0F);
 		setStepSound(soundGrassFootstep);
-	}
-
-	public BlockPlantCore(int par1)
-	{
-		this(par1, Material.plants);
 	}
 
 	@Override
@@ -58,6 +54,11 @@ public class BlockPlantCore extends BlockFlower
 		{
 			return Items.bambooItem.itemID;
 		}
+		if(blockID == Blocks.bloodFlower.blockID)
+		{
+			return Items.heart.itemID;
+		}
+
 		return blockID;
 	}
 
@@ -70,5 +71,15 @@ public class BlockPlantCore extends BlockFlower
 	public String getName()
 	{
 		return this.unlocalizedName;
+	}
+
+	protected boolean canThisPlantGrowOnThisBlockID(int par1)
+	{		
+		if(blockID == Blocks.bloodFlower.blockID)
+		{
+			return par1 == Blocks.bloodGrass.blockID;
+		}
+		
+		return par1 == Block.grass.blockID || par1 == Block.dirt.blockID || par1 == Block.tilledField.blockID;
 	}
 }

@@ -23,11 +23,11 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
-import sheenrox82.RioV.src.entity.mob.core.EntityMobDeadBody;
+import sheenrox82.RioV.src.entity.mob.core.EntityBossCore;
 import sheenrox82.RioV.src.entity.mob.passive.EntityAltruEssence;
 import sheenrox82.RioV.src.entity.mob.passive.EntitySkeletalHorse;
 
-public class EntityAunTun extends EntityMobDeadBody implements IBossDisplayData
+public class EntityAunTun extends EntityBossCore
 {
 	public static final ItemStack defaultHeldItem;
 
@@ -64,7 +64,8 @@ public class EntityAunTun extends EntityMobDeadBody implements IBossDisplayData
 		this.setCurrentItemOrArmor(3, new ItemStack(Items.auntunMinionChestplate));
 		this.setCurrentItemOrArmor(2, new ItemStack(Items.auntunMinionLeggings));
 		this.setCurrentItemOrArmor(1, new ItemStack(Items.auntunMinionBoots));
-		if(TheMistsOfRioV.riovValis)
+		
+		if(TheMistsOfRioV.getInstance().riovValis)
 		{
 			isImmuneToFire = true;
 		}

@@ -14,7 +14,7 @@ import net.minecraft.world.PortalPosition;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 import sheenrox82.RioV.src.content.Blocks;
-import sheenrox82.RioV.src.world.teleporter.position.VaerynPortalPosition;
+import sheenrox82.RioV.src.world.teleporter.position.PortalPositionVaeryn;
 
 public class TeleporterVaeryn extends Teleporter
 {
@@ -136,7 +136,7 @@ public class TeleporterVaeryn extends Teleporter
 		{
 			if (flag)
 			{
-				this.destinationCoordinateCache.add(j1, new VaerynPortalPosition(this, i, j, k, this.worldServerInstance.getTotalWorldTime()));
+				this.destinationCoordinateCache.add(j1, new PortalPositionVaeryn(this, i, j, k, this.worldServerInstance.getTotalWorldTime()));
 				this.destinationCoordinateKeys.add(Long.valueOf(j1));
 			}
 			double d8 = (double)i + 0.5D;

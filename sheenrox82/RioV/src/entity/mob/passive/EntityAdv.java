@@ -15,11 +15,14 @@ import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntitySilverfish;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.content.Sound;
 import sheenrox82.RioV.src.entity.mob.core.EntityMobDeadBody;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTun;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTunBodyguard;
@@ -41,7 +44,7 @@ public class EntityAdv extends EntityMobDeadBody
 	{
 		super(par1World);
 		isImmuneToFire = false;
-		if(TheMistsOfRioV.riovValis)
+		if(TheMistsOfRioV.getInstance().riovValis)
 		{
 			isImmuneToFire = true;
 		}
@@ -69,7 +72,7 @@ public class EntityAdv extends EntityMobDeadBody
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityDarkEssence.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityVravinite.class, 0, true));
 
-		if(TheMistsOfRioV.riovPaladin)
+		if(TheMistsOfRioV.getInstance().riovPaladin)
 		{
 			targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPaladin.class, 0, true));
 		}
@@ -158,7 +161,7 @@ public class EntityAdv extends EntityMobDeadBody
 	@Override
 	protected boolean isValidLightLevel()
 	{
-		return true; //don't care about the light level to spawn
+		return true;
 	}
 
 	@Override
@@ -170,16 +173,6 @@ public class EntityAdv extends EntityMobDeadBody
 	static
 	{
 		defaultHeldItem = new ItemStack(Items.amethystSword);
-
-		if(TheMistsOfRioV.riovPaladin)
-		{
-			defaultHeldItem = new ItemStack(Items.darkenedInfusedAmethystSword);
-		}
-
-		if(TheMistsOfRioV.riovPaladin = false)
-		{
-			defaultHeldItem = new ItemStack(Items.amethystSword);
-		}
 	}
 
 	@Override
@@ -209,7 +202,7 @@ public class EntityAdv extends EntityMobDeadBody
 		}
 		if (var1 == 2)
 		{
-			this.dropItem(Items.darknessArrow.itemID, 1);
+			this.dropItem(Items.scroll.itemID, 1);
 		}
 		if (var1 == 3)
 		{
@@ -225,7 +218,6 @@ public class EntityAdv extends EntityMobDeadBody
 		}
 		if (var1 == 6)
 		{
-			this.dropItem(Items.trainingSword.itemID, 1);
 		}
 		if (var1 == 7)
 		{
@@ -247,4 +239,14 @@ public class EntityAdv extends EntityMobDeadBody
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(8.0D);
 	}
+	
+	@Override
+	public boolean interact(EntityPlayer par1EntityPlayer)
+    {
+		par1EntityPlayer.playSound(Sound.hello, 1, 1);
+		
+		if(!this.worldObj.isRemote)
+		par1EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Hello to you too, " + par1EntityPlayer.username + "!"));
+		return true;
+    }
 }

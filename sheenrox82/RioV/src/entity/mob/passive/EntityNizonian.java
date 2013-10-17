@@ -36,7 +36,7 @@ public class EntityNizonian extends EntityMobDeadBody
 	public EntityNizonian(World par1World)
 	{
 		super(par1World);
-		if(TheMistsOfRioV.riovValis)
+		if(TheMistsOfRioV.getInstance().riovValis)
 		{
 			isImmuneToFire = true;
 		}
@@ -63,7 +63,7 @@ public class EntityNizonian extends EntityMobDeadBody
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntitySilverfish.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityWitch.class, 0, true));
 
-		if(TheMistsOfRioV.riovPaladin)
+		if(TheMistsOfRioV.getInstance().riovPaladin)
 		{
 
 		}
@@ -94,22 +94,11 @@ public class EntityNizonian extends EntityMobDeadBody
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(60.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(20.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(7.0D);
 	}
 
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
-
-	protected void dropFewItems(boolean par1, int par2)
-	{
-		int var1 = this.rand.nextInt(10);
-
-		if(var1 == 1)
-		{
-			this.dropItem(Items.nizonianBlade.itemID, 1);
-		}
-	}
-
 }

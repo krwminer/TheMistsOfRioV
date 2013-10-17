@@ -24,7 +24,7 @@ public class RioVDoor extends Item
 		super(par1 - 256);
 		this.doorMaterial = par2Material;
 		this.maxStackSize = 1;
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@Override

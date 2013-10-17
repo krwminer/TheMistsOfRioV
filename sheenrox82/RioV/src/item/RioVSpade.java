@@ -15,6 +15,7 @@ import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.Color;
 import sheenrox82.RioV.src.util.Util;
 
 public class RioVSpade extends ItemSpade
@@ -27,7 +28,7 @@ public class RioVSpade extends ItemSpade
 	{
 		super(par1 - 256, par2EnumToolMaterial);
 		this.isInfused = par2;
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	public boolean hasEffect(ItemStack par1ItemStack)
@@ -113,15 +114,13 @@ public class RioVSpade extends ItemSpade
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisShovel");
 		}
 		
-		if(TheMistsOfRioV.natura)
+		if(TheMistsOfRioV.getInstance().natura)
 		{
-			if(itemID == Items.infusedBloodwoodShovel.itemID)
-			{
-				this.itemIcon = par1IconRegister.registerIcon("Natura:bloodwood_shovel");
-			}	
+			if(itemID == Items.infusedBloodwoodShovel.itemID || itemID == Items.infusedGhostwoodShovel.itemID || itemID == Items.infusedDarkwoodShovel.itemID || itemID == Items.infusedFusewoodShovel.itemID || itemID == Items.infusedNetherquartzShovel.itemID)
+				this.itemIcon = par1IconRegister.registerIcon(this.unlocalizedName);
 		}
 		
-		if(TheMistsOfRioV.aether)
+		if(TheMistsOfRioV.getInstance().aether)
 		{
 			if(itemID == Items.infusedSkyrootShovel.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Skyroot Shovel");
 			if(itemID == Items.infusedHolystoneShovel.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Holystone Shovel");
@@ -135,9 +134,9 @@ public class RioVSpade extends ItemSpade
 	{
 		if(Config.showToolInfo)
 		{
-			var3.add(var1.getMaxDamage() - var1.getItemDamage() + " Uses");
-			var3.add("Digging Speed: " + toolMaterial.getEfficiencyOnProperMaterial());
-			var3.add("Harvest Level: " + toolMaterial.getHarvestLevel());
+			var3.add(Color.GOLD + (var1.getMaxDamage() - var1.getItemDamage()) + " Uses");
+			var3.add(Color.DARK_PURPLE + "Digging Speed: " + toolMaterial.getEfficiencyOnProperMaterial());
+			var3.add(Color.AQUA + "Harvest Level: " + toolMaterial.getHarvestLevel());
 		}
 	}
 }

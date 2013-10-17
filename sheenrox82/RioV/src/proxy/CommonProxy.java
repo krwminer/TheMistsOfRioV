@@ -1,6 +1,7 @@
 package sheenrox82.RioV.src.proxy;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBiped;
 import cpw.mods.fml.client.FMLClientHandler;
 
 public class CommonProxy

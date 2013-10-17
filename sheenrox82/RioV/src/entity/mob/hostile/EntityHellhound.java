@@ -53,12 +53,12 @@ public class EntityHellhound extends EntityMobDeadBody
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntitySilverfish.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityWitch.class, 0, true));
 		
-		if(TheMistsOfRioV.riovValis)
+		if(TheMistsOfRioV.getInstance().riovValis)
 		{
 			isImmuneToFire = true;
 		}
 
-		if(TheMistsOfRioV.riovPaladin)
+		if(TheMistsOfRioV.getInstance().riovPaladin)
 		{
 		}
 

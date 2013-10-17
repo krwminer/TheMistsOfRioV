@@ -25,7 +25,7 @@ public class BlockBlackQuartz extends Block
 	public BlockBlackQuartz(int par1)
 	{
 		super(par1, Material.rock);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 	
 	@Override

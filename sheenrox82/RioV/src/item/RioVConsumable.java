@@ -23,7 +23,7 @@ public class RioVConsumable extends ItemFood
 	public RioVConsumable(int par1, int par2, float par3, boolean par4)
 	{
 		super(par1 - 256, par2, par4);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class RioVConsumable extends ItemFood
 			return itemStack;
 		}
 		
-		if(TheMistsOfRioV.aether)
+		if(TheMistsOfRioV.getInstance().aether)
 		{
 			if(itemStack.itemID == Items.magicalBlueBerry.itemID)
 			{
@@ -92,7 +92,7 @@ public class RioVConsumable extends ItemFood
 			return true;
 		}
 		
-		if(TheMistsOfRioV.aether)
+		if(TheMistsOfRioV.getInstance().aether)
 		{
 			if(itemID == Items.magicalBlueBerry.itemID)
 			{
@@ -109,7 +109,7 @@ public class RioVConsumable extends ItemFood
 	{
 		this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
 
-		if(TheMistsOfRioV.aether)
+		if(TheMistsOfRioV.getInstance().aether)
 		{
 			if(itemID == Items.magicalBlueBerry.itemID)
 			{

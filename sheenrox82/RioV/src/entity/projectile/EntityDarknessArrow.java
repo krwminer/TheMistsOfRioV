@@ -20,6 +20,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Registry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -315,11 +316,11 @@ public class EntityDarknessArrow extends EntityCustomArrow implements IProjectil
 
                     if (this.shootingEntity == null)
                     {
-                        damagesource = Registry.causeArrowDamage(this, this);
+                        damagesource = MethodUtil.causeArrowDamage(this, this);
                     }
                     else
                     {
-                        damagesource = Registry.causeArrowDamage(this, this.shootingEntity);
+                        damagesource = MethodUtil.causeArrowDamage(this, this.shootingEntity);
                     }
 
                     if (this.isBurning() && !(movingobjectposition.entityHit instanceof EntityEnderman))

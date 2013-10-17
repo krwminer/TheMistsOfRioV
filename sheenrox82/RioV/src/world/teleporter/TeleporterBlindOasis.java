@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 import sheenrox82.RioV.src.content.Blocks;
-import sheenrox82.RioV.src.world.teleporter.position.BlindOasisPortalPosition;
+import sheenrox82.RioV.src.world.teleporter.position.PortalPositionBlindOasis;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
@@ -137,7 +137,7 @@ public class TeleporterBlindOasis extends Teleporter
 		{
 			if (flag)
 			{
-				this.destinationCoordinateCache.add(j1, new BlindOasisPortalPosition(this, i, j, k, this.worldServerInstance.getTotalWorldTime()));
+				this.destinationCoordinateCache.add(j1, new PortalPositionBlindOasis(this, i, j, k, this.worldServerInstance.getTotalWorldTime()));
 				this.destinationCoordinateKeys.add(Long.valueOf(j1));
 			}
 			double d8 = (double)i + 0.5D;

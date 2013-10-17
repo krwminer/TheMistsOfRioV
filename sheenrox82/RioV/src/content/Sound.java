@@ -13,13 +13,10 @@ public class Sound
 		SOUND_PREFIX + "demon.ogg",
 		SOUND_PREFIX + "hellhound.ogg",
 		SOUND_PREFIX + "auntun.ogg",
-		SOUND_PREFIX + "darkness.ogg"
-		};
-
-	public static String[] music = 
-		{ 
-		SOUND_PREFIX + "theAwakening.ogg",
-		SOUND_PREFIX + "frozen.ogg"
+		SOUND_PREFIX + "darkness.ogg",
+		SOUND_PREFIX + "exhale.ogg",
+		SOUND_PREFIX + "hello.ogg",
+		SOUND_PREFIX + "pain.ogg"
 		};
 	
 	public static final String portal = SOUND_PREFIX + "portal";
@@ -29,6 +26,7 @@ public class Sound
 	public static final String auntun = SOUND_PREFIX + "auntun";
 	public static final String growl = SOUND_PREFIX + "growl";
 	public static final String darkness = SOUND_PREFIX + "darkness";
-	public static final String theAwakening = SOUND_PREFIX + "theAwakening";
-	public static final String frozen = SOUND_PREFIX + "frozen";
+	public static final String exhale = SOUND_PREFIX + "exhale";
+	public static final String hello = SOUND_PREFIX + "hello";
+	public static final String pain = SOUND_PREFIX + "pain";
 }

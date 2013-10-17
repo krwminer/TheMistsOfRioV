@@ -37,7 +37,7 @@ public class BlockGlimmerwoodChest extends BlockChest
     {
         super(par1, par2);
         this.isTrapped = par2;
-        this.setCreativeTab(TheMistsOfRioV.tab);
+        this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
         this.setBlockBounds(0.0625F, 0.0F, 0.0625F, 0.9375F, 0.875F, 0.9375F);
     }
     

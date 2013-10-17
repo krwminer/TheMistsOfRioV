@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.NetLoginHandler;
 import net.minecraft.network.packet.NetHandler;
 import net.minecraft.network.packet.Packet1Login;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatMessageComponent;
-import sheenrox82.RioV.src.base.TheMistsOfRioV;
-import sheenrox82.RioV.src.block.BlockAnvil;
+import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.util.Color;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.common.network.IConnectionHandler;

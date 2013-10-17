@@ -5,10 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.tileentity.TileEntityInfuser;
 
 
+import mods.natura.common.NContent;
+import net.aetherteam.aether.items.AetherItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.src.*;
@@ -28,9 +31,7 @@ public class InfuserRecipes
     private InfuserRecipes()
     {
     	this.addAltarRecipe(Items.amethystSword.itemID, new ItemStack(Items.infusedAmethystSword, 1));
-        this.addAltarRecipe(Items.darkenedAmethystSword.itemID, new ItemStack(Items.darkenedInfusedAmethystSword, 1));
         this.addAltarRecipe(Items.onyxSword.itemID, new ItemStack(Items.infusedOnyxSword, 1));
-        this.addAltarRecipe(Items.darkenedOnyxSword.itemID, new ItemStack(Items.darkenedInfusedOnyxSword, 1));
         this.addAltarRecipe(Items.amethystShovel.itemID, new ItemStack(Items.infusedAmethystShovel, 1));
         this.addAltarRecipe(Items.amethystPickaxe.itemID, new ItemStack(Items.infusedAmethystPickaxe, 1));
         this.addAltarRecipe(Items.amethystAxe.itemID, new ItemStack(Items.infusedAmethystAxe, 1));
@@ -71,9 +72,6 @@ public class InfuserRecipes
         this.addAltarRecipe(Items.dragonAxe.itemID, new ItemStack(Items.infusedDragonAxe, 1));
         this.addAltarRecipe(Items.dragonShovel.itemID, new ItemStack(Items.infusedDragonShovel, 1));
         this.addAltarRecipe(Items.dragonSword.itemID, new ItemStack(Items.infusedDragonSword, 1));
-        this.addAltarRecipe(Items.darkenedDragonSword.itemID, new ItemStack(Items.darkenedInfusedDragonSword, 1));
-        this.addAltarRecipe(Items.darkenedSapphireSword.itemID, new ItemStack(Items.darkenedInfusedSapphireSword, 1));
-        this.addAltarRecipe(Items.darkenedTopazSword.itemID, new ItemStack(Items.darkenedInfusedTopazSword, 1));
         this.addAltarRecipe(Items.blindoniteHelmet.itemID, new ItemStack(Items.infusedBlindoniteHelmet, 1));
         this.addAltarRecipe(Items.blindoniteChestplate.itemID, new ItemStack(Items.infusedBlindoniteChestplate, 1));
         this.addAltarRecipe(Items.blindoniteLeggings.itemID, new ItemStack(Items.infusedBlindoniteLeggings, 1));
@@ -91,7 +89,59 @@ public class InfuserRecipes
         this.addAltarRecipe(Items.vraviniteAxe.itemID, new ItemStack(Items.infusedVraviniteAxe, 1));
         this.addAltarRecipe(Items.vraviniteShovel.itemID, new ItemStack(Items.infusedVraviniteShovel, 1));
         this.addAltarRecipe(Items.vraviniteSword.itemID, new ItemStack(Items.infusedVraviniteSword, 1));
-        this.addAltarRecipe(Items.darkenedVraviniteSword.itemID, new ItemStack(Items.darkenedInfusedVraviniteSword, 1));
+        
+        if(TheMistsOfRioV.getInstance().aether)
+        {
+			this.addAltarRecipe(AetherItems.SkyrootPickaxe.itemID, new ItemStack(Items.infusedSkyrootPickaxe, 1));
+			this.addAltarRecipe(AetherItems.SkyrootAxe.itemID, new ItemStack(Items.infusedSkyrootAxe, 1));
+			this.addAltarRecipe(AetherItems.SkyrootShovel.itemID, new ItemStack(Items.infusedSkyrootShovel, 1));
+			this.addAltarRecipe(AetherItems.SkyrootSword.itemID, new ItemStack(Items.infusedSkyrootSword, 1));
+			this.addAltarRecipe(AetherItems.HolystonePickaxe.itemID, new ItemStack(Items.infusedHolystonePickaxe, 1));
+			this.addAltarRecipe(AetherItems.HolystoneAxe.itemID, new ItemStack(Items.infusedHolystoneAxe, 1));
+			this.addAltarRecipe(AetherItems.HolystoneShovel.itemID, new ItemStack(Items.infusedHolystoneShovel, 1));
+			this.addAltarRecipe(AetherItems.HolystoneSword.itemID, new ItemStack(Items.infusedHolystoneSword, 1));
+			this.addAltarRecipe(AetherItems.ZanitePickaxe.itemID, new ItemStack(Items.infusedZanitePickaxe, 1));
+			this.addAltarRecipe(AetherItems.ZaniteAxe.itemID, new ItemStack(Items.infusedZaniteAxe, 1));
+			this.addAltarRecipe(AetherItems.ZaniteShovel.itemID, new ItemStack(Items.infusedZaniteShovel, 1));
+			this.addAltarRecipe(AetherItems.ZaniteSword.itemID, new ItemStack(Items.infusedZaniteSword, 1));
+			this.addAltarRecipe(AetherItems.GravititePickaxe.itemID, new ItemStack(Items.infusedGravititePickaxe, 1));
+			this.addAltarRecipe(AetherItems.GravititeAxe.itemID, new ItemStack(Items.infusedGravititeAxe, 1));
+			this.addAltarRecipe(AetherItems.GravititeShovel.itemID, new ItemStack(Items.infusedGravititeShovel, 1));
+			this.addAltarRecipe(AetherItems.GravititeSword.itemID, new ItemStack(Items.infusedGravititeSword, 1));
+			this.addAltarRecipe(AetherItems.GravititeHelmet.itemID, new ItemStack(Items.infusedGravititeHelmet, 1));
+			this.addAltarRecipe(AetherItems.GravititeChestplate.itemID, new ItemStack(Items.infusedGravititeChestplate, 1));
+			this.addAltarRecipe(AetherItems.GravititeLeggings.itemID, new ItemStack(Items.infusedGravititeLeggings, 1));
+			this.addAltarRecipe(AetherItems.GravititeBoots.itemID, new ItemStack(Items.infusedGravititeBoots, 1));
+			this.addAltarRecipe(AetherItems.ZaniteHelmet.itemID, new ItemStack(Items.infusedZaniteHelmet, 1));
+			this.addAltarRecipe(AetherItems.ZaniteChestplate.itemID, new ItemStack(Items.infusedZaniteChestplate, 1));
+			this.addAltarRecipe(AetherItems.ZaniteLeggings.itemID, new ItemStack(Items.infusedZaniteLeggings, 1));
+			this.addAltarRecipe(AetherItems.ZaniteBoots.itemID, new ItemStack(Items.infusedZaniteBoots, 1));
+			this.addAltarRecipe(AetherItems.BlueBerry.itemID, new ItemStack(Items.magicalBlueBerry, 1));
+        }
+        
+        if(TheMistsOfRioV.getInstance().natura)
+        {
+        	this.addAltarRecipe(NContent.bloodwoodPickaxe.itemID, new ItemStack(Items.infusedBloodwoodPickaxe, 1));
+			this.addAltarRecipe(NContent.bloodwoodAxe.itemID, new ItemStack(Items.infusedBloodwoodAxe, 1));
+			this.addAltarRecipe(NContent.bloodwoodShovel.itemID, new ItemStack(Items.infusedBloodwoodShovel, 1));
+			this.addAltarRecipe(NContent.bloodwoodSword.itemID, new ItemStack(Items.infusedBloodwoodSword, 1));
+			this.addAltarRecipe(NContent.ghostwoodPickaxe.itemID, new ItemStack(Items.infusedGhostwoodPickaxe, 1));
+			this.addAltarRecipe(NContent.ghostwoodAxe.itemID, new ItemStack(Items.infusedGhostwoodAxe, 1));
+			this.addAltarRecipe(NContent.ghostwoodShovel.itemID, new ItemStack(Items.infusedGhostwoodShovel, 1));
+			this.addAltarRecipe(NContent.ghostwoodSword.itemID, new ItemStack(Items.infusedGhostwoodSword, 1));
+			this.addAltarRecipe(NContent.darkwoodPickaxe.itemID, new ItemStack(Items.infusedDarkwoodPickaxe, 1));
+			this.addAltarRecipe(NContent.darkwoodAxe.itemID, new ItemStack(Items.infusedDarkwoodAxe, 1));
+			this.addAltarRecipe(NContent.darkwoodShovel.itemID, new ItemStack(Items.infusedDarkwoodShovel, 1));
+			this.addAltarRecipe(NContent.darkwoodSword.itemID, new ItemStack(Items.infusedDarkwoodSword, 1));
+			this.addAltarRecipe(NContent.netherquartzPickaxe.itemID, new ItemStack(Items.infusedNetherquartzPickaxe, 1));
+			this.addAltarRecipe(NContent.netherquartzAxe.itemID, new ItemStack(Items.infusedNetherquartzAxe, 1));
+			this.addAltarRecipe(NContent.netherquartzShovel.itemID, new ItemStack(Items.infusedNetherquartzShovel, 1));
+			this.addAltarRecipe(NContent.netherquartzSword.itemID, new ItemStack(Items.infusedNetherquartzSword, 1));
+			this.addAltarRecipe(NContent.fusewoodPickaxe.itemID, new ItemStack(Items.infusedFusewoodPickaxe, 1));
+			this.addAltarRecipe(NContent.fusewoodAxe.itemID, new ItemStack(Items.infusedFusewoodAxe, 1));
+			this.addAltarRecipe(NContent.fusewoodShovel.itemID, new ItemStack(Items.infusedFusewoodShovel, 1));
+			this.addAltarRecipe(NContent.fusewoodSword.itemID, new ItemStack(Items.infusedFusewoodSword, 1));
+        }
     }
 
 	public void addAltarRecipe(int par1, ItemStack par2ItemStack)

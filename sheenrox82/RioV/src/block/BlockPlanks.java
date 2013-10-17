@@ -24,7 +24,7 @@ public class BlockPlanks extends Block
     public BlockPlanks(int par1)
     {
         super(par1, Material.wood);
-        this.setCreativeTab(TheMistsOfRioV.tab);
+        this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
     }
 
     @SideOnly(Side.CLIENT)

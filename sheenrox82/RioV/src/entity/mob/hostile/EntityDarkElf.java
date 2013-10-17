@@ -21,11 +21,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.content.Sound;
 import sheenrox82.RioV.src.entity.mob.core.EntityMobDeadBody;
 import sheenrox82.RioV.src.entity.mob.passive.EntityAltruEssence;
 import sheenrox82.RioV.src.entity.mob.passive.EntitySkeletalHorse;
@@ -57,7 +59,8 @@ public class EntityDarkElf extends EntityMobDeadBody implements IRangedAttackMob
 		this.tasks.addTask(6, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		isImmuneToFire = false;
-		if(TheMistsOfRioV.riovValis)
+		
+		if(TheMistsOfRioV.getInstance().riovValis)
 		{
 			isImmuneToFire = true;
 		}
@@ -264,4 +267,26 @@ public class EntityDarkElf extends EntityMobDeadBody implements IRangedAttackMob
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(4.0D);
 	}
+	
+	@Override
+	protected String getLivingSound()
+	{
+		return Sound.exhale;
+	}
+	
+	@Override
+	protected String getHurtSound()
+	{
+		return Sound.pain;
+	}
+	
+	@Override
+	public boolean interact(EntityPlayer par1EntityPlayer)
+    {
+		par1EntityPlayer.playSound(Sound.hello, 1, 1);
+		
+		if(!this.worldObj.isRemote)
+		par1EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Hello to you too, " + par1EntityPlayer.username + "!"));
+		return true;
+    }
 }

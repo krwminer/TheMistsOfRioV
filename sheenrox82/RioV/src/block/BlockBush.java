@@ -20,13 +20,16 @@ import sheenrox82.RioV.src.util.Util;
 
 public class BlockBush extends BlockFlower
 {
+	public int growth;
 
 	public BlockBush(int par1, Material par2Material)
 	{
 		super(par1, par2Material);
-		setCreativeTab(TheMistsOfRioV.tab);
+		setCreativeTab(TheMistsOfRioV.getInstance().tab);
 		setHardness(0.3F);
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+		float f = 0.375F;
+		float f1 = f / 2.0F;
+		this.setBlockBounds(0.5F - f1, 0.0F, 0.5F - f1, 0.5F + f1, f, 0.5F + f1);
 		setStepSound(soundGrassFootstep);
 	}
 
@@ -75,7 +78,14 @@ public class BlockBush extends BlockFlower
 	@Override
 	public void registerIcons(IconRegister par1IconRegister)
 	{
-		this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
+		if(blockID == Blocks.paleBush.blockID)
+		{
+			this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paleLeaf");
+		}
+		else
+		{
+			this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
+		}
 	}
 
 	public String getName()
@@ -104,7 +114,7 @@ public class BlockBush extends BlockFlower
 		}
 		if(blockID == Blocks.bloodBerryBush.blockID)
 		{
-			world.setBlock(x, y, z, Blocks.paleLeaf.blockID, meta, meta);
+			world.setBlock(x, y, z, Blocks.paleBush.blockID, meta, meta);
 		}
 		if(blockID == Blocks.blueBerryBush.blockID)
 		{
@@ -127,13 +137,13 @@ public class BlockBush extends BlockFlower
 	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
 	{
-		return AxisAlignedBB.getAABBPool().getAABB((double)par2 + this.minX, (double)par3 + this.minY, (double)par4 + this.minZ, (double)par2 + this.maxX, (double)par3 + this.maxY, (double)par4 + this.maxZ);
+		return null;
 	}
 
 	@Override
 	protected boolean canThisPlantGrowOnThisBlockID(int par1)
 	{
-		if(blockID == Blocks.bloodBerryBush.blockID)
+		if(blockID == Blocks.bloodBerryBush.blockID || blockID == Blocks.paleBush.blockID)
 		{
 			return par1 == Blocks.bloodDirt.blockID || par1 == Blocks.bloodGrass.blockID;
 		}

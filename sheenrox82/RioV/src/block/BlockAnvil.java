@@ -22,7 +22,7 @@ public class BlockAnvil extends Block
 	public BlockAnvil(int par1)
 	{
 		super(par1, Material.anvil);
-		setCreativeTab(TheMistsOfRioV.tab);
+		setCreativeTab(TheMistsOfRioV.getInstance().tab);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.80F, 1.0F);
 		this.setLightOpacity(0);
 	}

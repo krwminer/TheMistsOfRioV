@@ -26,7 +26,7 @@ public class RioVBucket extends Item
 		super(par1 - 256);
 		this.maxStackSize = 1;
 		this.isFull = par2;
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@Override

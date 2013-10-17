@@ -2,8 +2,10 @@ package sheenrox82.RioV.src.item;
 
 import java.util.List;
 
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
@@ -14,6 +16,7 @@ import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.Color;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -29,7 +32,7 @@ public class RioVArmor extends ItemArmor
 		super(par1 - 256, par2EnumArmorMaterial, par3, par4);
 		this.material = par2EnumArmorMaterial;
 		this.setMaxDamage(par2EnumArmorMaterial.getDurability(par4));
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 		armorNamePrefix = armornamePrefix;
 		this.isInfused = par5;
 	}
@@ -369,15 +372,15 @@ public class RioVArmor extends ItemArmor
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisBoots");
 		}
-		if (TheMistsOfRioV.riovPaladin)
+		if (TheMistsOfRioV.getInstance().riovPaladin)
 		{
 			if (itemID == Items.paladinHelmet.itemID)this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paladinHelmet");
 			if (itemID == Items.paladinChestplate.itemID)this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paladinChestplate");
 			if (itemID == Items.paladinLeggings.itemID)this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paladinLeggings");
 			if (itemID == Items.paladinBoots.itemID)this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paladinBoots");
 		}
-		
-		if (TheMistsOfRioV.aether)
+
+		if (TheMistsOfRioV.getInstance().aether)
 		{
 			if (itemID == Items.infusedZaniteHelmet.itemID)this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Helmet");
 			if (itemID == Items.infusedZaniteChestplate.itemID)this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Chestplate");
@@ -396,8 +399,8 @@ public class RioVArmor extends ItemArmor
 	{
 		if(Config.showToolInfo)
 		{
-			var3.add(var1.getMaxDamage() - var1.getItemDamage() + " Uses");
-			var3.add("Protection: " + material.maxDamageFactor);
+			var3.add(Color.GOLD + (var1.getMaxDamage() - var1.getItemDamage()) + " Uses");
+			var3.add(Color.DARK_PURPLE + "Protection: " + material.maxDamageFactor);
 		}
 	}
 }

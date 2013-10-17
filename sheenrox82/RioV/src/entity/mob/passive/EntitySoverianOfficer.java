@@ -15,10 +15,13 @@ import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntitySilverfish;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.content.Sound;
 import sheenrox82.RioV.src.entity.mob.core.EntityMobDeadBody;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkElf;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkEssence;
@@ -35,7 +38,7 @@ public class EntitySoverianOfficer extends EntityMobDeadBody
 	{
 		super(par1World);
 		isImmuneToFire = false;
-		if(TheMistsOfRioV.riovValis)
+		if(TheMistsOfRioV.getInstance().riovValis)
 		{
 			isImmuneToFire = true;
 		}
@@ -57,7 +60,7 @@ public class EntitySoverianOfficer extends EntityMobDeadBody
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityDarkEssence.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityAdv.class, 0, true));
 
-		if(TheMistsOfRioV.riovPaladin)
+		if(TheMistsOfRioV.getInstance().riovPaladin)
 		{
 			targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPaladin.class, 0, true));
 		}
@@ -149,4 +152,26 @@ public class EntitySoverianOfficer extends EntityMobDeadBody
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(10.0D);
 	}
+	
+	@Override
+	protected String getLivingSound()
+	{
+		return Sound.exhale;
+	}
+	
+	@Override
+	protected String getHurtSound()
+	{
+		return Sound.pain;
+	}
+	
+	@Override
+	public boolean interact(EntityPlayer par1EntityPlayer)
+    {
+		par1EntityPlayer.playSound(Sound.hello, 1, 1);
+		
+		if(!this.worldObj.isRemote)
+		par1EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Hello to you too, " + par1EntityPlayer.username + "!"));
+		return true;
+    }
 }

@@ -11,6 +11,7 @@ public class EntityResourceLocation
 	public static final ResourceLocation auntun = new ResourceLocation(Util.MOD_ID + ":" + entityString + "AunTunMinion.png");
 	public static final ResourceLocation blood_ghoul = new ResourceLocation(Util.MOD_ID + ":" + entityString + "BloodGhoul.png");
 	public static final ResourceLocation dark_elf = new ResourceLocation(Util.MOD_ID + ":" + entityString + "DarkElf.png");
+	public static final ResourceLocation wood_elf = new ResourceLocation(Util.MOD_ID + ":" + entityString + "WoodElf.png");
 	public static final ResourceLocation darkness_arrow = new ResourceLocation(Util.MOD_ID + ":" + entityString + "DarknessArrow.png");
 	public static final ResourceLocation demon_angel = new ResourceLocation(Util.MOD_ID + ":" + entityString + "DemonAngel.png");
 	public static final ResourceLocation fairy = new ResourceLocation(Util.MOD_ID + ":" + entityString + "Fairy.png");
@@ -25,6 +26,7 @@ public class EntityResourceLocation
 	public static final ResourceLocation terron = new ResourceLocation(Util.MOD_ID + ":" + entityString + "Terron.png");
 	public static final ResourceLocation vravinite = new ResourceLocation(Util.MOD_ID + ":" + entityString + "Vravinite.png");
 	public static final ResourceLocation vravinite_arrow = new ResourceLocation(Util.MOD_ID + ":" + entityString + "VraviniteArrow.png");
+	public static final ResourceLocation onyx_arrow = new ResourceLocation(Util.MOD_ID + ":" + entityString + "OnyxArrow.png");
 	public static final ResourceLocation dove = new ResourceLocation(Util.MOD_ID + ":" + entityString + "Dove.png");
 	public static final ResourceLocation angel = new ResourceLocation(Util.MOD_ID + ":" + entityString + "Angel.png");
 	public static final ResourceLocation rabbit = new ResourceLocation(Util.MOD_ID + ":" + entityString + "Rabbit.png");

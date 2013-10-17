@@ -38,7 +38,7 @@ public class BlockInfuser extends BlockContainer
         setHardness(6.0F);
         setResistance(6.0F);
         this.isActive = par3;
-        this.setCreativeTab(TheMistsOfRioV.tab);
+        this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
     }
     
     @Override

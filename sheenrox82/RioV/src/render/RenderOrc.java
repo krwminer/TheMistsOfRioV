@@ -17,7 +17,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderOrc extends RenderBiped
 {
-	
 	public RenderOrc()
 	{
 		super(new ModelBiped(), 0.5F);
@@ -50,8 +49,8 @@ public class RenderOrc extends RenderBiped
 	}
 
 	@Override
-	protected ResourceLocation getEntityTexture(Entity entity) {
-		// TODO Auto-generated method stub
+	protected ResourceLocation getEntityTexture(Entity entity) 
+	{
 		return EntityResourceLocation.orc;
 	}
 }

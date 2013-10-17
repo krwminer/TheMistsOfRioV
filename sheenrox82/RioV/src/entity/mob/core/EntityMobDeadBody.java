@@ -1,10 +1,10 @@
 package sheenrox82.RioV.src.entity.mob.core;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
@@ -79,6 +79,7 @@ public class EntityMobDeadBody extends EntityMob
 				}
 			}
 		}
+		
 		return false;
 
 	}

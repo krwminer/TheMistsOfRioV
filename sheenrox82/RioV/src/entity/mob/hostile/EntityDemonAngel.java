@@ -5,7 +5,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.boss.IBossDisplayData;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.nbt.NBTTagCompound;
@@ -14,9 +13,9 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.content.Sound;
-import sheenrox82.RioV.src.entity.mob.core.EntityMobDeadBody;
+import sheenrox82.RioV.src.entity.mob.core.EntityBossCore;
 
-public class EntityDemonAngel extends EntityMobDeadBody implements IBossDisplayData
+public class EntityDemonAngel extends EntityBossCore
 {
 	private float heightOffset = 0.5F;
 	private int heightOffsetUpdateTime;
@@ -25,7 +24,7 @@ public class EntityDemonAngel extends EntityMobDeadBody implements IBossDisplayD
 	public EntityDemonAngel(World par1World)
 	{
 		super(par1World);
-		this.setSize(1.0F, 3.0F);
+		this.setSize(1.0F, 4F);
 		this.isImmuneToFire = true;
 		this.getNavigator().setCanSwim(true);
 		this.tasks.addTask(1, new EntityAISwimming(this));

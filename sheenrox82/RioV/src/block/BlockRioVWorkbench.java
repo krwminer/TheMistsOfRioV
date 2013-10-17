@@ -29,7 +29,7 @@ public class BlockRioVWorkbench extends BlockWorkbench
 	public BlockRioVWorkbench(int par1)
 	{
 		super(par1);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@SideOnly(Side.CLIENT)

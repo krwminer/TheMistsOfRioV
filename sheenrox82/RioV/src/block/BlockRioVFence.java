@@ -24,7 +24,7 @@ public class BlockRioVFence extends BlockFence
     {
         super(par1, par2Str, par3Material);
         this.field_94464_a = par2Str;
-        this.setCreativeTab(TheMistsOfRioV.tab);
+        this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
     }
 
 	@Override

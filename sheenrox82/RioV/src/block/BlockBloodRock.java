@@ -29,7 +29,7 @@ public class BlockBloodRock extends Block
 	public BlockBloodRock(int par1)
 	{
 		super(par1, Material.iron);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@Override

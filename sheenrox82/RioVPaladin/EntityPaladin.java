@@ -52,7 +52,7 @@ public class EntityPaladin extends EntityMobDeadBody implements IBossDisplayData
 		this.setCurrentItemOrArmor(3, new ItemStack(Items.paladinChestplate));
 		this.setCurrentItemOrArmor(2, new ItemStack(Items.paladinLeggings));
 		this.setCurrentItemOrArmor(1, new ItemStack(Items.paladinBoots));
-		if(TheMistsOfRioV.riovValis)
+		if(TheMistsOfRioV.getInstance().riovValis)
 		{
 			isImmuneToFire = true;
 		}

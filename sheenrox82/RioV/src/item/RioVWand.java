@@ -33,7 +33,7 @@ public class RioVWand extends Item
 		this.firetick = this.firemax;
 		this.maxStackSize = 1;
 		this.setMaxDamage(300);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 		bFull3D = true;
 	}
 

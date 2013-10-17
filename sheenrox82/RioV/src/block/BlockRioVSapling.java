@@ -25,7 +25,7 @@ public class BlockRioVSapling extends BlockFlower
 		float var3 = 0.4F;
 		this.setStepSound(soundGrassFootstep);
 		this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, var3 * 2.0F, 0.5F + var3);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 	/**
 	 * Ticks the block if it's been scheduled

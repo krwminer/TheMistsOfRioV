@@ -4,7 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.world.World;
-import sheenrox82.RioV.src.entity.particle.EntityParticleGlimmer;
+import sheenrox82.RioV.src.entity.particle.EntityGlimmerParticleFX;
 
 public class Particles
 {
@@ -41,9 +41,9 @@ public class Particles
 			{
 				if (particleName.equals("glimmer"))
 				{
-					var21 = new EntityParticleGlimmer(theWorld, par2, par4, par6, (float)par8, (float)par10, (float)par12);
+					var21 = new EntityGlimmerParticleFX(theWorld, par2, par4, par6, (float)par8, (float)par10, (float)par12);
 				}
-	
+				
 				mc.effectRenderer.addEffect((EntityFX)var21);
 				return (EntityFX)var21;
 			}

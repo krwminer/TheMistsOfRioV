@@ -25,7 +25,7 @@ public class BlockGlimmerGrass extends Block
 		super(par1, Material.grass);
 		this.setStepSound(soundGrassFootstep);
 		this.setTickRandomly(true);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@SideOnly(Side.CLIENT)

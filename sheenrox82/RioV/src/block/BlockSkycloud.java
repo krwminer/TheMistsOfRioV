@@ -24,6 +24,7 @@ import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
+import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.content.Materials;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
@@ -39,7 +40,7 @@ public class BlockSkycloud extends Block
 		this.setLightOpacity(1);
 		this.setStepSound(Block.soundClothFootstep);
 		this.setTickRandomly(true);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World var1, int var2, int var3, int var4)
@@ -105,6 +106,12 @@ public class BlockSkycloud extends Block
 		this.blockIcon = var1.registerIcon(Util.MOD_ID + ":" + this.getName());
 	}
 
+	@Override
+	public int idDropped(int par1, Random par2Random, int par3)
+	{
+		return Items.windElement.itemID;
+	}
+	
 	public String getName()
 	{
 		return this.unlocalizedName;

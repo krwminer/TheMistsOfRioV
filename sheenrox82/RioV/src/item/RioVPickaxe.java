@@ -1,7 +1,6 @@
 package sheenrox82.RioV.src.item;
 
 import java.util.List;
-
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,6 +11,7 @@ import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.Color;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -25,7 +25,7 @@ public class RioVPickaxe extends ItemPickaxe
 	{
 		super(par1 - 256, par2EnumToolMaterial);
 		this.isInfused = par2;
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@Override
@@ -50,9 +50,9 @@ public class RioVPickaxe extends ItemPickaxe
 
 		if(Config.showToolInfo)
 		{
-			var3.add(var1.getMaxDamage() - var1.getItemDamage() + " Uses");
-			var3.add("Mining Speed: " + toolMaterial.getEfficiencyOnProperMaterial());
-			var3.add("Harvest Level: " + toolMaterial.getHarvestLevel());
+			var3.add(Color.GOLD + (var1.getMaxDamage() - var1.getItemDamage()) + " Uses");
+			var3.add(Color.DARK_PURPLE + "Mining Speed: " + toolMaterial.getEfficiencyOnProperMaterial());
+			var3.add(Color.AQUA + "Harvest Level: " + toolMaterial.getHarvestLevel());
 		}
 	}
 
@@ -117,15 +117,13 @@ public class RioVPickaxe extends ItemPickaxe
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisPickaxe");
 		}
 		
-		if(TheMistsOfRioV.natura)
+		if(TheMistsOfRioV.getInstance().natura)
 		{
-			if(itemID == Items.infusedBloodwoodPickaxe.itemID)
-			{
-				this.itemIcon = par1IconRegister.registerIcon("Natura:bloodwood_pickaxe");
-			}	
+			if(itemID == Items.infusedBloodwoodPickaxe.itemID || itemID == Items.infusedGhostwoodPickaxe.itemID || itemID == Items.infusedDarkwoodPickaxe.itemID || itemID == Items.infusedFusewoodPickaxe.itemID || itemID == Items.infusedNetherquartzPickaxe.itemID)
+				this.itemIcon = par1IconRegister.registerIcon(this.unlocalizedName);
 		}
 		
-		if(TheMistsOfRioV.aether)
+		if(TheMistsOfRioV.getInstance().aether)
 		{
 			if(itemID == Items.infusedSkyrootPickaxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Skyroot Pickaxe");
 			if(itemID == Items.infusedHolystonePickaxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Holystone Pickaxe");

@@ -35,7 +35,7 @@ public class EntityTefGuard extends EntityMobDeadBody
 	{
 		super(par1World);
 		isImmuneToFire = false;
-		if(TheMistsOfRioV.riovValis)
+		if(TheMistsOfRioV.getInstance().riovValis)
 		{
 			isImmuneToFire = true;
 		}
@@ -93,7 +93,7 @@ public class EntityTefGuard extends EntityMobDeadBody
 
 	static
 	{
-		defaultHeldItem = new ItemStack(Items.darkenedInfusedOnyxSword);
+		defaultHeldItem = new ItemStack(Items.onyxSword);
 	}
 	
 	protected void applyEntityAttributes()
@@ -119,7 +119,7 @@ public class EntityTefGuard extends EntityMobDeadBody
 		}
 		if (var1 == 1)
 		{
-			this.dropItem(Items.darkenedInfusedOnyxSword.itemID, 1);
+			this.dropItem(Items.onyxSword.itemID, 1);
 		}
 		if (var1 == 2)
 		{

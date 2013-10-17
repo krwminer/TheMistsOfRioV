@@ -24,7 +24,7 @@ public class RioVDrinkable extends ItemFood
 	{
 		super(par1 - 256, par2, par4);
 		this.setMaxStackSize(1);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@Override

@@ -29,6 +29,7 @@ import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Enchantments;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.Color;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -45,7 +46,7 @@ public class RioVWeapon extends ItemSword
 		this.toolMaterial = par2EnumToolMaterial;
 		this.maxStackSize = 1;
 		this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 		this.weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
 		this.isInfused = par2;
 	}
@@ -130,7 +131,7 @@ public class RioVWeapon extends ItemSword
 			par2EntityLivingBase.addPotionEffect(new PotionEffect(Potion.wither.id, 100, 2)); 
 		}
 
-		if(TheMistsOfRioV.aether)
+		if(TheMistsOfRioV.getInstance().aether)
 		{
 			if(itemID == Items.infusedGravititeSword.itemID)
 			{
@@ -148,12 +149,6 @@ public class RioVWeapon extends ItemSword
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
 	{
-		if(itemstack.itemID == Items.shifter.itemID)
-		{
-			entityplayer.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 200, 10));
-			itemstack.damageItem(1, entityplayer);
-		}
-
 		if(itemstack.itemID == Items.khuulisScythe.itemID)
 		{
 			float f = 1.0F;
@@ -215,8 +210,8 @@ public class RioVWeapon extends ItemSword
 
 		if(Config.showToolInfo)
 		{
-			var3.add(var1.getMaxDamage() - var1.getItemDamage() + " Uses");
-			var3.add("Damage: " + toolMaterial.getDamageVsEntity());
+			var3.add(Color.GOLD + (var1.getMaxDamage() - var1.getItemDamage()) + " Uses");
+			var3.add(Color.DARK_PURPLE + "Damage: " + toolMaterial.getDamageVsEntity());
 		}
 	}
 
@@ -243,25 +238,9 @@ public class RioVWeapon extends ItemSword
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "amethystSword");
 		}
-		if(itemID == Items.darkenedAmethystSword.itemID || itemID == Items.darkenedInfusedAmethystSword.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "darkenedAmethystSword");
-		}
 		if(itemID == Items.onyxSword.itemID || itemID == Items.infusedOnyxSword.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "onyxSword");
-		}
-		if(itemID == Items.darkenedOnyxSword.itemID || itemID == Items.darkenedInfusedOnyxSword.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "darkenedOnyxSword");
-		}
-		if(itemID == Items.bladeOfAni.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "bladeOfAni");
-		}
-		if(itemID == Items.nizonianBlade.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "nizonianBlade");
 		}
 		if(itemID == Items.daetoriSword.itemID)
 		{
@@ -275,17 +254,9 @@ public class RioVWeapon extends ItemSword
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "axeOfAunTun");
 		}
-		if(itemID == Items.slateHandaxe.itemID || itemID == Items.sharpenedSlateHandaxe.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "slateHandaxe");
-		}
 		if(itemID == Items.dragonSword.itemID || itemID == Items.infusedDragonSword.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "dragonSword");
-		}
-		if(itemID == Items.vulronSword.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "vulronSword");
 		}
 		if(itemID == Items.UnfusedaxeOfAunTun.itemID || itemID == Items.HalfFusedaxeOfAunTun.itemID)
 		{
@@ -295,10 +266,6 @@ public class RioVWeapon extends ItemSword
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "khuulisScythe");
 		}
-		if(itemID == Items.shifter.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "shifter");
-		}
 		if(itemID == Items.sapphireSword.itemID || itemID == Items.infusedSapphireSword.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "sapphireSword");
@@ -307,29 +274,13 @@ public class RioVWeapon extends ItemSword
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "topazSword");
 		}
-		if(itemID == Items.trainingSword.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "trainingSword");
-		}
 		if(itemID == Items.galokinSword.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "galokinSword");
 		}
-		if(itemID == Items.darkenedTopazSword.itemID || itemID == Items.darkenedInfusedTopazSword.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "darkenedTopazSword");
-		}
-		if(itemID == Items.darkenedSapphireSword.itemID || itemID == Items.darkenedInfusedSapphireSword.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "darkenedSapphireSword");
-		}
 		if(itemID == Items.swordOfFlame.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "swordOfFlame");
-		}
-		if(itemID == Items.darkenedDragonSword.itemID || itemID == Items.darkenedInfusedDragonSword.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "darkenedDragonSword");
 		}
 		if(itemID == Items.blindoniteSword.itemID || itemID == Items.infusedBlindoniteSword.itemID)
 		{
@@ -363,28 +314,28 @@ public class RioVWeapon extends ItemSword
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisSword");
 		}
-		if(itemID == Items.darkenedVraviniteSword.itemID || itemID == Items.darkenedInfusedVraviniteSword.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "darkenedVraviniteSword");
-		}
-		if(TheMistsOfRioV.riovPaladin)
+		if(TheMistsOfRioV.getInstance().riovPaladin)
 		{
 			if(itemID == Items.paladinLongsword.itemID) this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paladinLongsword");
 		}
 
-		if(TheMistsOfRioV.natura)
+		if(TheMistsOfRioV.getInstance().natura)
 		{
-			if(itemID == Items.infusedBloodwoodSword.itemID) this.itemIcon = par1IconRegister.registerIcon("Natura:bloodwood_sword");	
+			if(itemID == Items.infusedBloodwoodSword.itemID || itemID == Items.infusedGhostwoodSword.itemID || itemID == Items.infusedDarkwoodSword.itemID || itemID == Items.infusedFusewoodSword.itemID || itemID == Items.infusedNetherquartzSword.itemID)
+				this.itemIcon = par1IconRegister.registerIcon(this.unlocalizedName);
 		}
 
-		if(TheMistsOfRioV.aether)
+		if(TheMistsOfRioV.getInstance().aether)
 		{
 			if(itemID == Items.infusedSkyrootSword.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Skyroot Sword");	
 			if(itemID == Items.infusedHolystoneSword.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Holystone Sword");	
 			if(itemID == Items.infusedZaniteSword.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Sword");	
 			if(itemID == Items.infusedGravititeSword.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Gravitite Sword");	
-			if(itemID == Items.darkenedInfusedZaniteSword.itemID || itemID == Items.darkenedZaniteSword.itemID) this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "darkenedZaniteSword");	
-			if(itemID == Items.darkenedInfusedGravititeSword.itemID || itemID == Items.darkenedGravititeSword.itemID) this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "darkenedGravititeSword");	
 		}
+	}
+	
+	public String getName()
+	{
+		return this.unlocalizedName;
 	}
 }

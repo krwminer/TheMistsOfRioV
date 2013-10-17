@@ -13,6 +13,7 @@ public class Config
 	
 	public static int blockID = 1000;
 	public static int itemID = 7000;
+	public static int expItemID = 9000;
 	public static int biomeBlockID = 200;
 	public static int enchantmentID = 80;
 	public static int entityID = 8200;
@@ -27,11 +28,12 @@ public class Config
 	public static int savannahBiomeID;
 	public static int flamonorBiomeID;
 	public static int sanctuatiteBiomeID;
+	public static int canopyOasisBiomeID;
+	public static int bambooFieldsBiomeID;
+	public static int runesBiomeID;
 	public static boolean HUD;
 	public static boolean allowCoinDrop;
 	public static boolean showToolInfo;
-	public static int canopyOasisBiomeID;
-	public static int bambooFieldsBiomeID;
 
 	public static void initialize(FMLPreInitializationEvent event)
 	{
@@ -53,6 +55,7 @@ public class Config
 		showToolInfo = config.get("Misc", "Show Tool Info?", true).getBoolean(showToolInfo);
 		canopyOasisBiomeID = config.get("Biome IDs", "Canopy Oasis Biome ID (Overworld Dimension)", 31).getInt(canopyOasisBiomeID);
 		bambooFieldsBiomeID = config.get("Biome IDs", "Bamboo Fiels Biome ID (Overworld Dimension)", 32).getInt(bambooFieldsBiomeID);
+		runesBiomeID = config.get("Biome IDs", "Runes Biome ID (Overworld Dimension)", 33).getInt(runesBiomeID);
 
 		config.load();
 	}
@@ -62,6 +65,13 @@ public class Config
 		itemID++;
 
 		return config.get("Items", name, itemID).getInt();
+	}
+	
+	public static int addExpansionItem(String name)
+	{
+		expItemID++;
+
+		return config.get("Items", name, expItemID).getInt();
 	}
 
 	public static int addBlock(String name)

@@ -30,7 +30,7 @@ public class AnvilCraftingManager
 	public String[] shield = { "X X", "XXX", " X " };
 	
 	public static final int WILDCARD_VALUE = Short.MAX_VALUE;
-	private static final AnvilCraftingManager instance = new AnvilCraftingManager();
+	public static AnvilCraftingManager instance;
 	public static List recipes = new ArrayList();
 
 	public static final AnvilCraftingManager getInstance()
@@ -38,7 +38,7 @@ public class AnvilCraftingManager
 		return instance;
 	}
 
-	private AnvilCraftingManager()
+	public AnvilCraftingManager()
 	{
 		recipes = new ArrayList();
 
@@ -58,8 +58,6 @@ public class AnvilCraftingManager
 		this.addRecipe(new ItemStack(Items.topazSword, 1), new Object[] { sword, Character.valueOf('X'), Items.topaz, Character.valueOf('!'), Item.stick});
 		this.addRecipe(new ItemStack(Items.topazShovel, 1), new Object[] { shovel, Character.valueOf('X'), Items.topaz, Character.valueOf('!'), Item.stick});
 		this.addRecipe(new ItemStack(Items.topazAxe, 1), new Object[] { axe, Character.valueOf('X'), Items.topaz, Character.valueOf('!'), Item.stick});
-		this.addRecipe(new ItemStack(Items.nizonianBlade, 1), new Object[] { dagger, Character.valueOf('X'), Item.ingotGold, Character.valueOf('!'), Items.blackBone});
-		this.addRecipe(new ItemStack(Items.bladeOfAni, 1), new Object[] { dagger, Character.valueOf('X'), Item.ingotIron, Character.valueOf('!'), Items.blackBone});
 		this.addRecipe(new ItemStack(Items.dragonPickaxe, 1), new Object[] { pickaxe, Character.valueOf('X'), Items.dragonSoul, Character.valueOf('!'), Items.blackBone});
 		this.addRecipe(new ItemStack(Items.dragonSword, 1), new Object[] { sword, Character.valueOf('X'), Items.dragonSoul, Character.valueOf('!'), Items.blackBone});
 		this.addRecipe(new ItemStack(Items.dragonShovel, 1), new Object[] { shovel, Character.valueOf('X'), Items.dragonSoul, Character.valueOf('!'), Items.blackBone});
@@ -84,11 +82,7 @@ public class AnvilCraftingManager
 		this.addRecipe(new ItemStack(Items.glimmerwoodAxe, 1), new Object[] { axe, Character.valueOf('X'), Blocks.glimmerwoodPlanks, Character.valueOf('!'), Items.glimmerwoodSticks});
 		this.addRecipe(new ItemStack(Items.khuulisScythe, 1), "X  ", " Z ", "  X", Character.valueOf('X'), Item.ingotIron, Character.valueOf('Z'), Items.blackBone);
 		this.addRecipe(new ItemStack(Items.bowOfWurTun, 1), " XC", "D C", " XC", Character.valueOf('X'), Item.ingotGold, Character.valueOf('C'), Item.silk, Character.valueOf('D'), Items.blackBone);
-		this.addRecipe(new ItemStack(Items.shifter, 1), "XXX", Character.valueOf('X'), Item.ingotIron);
-		this.addRecipe(new ItemStack(Items.slateHandaxe, 1), "XXX", "X* ", " * ", " * ", Character.valueOf('X'), Items.slateFragment, Character.valueOf('*'), Items.blackBone);
-		this.addRecipe(new ItemStack(Items.sharpenedSlateHandaxe, 1), "X*", Character.valueOf('*'), Items.slateHandaxe, Character.valueOf('X'), Items.burnedQuartz);
 		this.addRecipe(new ItemStack(Items.enforcedBowOfWurTun, 1), " XC", "DOC", " XC", Character.valueOf('X'), Item.ingotGold, Character.valueOf('C'), Item.silk, Character.valueOf('D'), Items.blackBone, Character.valueOf('O'), Items.bowOfWurTun);
-		this.addRecipe(new ItemStack(Items.longbow, 1), " XC", "XOC", " XC", Character.valueOf('X'), Item.stick, Character.valueOf('C'), Item.silk, Character.valueOf('O'), Item.bow);
 		this.addRecipe(new ItemStack(Items.skywoodPickaxe, 1), new Object[] { pickaxe, Character.valueOf('X'), Blocks.skywoodPlanks, Character.valueOf('!'), Items.skywoodSticks});
 		this.addRecipe(new ItemStack(Items.skywoodSword, 1), new Object[] { sword, Character.valueOf('X'), Blocks.skywoodPlanks, Character.valueOf('!'), Items.skywoodSticks});
 		this.addRecipe(new ItemStack(Items.skywoodShovel, 1), new Object[] { shovel, Character.valueOf('X'), Blocks.skywoodPlanks, Character.valueOf('!'), Items.skywoodSticks});
@@ -104,7 +98,6 @@ public class AnvilCraftingManager
 		this.addRecipe(new ItemStack(Items.daetoriSword, 1), new Object[] { " X ", " X ", "!!!", " X ", Character.valueOf('X'), Items.blackBone, Character.valueOf('!'), Item.ingotIron});
 		this.addRecipe(new ItemStack(Items.sorrowSword, 1), new Object[] { " X ", " X ", "XXX", " X ", Character.valueOf('X'), Items.blackBone});
 		this.addRecipe(new ItemStack(Items.UnfusedaxeOfAunTun, 1), new Object[] { "XOX", "X!X", " ! ", "*!*", Character.valueOf('X'), Items.vulron, Character.valueOf('!'), Items.blackBone, Character.valueOf('O'), Items.darkMatter, Character.valueOf('*'), Items.clothOfMagic});
-		this.addRecipe(new ItemStack(Items.vulronSword, 1), new Object[] { sword, Character.valueOf('X'), Items.vulron, Character.valueOf('!'), Items.blackBone});
 		this.addRecipe(new ItemStack(Items.swordOfFlame, 1), "*", "*", "*", Character.valueOf('*'), Items.ingotOfFlame);
 
 		this.addRecipe(new ItemStack(Items.onyxHelmet, 1), new Object[] { helmet, Character.valueOf('X'), Items.onyx});

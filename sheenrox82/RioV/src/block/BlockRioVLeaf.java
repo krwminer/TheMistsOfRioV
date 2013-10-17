@@ -29,7 +29,7 @@ public class BlockRioVLeaf extends BlockLeaves implements IShearable
 	public BlockRioVLeaf(int par1, Material par2Material)
 	{
 		super(par1);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 		this.setHardness(0.1F);
 		this.setTickRandomly(true);
 	}

@@ -25,17 +25,5 @@ public class SoundHandler
 				FMLLog.info("Failed loading " + Util.MOD_NAME + " sound: " + sound);
 			}
 		}
-		
-		for(String sound : Sound.music)
-		{
-			try 
-			{
-				event.manager.addStreaming(sound);
-			} 
-			catch(Exception e) 
-			{
-				FMLLog.info("Failed loading " + Util.MOD_NAME + " sound: " + sound);
-			}
-		}
 	}
 }

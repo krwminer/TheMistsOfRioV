@@ -22,7 +22,7 @@ public class BlockGlimmerwoodLog extends Block
 	public BlockGlimmerwoodLog(int par1)
 	{
 		super(par1, Material.wood);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 		this.setStepSound(soundWoodFootstep);
 		this.setHardness(2.0F);
 	}
@@ -45,7 +45,7 @@ public class BlockGlimmerwoodLog extends Block
 
 						if (Block.blocksList[j2] != null)
 						{
-							Blocks.glimmerwoodLeaf.beginLeavesDecay(par1World, par2 + k1, par3 + l1, par4 + i2);
+							Block.blocksList[j2].beginLeavesDecay(par1World, par2 + k1, par3 + l1, par4 + i2);
 						}
 					}
 				}

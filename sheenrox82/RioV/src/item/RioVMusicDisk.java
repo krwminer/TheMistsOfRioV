@@ -14,10 +14,10 @@ public class RioVMusicDisk extends ItemRecord
 
     public RioVMusicDisk(int itemID, String s, String artist, String song)
     {
-        super(itemID, s);
+        super(itemID - 256, s);
         this.artistName = artist;
         this.songName = song;
-        this.setCreativeTab(TheMistsOfRioV.tab);
+        this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
     }
 
     public String getRecordTitle()

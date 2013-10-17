@@ -7,7 +7,6 @@ import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.boss.IBossDisplayData;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityEnderman;
@@ -28,14 +27,14 @@ import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.content.Sound;
-import sheenrox82.RioV.src.entity.mob.core.EntityMobDeadBody;
+import sheenrox82.RioV.src.entity.mob.core.EntityBossCore;
 
-public class EntityTerron extends EntityMobDeadBody implements IBossDisplayData
+public class EntityTerron extends EntityBossCore
 {
 	public EntityTerron(World par1World)
 	{
 		super(par1World);
-		this.setSize(1F, 2.8F);
+		this.setSize(1F, 3.8F);
 		this.experienceValue = 70;
 		isImmuneToFire = false;
 		this.getNavigator().setCanSwim(true);
@@ -65,7 +64,7 @@ public class EntityTerron extends EntityMobDeadBody implements IBossDisplayData
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityTefGuard.class, 0, true));
 		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
 		tasks.addTask(4, new EntityAIAttackOnCollide(this, 0.56D, true));
-		if(TheMistsOfRioV.riovValis)
+		if(TheMistsOfRioV.getInstance().riovValis)
 		{
 			isImmuneToFire = true;
 		}
@@ -96,13 +95,7 @@ public class EntityTerron extends EntityMobDeadBody implements IBossDisplayData
 	{
 		this.dropItem(Items.agonite.itemID, 3);
 	}
-	
-	@Override
-	protected void dropRareDrop(int par1)
-	{
-		this.dropItem(Items.theAwakening.itemID, 1);
-	}
-	
+
 	@Override
 	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
 	{

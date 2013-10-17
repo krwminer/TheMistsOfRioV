@@ -28,7 +28,7 @@ public class RioVShield extends Item
 		this.protection = protection;
 		this.maxStackSize = 1;
 		this.setMaxDamage(var2.getMaxUses());
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@Override

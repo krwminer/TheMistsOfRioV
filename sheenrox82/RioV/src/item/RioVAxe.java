@@ -8,6 +8,7 @@ import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.Color;
 import sheenrox82.RioV.src.util.Util;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -27,7 +28,7 @@ public class RioVAxe extends ItemAxe
 	{
 		super(par1 - 256, par2EnumToolMaterial);
 		this.isInfused = par2;
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@Override
@@ -104,15 +105,13 @@ public class RioVAxe extends ItemAxe
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisAxe");
 		}
 		
-		if(TheMistsOfRioV.natura)
+		if(TheMistsOfRioV.getInstance().natura)
 		{
-			if(itemID == Items.infusedBloodwoodAxe.itemID)
-			{
-				this.itemIcon = par1IconRegister.registerIcon("Natura:bloodwood_hatchet");
-			}	
+			if(itemID == Items.infusedBloodwoodAxe.itemID || itemID == Items.infusedGhostwoodAxe.itemID || itemID == Items.infusedDarkwoodAxe.itemID || itemID == Items.infusedFusewoodAxe.itemID || itemID == Items.infusedNetherquartzAxe.itemID)
+				this.itemIcon = par1IconRegister.registerIcon(this.unlocalizedName);
 		}
 		
-		if(TheMistsOfRioV.aether)
+		if(TheMistsOfRioV.getInstance().aether)
 		{
 			if(itemID == Items.infusedSkyrootAxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Skyroot Axe");	
 			if(itemID == Items.infusedHolystoneAxe.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Holystone Axe");	
@@ -127,9 +126,9 @@ public class RioVAxe extends ItemAxe
 	{
 		if(Config.showToolInfo)
 		{
-			var3.add(var1.getMaxDamage() - var1.getItemDamage() + " Uses");
-			var3.add("Axing Speed: " + toolMaterial.getEfficiencyOnProperMaterial());
-			var3.add("Harvest Level: " + toolMaterial.getHarvestLevel());
+			var3.add(Color.GOLD + (var1.getMaxDamage() - var1.getItemDamage()) + " Uses");
+			var3.add(Color.DARK_PURPLE + "Axing Speed: " + toolMaterial.getEfficiencyOnProperMaterial());
+			var3.add(Color.AQUA + "Harvest Level: " + toolMaterial.getHarvestLevel());
 		}
 	}
 }

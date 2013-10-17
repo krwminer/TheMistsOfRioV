@@ -32,7 +32,7 @@ public class RioVSummoners extends Item
 		super(par1 - 256);
 		this.maxStackSize = 1;
 		this.setMaxDamage(1);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	@Override

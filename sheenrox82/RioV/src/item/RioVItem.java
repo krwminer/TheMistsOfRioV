@@ -1,5 +1,7 @@
 package sheenrox82.RioV.src.item;
 
+import java.util.List;
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -17,7 +19,7 @@ public class RioVItem extends Item
 	{
 		super(par1 - 256);
 		this.setMaxDamage(0);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
 	public String itemName()
@@ -41,5 +43,27 @@ public class RioVItem extends Item
 	public void registerIcons(IconRegister par1IconRegister)
 	{
 		this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.itemName());
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
+    {
+		if(itemID == Items.amethyst.itemID)par3List.add("A gem to show wealth and power");
+		if(itemID == Items.onyx.itemID)par3List.add("A dark mass");
+		if(itemID == Items.vravinite.itemID)par3List.add("A crystal to show confidence");
+		if(itemID == Items.aleris.itemID)par3List.add("A gem to show defence and strategies");
+    }
+	
+	@Override
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+	{
+		if(itemID == Items.heart.itemID)
+		{
+			par3EntityPlayer.heal(2);
+			par3EntityPlayer.inventory.consumeInventoryItem(Items.heart.itemID);
+		}
+		
+		return par1ItemStack;
 	}
 }

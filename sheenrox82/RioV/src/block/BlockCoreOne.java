@@ -21,7 +21,7 @@ public class BlockCoreOne extends Block
 	public BlockCoreOne(int par1)
 	{
 		super(par1, Material.rock);
-		this.setCreativeTab(TheMistsOfRioV.tab);
+		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 	
 	@Override
@@ -156,6 +156,10 @@ public class BlockCoreOne extends Block
 			{
 				return 2;
 			}
+			if(blockID == Blocks.runestone.blockID)
+			{
+				return 0;
+			}
 		}
 
 		if(var2 == 1)
@@ -209,6 +213,10 @@ public class BlockCoreOne extends Block
 			{
 				return 1;
 			}
+			if(blockID == Blocks.runestone.blockID)
+			{
+				return 0;
+			}
 		}
 
 		if(var2 == 3)
@@ -259,6 +267,10 @@ public class BlockCoreOne extends Block
 				return 0;
 			}
 			if(blockID == Blocks.alerisOre.blockID)
+			{
+				return 0;
+			}
+			if(blockID == Blocks.runestone.blockID)
 			{
 				return 0;
 			}
@@ -314,6 +326,10 @@ public class BlockCoreOne extends Block
 			{
 				return 1;
 			}
+			if(blockID == Blocks.runestone.blockID)
+			{
+				return 0;
+			}
 		}
 
 		if(var2 == 5)
@@ -365,6 +381,10 @@ public class BlockCoreOne extends Block
 			if(blockID == Blocks.alerisOre.blockID)
 			{
 				return 3;
+			}
+			if(blockID == Blocks.runestone.blockID)
+			{
+				return 1;
 			}
 		}
 
