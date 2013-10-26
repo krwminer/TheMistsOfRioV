@@ -46,6 +46,7 @@ import sheenrox82.RioV.src.render.RenderBipedCore;
 import sheenrox82.RioV.src.render.RenderBossCore;
 import sheenrox82.RioV.src.render.RenderDarkEssence;
 import sheenrox82.RioV.src.render.RenderDove;
+import sheenrox82.RioV.src.render.RenderEssence;
 import sheenrox82.RioV.src.render.RenderFairy;
 import sheenrox82.RioV.src.render.RenderLivingCore;
 import sheenrox82.RioV.src.render.RenderOrc;
@@ -96,7 +97,7 @@ public class ClientProxy extends CommonProxy
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkElf.class, new RenderBipedCore(EntityResourceLocation.dark_elf));
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarknessArrow.class, new RenderDarknessArrow());
 		RenderingRegistry.registerEntityRenderingHandler(EntityAunTun.class, new RenderAunTun());
-		RenderingRegistry.registerEntityRenderingHandler(EntityAltruEssence.class, new RenderBipedCore(EntityResourceLocation.essence));
+		RenderingRegistry.registerEntityRenderingHandler(EntityAltruEssence.class, new RenderEssence());
 		RenderingRegistry.registerEntityRenderingHandler(EntityNizonian.class, new RenderLivingCore(new ModelTerron(), 0.5F, 0.9F, 0.9F, 0.9F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalokin.class, new RenderBipedCore(EntityResourceLocation.galokin));
 		RenderingRegistry.registerEntityRenderingHandler(EntityOrc.class, new RenderOrc());
@@ -156,7 +157,7 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void cape()
 	{
-		DevCapesUtil.getInstance().addFileUrl("https://dl.dropbox.com/u/126631367/Capes.txt");
+		DevCapesUtil.addFileUrl("https://dl.dropbox.com/u/126631367/Capes.txt");
 	}
 
 	public static int addArmor(String armorName)

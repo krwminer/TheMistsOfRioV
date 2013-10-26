@@ -119,7 +119,7 @@ public class Crafting
 		GameRegistry.addRecipe(new ItemStack(Items.blindonite, 4), "X", Character.valueOf('X'), Blocks.blindoniteBlock);
 		GameRegistry.addRecipe(new ItemStack(Items.glimmerwoodBucket, 1), "X X", " X ", Character.valueOf('X'), Blocks.glimmerwoodPlanks);
 		GameRegistry.addRecipe(new ItemStack(Items.bloodBucket, 1), "X X", " X ", Character.valueOf('X'), Blocks.bloodPlanks);
-		GameRegistry.addShapelessRecipe(new ItemStack(Items.chain, 2), new Object[] {Item.ingotIron});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.chain, 2), new Object[] {new ItemStack(Item.ingotIron, 3)});
 		GameRegistry.addRecipe(new ItemStack(Item.helmetChain, 1), new Object[] { helmet, Character.valueOf('X'), Items.chain});
 		GameRegistry.addRecipe(new ItemStack(Item.plateChain, 1), new Object[] { chestplate, Character.valueOf('X'), Items.chain});
 		GameRegistry.addRecipe(new ItemStack(Item.legsChain, 1), new Object[] { leggings, Character.valueOf('X'), Items.chain});
