@@ -93,7 +93,7 @@ public class Blocks
 	public static final Block topazBlock = (new BlockCoreOne(Config.addBlock("Mystic Topaz Block"))).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("topazBlock");
 	public static final Block cherryPlant = (new BlockPlantCore(Config.addBlock("Cherry Plant"))).setCreativeTab(null).setUnlocalizedName("cherryPlant");
 	public static final Block amethystOre = (new BlockCoreOne(Config.addBlock("Amethyst Ore"))).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("amethystOre");
-	public static final Block lamp = (new BlockCoreOne(Config.addBlock("Lamp"))).setHardness(0.0F).setStepSound(Block.soundGlassFootstep).setLightValue(0.7F).setUnlocalizedName("lamp");
+	public static final Block lamp = (new BlockCoreOne(Config.addBlock("Lamp"))).setHardness(0.0F).setStepSound(Block.soundGlassFootstep).setLightValue(0.9F).setUnlocalizedName("lamp");
 	public static final Block blackQuartzBlock = (new BlockBlackQuartz(Config.addBlock("Black Quartz Block"))).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blackQuartzBlock_side");
 	public static final Block blueFlower = (new BlockPlantCore(Config.addBlock("Blue Flower"))).setUnlocalizedName("blueFlower");
 	public static final BlockBlindOasisPortal blindOasisPortal = (BlockBlindOasisPortal)(new BlockBlindOasisPortal(Config.addBlock("Blind Oasis Portal"))).setUnlocalizedName("blindOasisPortal");

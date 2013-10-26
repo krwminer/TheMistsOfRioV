@@ -186,7 +186,7 @@ public class EntityOrc extends EntityMobDeadBody
 		par1EntityPlayer.playSound(Sound.hello, 1, 1);
 		
 		if(!this.worldObj.isRemote)
-		par1EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Hello to you too, " + par1EntityPlayer.username + "!"));
+		par1EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Rohhu nu 'u nuu, " + par1EntityPlayer.username + "!"));
 		return true;
     }
 }
