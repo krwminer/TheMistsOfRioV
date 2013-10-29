@@ -94,4 +94,8 @@ public class EntitySkeletalHorse extends EntityHorse
 		this.dropItem(Items.blackBone.itemID, 1);
 	}
 
+	public boolean getCanSpawnHere()
+    {
+        return true;
+    }
 }

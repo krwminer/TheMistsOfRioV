@@ -39,7 +39,7 @@ public class EntityAunTunMinion extends EntityMobDeadBody
 		this.isImmuneToFire = true;
 		this.getNavigator().setCanSwim(true);
 		this.tasks.addTask(1, new EntityAISwimming(this));
-		this.tasks.addTask(5, new EntityAIWander(this, 0.56D));
+		this.tasks.addTask(5, new EntityAIWander(this, 0.62D));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityAltruEssence.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityTef.class, 0, true));
@@ -60,7 +60,7 @@ public class EntityAunTunMinion extends EntityMobDeadBody
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityWitch.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityDarkEssence.class, 0, true));
 		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
-		tasks.addTask(4, new EntityAIAttackOnCollide(this, 0.56D, true));
+		tasks.addTask(4, new EntityAIAttackOnCollide(this, 0.62D, true));
 		this.setCurrentItemOrArmor(4, new ItemStack(Items.auntunMinionHelmet));
 		this.setCurrentItemOrArmor(3, new ItemStack(Items.auntunMinionChestplate));
 		this.setCurrentItemOrArmor(2, new ItemStack(Items.auntunMinionLeggings));
@@ -154,7 +154,7 @@ public class EntityAunTunMinion extends EntityMobDeadBody
 	@Override
 	public boolean attackEntityAsMob(Entity par1Entity)
 	{
-		((EntityLivingBase)par1Entity).addPotionEffect(new PotionEffect(Potion.wither.id, 50, 1));
+		((EntityLivingBase)par1Entity).addPotionEffect(new PotionEffect(Potion.wither.id, 70, 1));
 		return true;
 	}
 }

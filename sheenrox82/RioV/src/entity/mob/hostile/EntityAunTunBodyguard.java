@@ -35,7 +35,7 @@ public class EntityAunTunBodyguard extends EntityMobDeadBody
 	{
 		super(par1World);
 		this.isImmuneToFire = true;
-		this.tasks.addTask(5, new EntityAIWander(this, 0.56D));
+		this.tasks.addTask(5, new EntityAIWander(this, 0.62D));
 		this.tasks.addTask(1, new EntityAIOpenDoor(this, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityAltruEssence.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));

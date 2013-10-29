@@ -76,7 +76,7 @@ public class EntityTerron extends EntityBossCore
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(900.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(25.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(16.0D);
 	}
 
 	@Override

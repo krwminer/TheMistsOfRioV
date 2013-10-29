@@ -71,7 +71,11 @@ public class BlockBush extends BlockFlower
 		{
 			return Items.strawBerry.itemID;
 		}
-
+		if(blockID == Blocks.coconut.blockID)
+		{
+			return blockID;
+		}
+		
 		return -1;
 	}
 
@@ -146,6 +150,10 @@ public class BlockBush extends BlockFlower
 		if(blockID == Blocks.bloodBerryBush.blockID || blockID == Blocks.paleBush.blockID)
 		{
 			return par1 == Blocks.bloodDirt.blockID || par1 == Blocks.bloodGrass.blockID;
+		}
+		if(blockID == Blocks.coconut.blockID)
+		{
+			return par1 == Block.sand.blockID;
 		}
 		else
 		{

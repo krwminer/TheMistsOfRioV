@@ -104,7 +104,10 @@ public class RioVAxe extends ItemAxe
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisAxe");
 		}
-		
+		if(itemID == Items.kupinumAxe.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumAxe");
+		}
 		if(TheMistsOfRioV.getInstance().natura)
 		{
 			if(itemID == Items.infusedBloodwoodAxe.itemID || itemID == Items.infusedGhostwoodAxe.itemID || itemID == Items.infusedDarkwoodAxe.itemID || itemID == Items.infusedFusewoodAxe.itemID || itemID == Items.infusedNetherquartzAxe.itemID)

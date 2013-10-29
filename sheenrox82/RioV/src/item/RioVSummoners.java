@@ -2,9 +2,6 @@ package sheenrox82.RioV.src.item;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,9 +17,11 @@ import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTunMinion;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkEssence;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDemonAngel;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityTef;
-import sheenrox82.RioV.src.entity.mob.hostile.EntityTefGuard;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityTerron;
+import sheenrox82.RioV.src.util.Color;
 import sheenrox82.RioV.src.util.Util;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class RioVSummoners extends Item
 {
@@ -123,33 +122,33 @@ public class RioVSummoners extends Item
 				par1ItemStack.damageItem(2, entityplayer);
 				return true;
 			}
-		}
-
-		if (par1ItemStack.itemID == Items.auntunSummoner.itemID)
-		{
-			int var4 = 0;
-			if (!world.isRemote)
+			
+			if (par1ItemStack.itemID == Items.auntunSummoner.itemID)
 			{
-				while (var4 < 1)//1 gets the amount of mobs to spawn at once
+				int var4 = 0;
+				if (!world.isRemote)
 				{
-					EntityAunTun var5 = new EntityAunTun(world);
-					var5.setPosition(par4, par5+1, par6);
-					world.spawnEntityInWorld(var5);
-					++var4;
+					while (var4 < 1)
+					{
+						EntityAunTun var5 = new EntityAunTun(world);
+						var5.setPosition(par4, par5+1, par6);
+						world.spawnEntityInWorld(var5);
+						++var4;
+					}
+					while (var4 < 10)
+					{
+						EntityAunTunMinion var5 = new EntityAunTunMinion(world);
+						var5.setPosition(par4, par5+1, par6);
+						world.spawnEntityInWorld(var5);
+						++var4;
+					}
 				}
-				while (var4 < 20)//1 gets the amount of mobs to spawn at once
-				{
-					EntityAunTunMinion var5 = new EntityAunTunMinion(world);
-					var5.setPosition(par4, par5+1, par6);
-					world.spawnEntityInWorld(var5);
-					++var4;
-				}
-			}
 
-			if(world.isRemote)
-				Minecraft.getMinecraft().thePlayer.addChatMessage("Aun'Tun has been summoned!");
-			par1ItemStack.damageItem(2, entityplayer);
-			return true;
+				if(world.isRemote)
+					Minecraft.getMinecraft().thePlayer.addChatMessage(Color.DARK_RED + "Aun'Tun has been summoned!" + Color.WHITE + " Good luck, this'll be a LONG fight.");
+				par1ItemStack.damageItem(2, entityplayer);
+				return true;
+			}
 		}
 
 		return false;
@@ -169,7 +168,7 @@ public class RioVSummoners extends Item
 			var3.add(StatCollector.translateToLocal("Spawned in: Blind Oasis Dimension"));
 		}
 		
-		if (var1.itemID == Items.demonAngelCrystal.itemID)
+		if (var1.itemID == Items.demonAngelCrystal.itemID || var1.itemID == Items.auntunSummoner.itemID)
 		{
 			var3.add(StatCollector.translateToLocal("Spawned in: Flamonor Dimension"));
 		}
@@ -194,6 +193,10 @@ public class RioVSummoners extends Item
 		if(itemID == Items.tefCrystal.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "tefCrystal");
+		}
+		if(itemID == Items.auntunSummoner.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "auntunSummoner");
 		}
 	}
 

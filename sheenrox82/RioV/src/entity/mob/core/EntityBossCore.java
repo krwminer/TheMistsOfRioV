@@ -11,10 +11,6 @@ import org.lwjgl.input.Keyboard;
 
 public class EntityBossCore extends EntityMob implements IBossDisplayData
 {
-	public int counter;
-	public int countdown;
-	public boolean justJumped;
-	
 	public EntityBossCore(World par1World)
 	{
 		super(par1World);
@@ -24,5 +20,10 @@ public class EntityBossCore extends EntityMob implements IBossDisplayData
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
+	}
+	
+	public boolean canDespawn()
+	{
+		return false;
 	}
 }

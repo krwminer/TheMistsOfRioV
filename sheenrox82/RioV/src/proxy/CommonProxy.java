@@ -30,4 +30,9 @@ public class CommonProxy
 	{
 		return FMLClientHandler.instance().getClient();
 	}
+
+	public ModelBiped getArmorModel(int id)
+	{
+		return null;
+	}
 }

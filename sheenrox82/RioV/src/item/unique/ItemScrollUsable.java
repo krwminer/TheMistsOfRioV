@@ -101,9 +101,9 @@ public class ItemScrollUsable extends Item
 			}	
 		}
 
-		if(!world.isRemote)
+		if(itemID == Items.scrollEverlight.itemID)
 		{
-			if(itemID == Items.scrollEverlight.itemID)
+			if(!world.isRemote)
 			{
 				if(world.getWorldTime() > 12000)
 				{
@@ -119,7 +119,7 @@ public class ItemScrollUsable extends Item
 
 		if(itemID == Items.scrollWindI.itemID )
 		{
-			entityplayer.addVelocity(0, 0.5, 0);
+			entityplayer.addVelocity(0, 0.9, 0);
 			entityplayer.inventory.consumeInventoryItem(this.itemID);
 		}
 

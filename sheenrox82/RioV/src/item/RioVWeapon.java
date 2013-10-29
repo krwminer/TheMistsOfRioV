@@ -218,15 +218,11 @@ public class RioVWeapon extends ItemSword
 	@Override
 	public EnumRarity getRarity(ItemStack par1)
 	{
-		if(par1.itemID == Items.axeOfAunTun.itemID)
+		if(par1.itemID == Items.axeOfAunTun.itemID || par1.itemID == Items.ultraAxeOfAunTun.itemID || par1.itemID == Items.daetoriSword.itemID)
 		{
 			return EnumRarity.epic;
 		}
 
-		if(par1.itemID == Items.daetoriSword.itemID)
-		{
-			return EnumRarity.epic;
-		}
 		return EnumRarity.common;
 	}
 
@@ -246,11 +242,15 @@ public class RioVWeapon extends ItemSword
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "daetoriSword");
 		}
+		if(itemID == Items.tasaravSword.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "tasaravSword");
+		}
 		if(itemID == Items.sorrowSword.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "sorrowSword");
 		}
-		if(itemID == Items.axeOfAunTun.itemID)
+		if(itemID == Items.axeOfAunTun.itemID || itemID == Items.ultraAxeOfAunTun.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "axeOfAunTun");
 		}
@@ -313,6 +313,10 @@ public class RioVWeapon extends ItemSword
 		if(itemID == Items.alerisSword.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisSword");
+		}
+		if(itemID == Items.kupinumSword.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumSword");
 		}
 		if(TheMistsOfRioV.getInstance().riovPaladin)
 		{

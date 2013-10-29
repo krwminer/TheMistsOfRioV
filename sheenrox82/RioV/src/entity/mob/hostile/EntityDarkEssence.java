@@ -97,7 +97,7 @@ public class EntityDarkEssence extends EntityBossCore
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(2000.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(50.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(22.0D);
 	}
 
 	@Override

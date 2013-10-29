@@ -2,19 +2,28 @@ package sheenrox82.RioV.src.handler;
 
 import java.util.EnumSet;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiIngame;
-import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.world.World;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
+import net.minecraftforge.event.EventPriority;
+import net.minecraftforge.event.ForgeSubscribe;
 
 import org.lwjgl.opengl.GL11;
 
 import sheenrox82.RioV.src.base.Config;
+import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class HudHandler extends Container implements ITickHandler 
 {
@@ -48,7 +57,7 @@ public class HudHandler extends Container implements ITickHandler
 			}
 		}
 	}
-
+	
 	@Override
 	public EnumSet<TickType> ticks() 
 	{

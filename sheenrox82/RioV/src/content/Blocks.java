@@ -23,8 +23,10 @@ import sheenrox82.RioV.src.block.BlockFloorboard;
 import sheenrox82.RioV.src.block.BlockGlimmerGrass;
 import sheenrox82.RioV.src.block.BlockGlimmerwoodChest;
 import sheenrox82.RioV.src.block.BlockGlimmerwoodLog;
+import sheenrox82.RioV.src.block.BlockHydrogenicPortal;
 import sheenrox82.RioV.src.block.BlockInfuser;
 import sheenrox82.RioV.src.block.BlockMagicBinder;
+import sheenrox82.RioV.src.block.BlockMist;
 import sheenrox82.RioV.src.block.BlockPlanks;
 import sheenrox82.RioV.src.block.BlockPlantCore;
 import sheenrox82.RioV.src.block.BlockRedFire;
@@ -44,7 +46,7 @@ import sheenrox82.RioV.src.block.BlockSanctuatiteFlowing;
 import sheenrox82.RioV.src.block.BlockSanctuatiteGrass;
 import sheenrox82.RioV.src.block.BlockSanctuatitePortal;
 import sheenrox82.RioV.src.block.BlockSancuatiteStill;
-import sheenrox82.RioV.src.block.BlockShortgrass;
+import sheenrox82.RioV.src.block.BlockShrine;
 import sheenrox82.RioV.src.block.BlockSkycloud;
 import sheenrox82.RioV.src.block.BlockSkywoodChest;
 import sheenrox82.RioV.src.block.BlockSkywoodLog;
@@ -60,7 +62,6 @@ import sheenrox82.RioV.src.util.Color;
 import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Blocks 
 {
@@ -194,6 +195,11 @@ public class Blocks
     public static final Block runestoneAltar = (new BlockRunestoneAltar(Config.addBlock("Runestone Altar"))).setHardness(6.0F).setStepSound(Block.soundStoneFootstep).setHardness(0.5F).setUnlocalizedName("runestoneAltar");
 	public static final Block bloodFlower = (new BlockPlantCore(Config.addBlock("Blood Flower"))).setUnlocalizedName("bloodFlower");
 	public static final Block paleBush = (new BlockBush(Config.addBlock("Pale Bush"))).setUnlocalizedName("paleBush");
+    public static final Block waterFilledGlowstone = (new BlockCoreOne(Config.addBlock("Water Filled Glowstone"))).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("waterFilledGlowstone");
+    public static final BlockHydrogenicPortal hydrogenicPortal = (BlockHydrogenicPortal)(new BlockHydrogenicPortal(Config.addBlock("Hydrogenic Portal"))).setUnlocalizedName("hydrogenicPortal");
+    public static final BlockMist mist = (BlockMist)(new BlockMist(Config.addBlock("Mist"))).setLightValue(1.0F).setUnlocalizedName("mist");
+	public static final Block coconut = (new BlockBush(Config.addBlock("Coconut"))).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("coconut");
+    public static final Block shrine = (new BlockShrine(Config.addBlock("Shrine"))).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("shrine");
 
 	public static void add()
 	{	
@@ -205,7 +211,12 @@ public class Blocks
 		MethodUtil.registerBlock(steamingBloodDeposit, Color.DARK_RED + "Steaming Blood Deposit");
 		MethodUtil.registerBlock(bloodBerryBush, Color.DARK_RED + "Blood Berry Bush");
 		MethodUtil.registerBlock(bloodFlower, Color.DARK_RED + "Blood Flower");
+		MethodUtil.registerBlock(waterFilledGlowstone, Color.AQUA + "Hydrogenic Glowstone");
 		MethodUtil.registerBlock(paleBush, "Pale Bush");
+		MethodUtil.registerBlock(hydrogenicPortal, Color.AQUA + "Hydrogenic Portal");
+		MethodUtil.registerBlock(mist, "Mist");
+		MethodUtil.registerBlock(shrine, "Shrine");
+		MethodUtil.registerBlock(coconut, "Coconut");
 		MethodUtil.registerBlock(runestone, "Runestone Deposit");
 		MethodUtil.registerBlock(runestoneAltar, "Runestone Altar");
 		MethodUtil.registerBlock(abstractor, "Runestone Abstractor");

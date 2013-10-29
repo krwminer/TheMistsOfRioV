@@ -40,7 +40,7 @@ public class RenderAunTun extends RenderBiped
 
 	protected void preRenderScale(EntityAunTun par1EntityGiantZombie, float par2)
 	{
-		GL11.glScalef(5F, 5F, 5F);
+		GL11.glScalef(14F, 14F, 14F);
 	}
 
 	protected void preRenderCallback(EntityLivingBase par1EntityLivingBase, float par2)

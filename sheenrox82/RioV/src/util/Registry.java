@@ -26,8 +26,10 @@ import sheenrox82.RioV.src.tileentity.TileEntityBloodChest;
 import sheenrox82.RioV.src.tileentity.TileEntityCherryBlossomChest;
 import sheenrox82.RioV.src.tileentity.TileEntityGlimmerwoodChest;
 import sheenrox82.RioV.src.tileentity.TileEntityInfuser;
+import sheenrox82.RioV.src.tileentity.TileEntityShrine;
 import sheenrox82.RioV.src.tileentity.TileEntitySkywoodChest;
 import sheenrox82.RioV.src.world.WorldGen;
+import sheenrox82.RioV.src.world.provider.WorldProviderAtlantea;
 import sheenrox82.RioV.src.world.provider.WorldProviderBlindOasis;
 import sheenrox82.RioV.src.world.provider.WorldProviderFlamonor;
 import sheenrox82.RioV.src.world.provider.WorldProviderSanctuatite;
@@ -81,11 +83,13 @@ public class Registry
 		GameRegistry.registerTileEntity(TileEntityCherryBlossomChest.class, "CherryBlossomChest");
 		GameRegistry.registerTileEntity(TileEntityBloodChest.class, "BloodChest");
 		GameRegistry.registerTileEntity(TileEntitySkywoodChest.class, "SkywoodChest");
+		GameRegistry.registerTileEntity(TileEntityShrine.class, "Shrine");
 		NetworkRegistry.instance().registerGuiHandler(TheMistsOfRioV.getInstance(), TheMistsOfRioV.getInstance().guiHandler);
 		MethodUtil.registerDimension(Config.blindOasisID, WorldProviderBlindOasis.class);
 		MethodUtil.registerDimension(Config.vaerynID, WorldProviderVaeryn.class);
 		MethodUtil.registerDimension(Config.flamonorID, WorldProviderFlamonor.class);
 		MethodUtil.registerDimension(Config.sanctuatiteID, WorldProviderSanctuatite.class);
+		MethodUtil.registerDimension(Config.atlanteaID, WorldProviderAtlantea.class);
 	}
 
 	public static void init(FMLInitializationEvent init)
@@ -99,6 +103,7 @@ public class Registry
 		EntityLoader.addDimensionSpawning();
 		BiomeGenBase.extremeHills.theBiomeDecorator.treesPerChunk = 15;
 		BiomeGenBase.plains.theBiomeDecorator.treesPerChunk = 1;
+		BiomeGenBase.forest.theBiomeDecorator.treesPerChunk = 46;
 		BiomeGenBase.plains.theBiomeDecorator.bigMushroomsPerChunk = 1;
 		BiomeGenBase.plains.theBiomeDecorator.flowersPerChunk = 30;
 		GameRegistry.registerWorldGenerator(new WorldGen());

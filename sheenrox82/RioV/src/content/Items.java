@@ -1,13 +1,10 @@
 package sheenrox82.RioV.src.content;
 
-import mods.natura.common.NContent;
-import net.aetherteam.aether.items.AetherItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
 import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
@@ -30,12 +27,14 @@ import sheenrox82.RioV.src.item.RioVWand;
 import sheenrox82.RioV.src.item.RioVWeapon;
 import sheenrox82.RioV.src.item.unique.ItemBamboo;
 import sheenrox82.RioV.src.item.unique.ItemBowOfWurTun;
+import sheenrox82.RioV.src.item.unique.ItemDragonChestplate;
 import sheenrox82.RioV.src.item.unique.ItemEnforcedBowOfWurTun;
 import sheenrox82.RioV.src.item.unique.ItemRune;
 import sheenrox82.RioV.src.item.unique.ItemScrollUsable;
+import sheenrox82.RioV.src.item.unique.ItemTasaravChestplate;
+import sheenrox82.RioV.src.item.unique.ItemTasaravHelmet;
 import sheenrox82.RioV.src.item.unique.ItemVraviniteBow;
 import sheenrox82.RioV.src.proxy.CommonProxy;
-import sheenrox82.RioV.src.recipe.InfuserRecipes;
 import sheenrox82.RioV.src.util.Color;
 import sheenrox82.RioV.src.util.MethodUtil;
 
@@ -57,6 +56,7 @@ public class Items
 	static EnumToolMaterial Daetori = EnumHelper.addToolMaterial("Daetori", 2, 500, 5F, 9, 12);
 	static EnumToolMaterial Sorrow = EnumHelper.addToolMaterial("Sorrow", 2, 700, 5F, 10, 13);
 	static EnumToolMaterial AxeOfAunTun = EnumHelper.addToolMaterial("AxeOfAunTun", 2, 2500, 5F, 18, 16);
+	static EnumToolMaterial UltraAxeOfAunTun = EnumHelper.addToolMaterial("UltraAxeOfAunTun", 2, 5000, 5F, 26, 30);
 	static EnumToolMaterial Vulron = EnumHelper.addToolMaterial("Vulron", 6, 200, 9F, 6, 12);
 	static EnumToolMaterial InfusedDragon = EnumHelper.addToolMaterial("InfusedDragon", 11, 3400, 18F, 11, 16);
 	static EnumToolMaterial Galokin = EnumHelper.addToolMaterial("Galokin", 4, 400, 6F, 6, 12);
@@ -70,6 +70,7 @@ public class Items
 	static EnumToolMaterial Aleris = EnumHelper.addToolMaterial("Aleris", 14, 2400, 14F, 16, 21);
 	static EnumToolMaterial InfusedVravinite = EnumHelper.addToolMaterial("InfusedVravinite", 13, 1000, 13F, 11, 12);
 	static EnumToolMaterial Vravinite = EnumHelper.addToolMaterial("Vravinite", 12, 900, 13F, 10, 12);
+	static EnumToolMaterial Kupinum = EnumHelper.addToolMaterial("Kupinum", 12, 1900, 10F, 13, 14);
 
 	static EnumArmorMaterial InfusedAmethystArmorMaterial = EnumHelper.addArmorMaterial("INFUSEDAMETHYST", 17, new int[] {4, 6, 6, 4}, 20);
 	static EnumArmorMaterial InfusedOnyxArmorMaterial = EnumHelper.addArmorMaterial("INFUSEDONYX", 18, new int[] {5, 6, 6, 5}, 20);
@@ -91,6 +92,8 @@ public class Items
 	static EnumArmorMaterial AlerisArmorMaterial = EnumHelper.addArmorMaterial("ALERIS", 48, new int[] {5, 8, 6, 5}, 20);
 	static EnumArmorMaterial InfusedVraviniteArmorMaterial = EnumHelper.addArmorMaterial("VRAVINITE", 33, new int[] {4, 6, 6, 4}, 20);
 	static EnumArmorMaterial VraviniteArmorMaterial = EnumHelper.addArmorMaterial("VRAVINITE", 32, new int[] {4, 6, 6, 4}, 20);
+	static EnumArmorMaterial KupinumArmorMaterial = EnumHelper.addArmorMaterial("KUPINUM", 45, new int[] {3, 7, 6, 3}, 16);
+	static EnumArmorMaterial SupremeAunTunArmorMaterial = EnumHelper.addArmorMaterial("SUPREMEAUNTUN", 68, new int[] {7, 10, 9, 9}, 50);
 
 	public static Item onyxHelmet = (new RioVArmor(Config.addItem("Onyx Helmet"), OnyxArmorMaterial, render, 0, "onyx", false)).setUnlocalizedName("onyxHelmet");
 	public static Item onyxChestplate = (new RioVArmor(Config.addItem("Onyx Chestplate"), OnyxArmorMaterial, render, 1, "onyx", false)).setUnlocalizedName("onyxChestplate");
@@ -121,7 +124,7 @@ public class Items
 	public static Item mythrilLeggings = (new RioVArmor(Config.addItem("Mythril Leggings"), MythrilArmorMaterial, render, 2, "mythril", false)).setUnlocalizedName("mythrilLeggings");
 	public static Item mythrilBoots = (new RioVArmor(Config.addItem("Mythril Boots"), MythrilArmorMaterial, render, 3, "mythril", false)).setUnlocalizedName("mythrilBoots");
 	public static Item dragonHelmet = (new RioVArmor(Config.addItem("Dragon Helmet"), DragonArmorMaterial, render, 0, "dragon", false)).setUnlocalizedName("dragonHelmet");
-	public static Item dragonChestplate = (new RioVArmor(Config.addItem("Dragon Chestplate"), DragonArmorMaterial, render, 1, "dragon", false)).setUnlocalizedName("dragonChestplate");
+	public static Item dragonChestplate = (new ItemDragonChestplate(Config.addItem("Dragon Chestplate"), DragonArmorMaterial, render, 1, "dragon", false)).setUnlocalizedName("dragonChestplate");
 	public static Item dragonLeggings = (new RioVArmor(Config.addItem("Dragon Leggings"), DragonArmorMaterial, render, 2, "dragon", false)).setUnlocalizedName("dragonLeggings");
 	public static Item dragonBoots = (new RioVArmor(Config.addItem("Dragon Boots"), DragonArmorMaterial, render, 3, "dragon", false)).setUnlocalizedName("dragonBoots");
 	public static Item amethystSword = (new RioVWeapon(Config.addItem("Amethyst Sword"), Amethyst, false)).setUnlocalizedName("amethystSword");
@@ -172,7 +175,7 @@ public class Items
 	public static Item baseCrystal = (new RioVItem(Config.addItem("Base Crystal"))).setUnlocalizedName("baseCrystal");
 	public static Item terronCrystal = (new RioVSummoners(Config.addItem("Terron Crystal"))).setUnlocalizedName("terronCrystal");
 	public static Item demonAngelCrystal = (new RioVSummoners(Config.addItem("Demon Angel Crystal"))).setUnlocalizedName("demonAngelCrystal");
-	public static Item auntunSummoner = (new RioVSummoners(Config.addItem("Aun'Tun Summoner"))).setCreativeTab(null).setUnlocalizedName("auntunSummoner");
+	public static Item auntunSummoner = (new RioVSummoners(Config.addItem("Aun'Tun Summoner"))).setUnlocalizedName("auntunSummoner");
 	public static Item khuulisScythe = (new RioVWeapon(Config.addItem("Khuuli's Scythe"), Onyx, false)).setUnlocalizedName("khuulisScythe");
 	public static Item bowOfWurTun = (new ItemBowOfWurTun(Config.addItem("Bow of Wur'Tun"))).setUnlocalizedName("bowOfWurTun");
 	public static Item wineGlass = (new RioVItem(Config.addItem("Wine Glass"))).setUnlocalizedName("wineGlass");
@@ -241,7 +244,7 @@ public class Items
 	public static Item leggingsOfFlame = (new RioVArmor(Config.addItem("Leggings of Flame"), FlameArmorMaterial, render, 2, "flame", false)).setUnlocalizedName("leggingsOfFlame");
 	public static Item bootsOfFlame = (new RioVArmor(Config.addItem("Boots of Flame"), FlameArmorMaterial, render, 3, "flame", false)).setUnlocalizedName("bootsOfFlame");
 	public static Item infusedDragonHelmet = (new RioVArmor(Config.addItem("Infused Dragon Helmet"), InfusedDragonArmorMaterial, render, 0, "dragon", true)).setUnlocalizedName("infusedDragonHelmet");
-	public static Item infusedDragonChestplate = (new RioVArmor(Config.addItem("Infused Dragon Chestplate"), InfusedDragonArmorMaterial, render, 1, "dragon", true)).setUnlocalizedName("infusedDragonChestplate");
+	public static Item infusedDragonChestplate = (new ItemDragonChestplate(Config.addItem("Infused Dragon Chestplate"), InfusedDragonArmorMaterial, render, 1, "dragon", true)).setUnlocalizedName("infusedDragonChestplate");
 	public static Item infusedDragonLeggings = (new RioVArmor(Config.addItem("Infused Dragon Leggings"), InfusedDragonArmorMaterial, render, 2, "dragon", true)).setUnlocalizedName("infusedDragonLeggings");
 	public static Item infusedDragonBoots = (new RioVArmor(Config.addItem("Infused Dragon Boots"), InfusedDragonArmorMaterial, render, 3, "dragon", true)).setUnlocalizedName("infusedDragonBoots");
 	public static Item infusedDragonSword = (new RioVWeapon(Config.addItem("Infused Dragon Sword"), InfusedDragon, true)).setUnlocalizedName("infusedDragonSword");
@@ -380,17 +383,46 @@ public class Items
 	public static Item windElement = (new RioVItem(Config.addItem("Wind Element"))).setUnlocalizedName("windElement");
 	public static Item rune = (new ItemRune(Config.addItem("Rune"))).setUnlocalizedName("rune");
 	public static Item heart = (new RioVItem(Config.addItem("Heart"))).setUnlocalizedName("heart");
-
-	/**PALADIN**/
-	public static Item paladinHelmet;
-	public static Item paladinChestplate;
-	public static Item paladinLeggings;
-	public static Item paladinBoots;
-	public static Item paladinLongsword;
+	public static Item kupinumHelmet = (new RioVArmor(Config.addItem("Kupinum Helmet"), KupinumArmorMaterial, render, 0, "kupinum", false)).setUnlocalizedName("kupinumHelmet");
+	public static Item kupinumChestplate = (new RioVArmor(Config.addItem("Kupinum Chestplate"), KupinumArmorMaterial, render, 1, "kupinum", false)).setUnlocalizedName("kupinumChestplate");
+	public static Item kupinumLeggings = (new RioVArmor(Config.addItem("Kupinum Leggings"), KupinumArmorMaterial, render, 2, "kupinum", false)).setUnlocalizedName("kupinumLeggings");
+	public static Item kupinumBoots = (new RioVArmor(Config.addItem("Kupinum Boots"), KupinumArmorMaterial, render, 3, "kupinum", false)).setUnlocalizedName("kupinumBoots");
+	public static Item kupinumPickaxe = (new RioVPickaxe(Config.addItem("Kupinum Pickaxe"), Kupinum, false)).setUnlocalizedName("kupinumPickaxe");
+	public static Item kupinumAxe = (new RioVAxe(Config.addItem("Kupinum Axe"), Kupinum, false)).setUnlocalizedName("kupinumAxe");
+	public static Item kupinumShovel = (new RioVSpade(Config.addItem("Kupinum Shovel"), Kupinum, false)).setUnlocalizedName("kupinumShovel");
+	public static Item kupinumSword = (new RioVWeapon(Config.addItem("Kupinum Sword"), Kupinum, false)).setUnlocalizedName("kupinumSword");
+	public static Item supremeAunTunHelmet = (new RioVArmor(Config.addItem("Supreme Aun'Tun Helmet"), SupremeAunTunArmorMaterial, render, 0, "auntunminion", true)).setUnlocalizedName("supremeAunTunHelmet");
+	public static Item supremeAunTunChestplate = (new RioVArmor(Config.addItem("Supreme Aun'Tun Chestplate"), SupremeAunTunArmorMaterial, render, 1, "auntunminion", true)).setUnlocalizedName("supremeAunTunChestplate");
+	public static Item supremeAunTunLeggings = (new RioVArmor(Config.addItem("Supreme Aun'Tun Leggings"), SupremeAunTunArmorMaterial, render, 2, "auntunminion", true)).setUnlocalizedName("supremeAunTunLeggings");
+	public static Item supremeAunTunBoots = (new RioVArmor(Config.addItem("Supreme Aun'Tun Boots"), SupremeAunTunArmorMaterial, render, 3, "auntunminion", true)).setUnlocalizedName("supremeAunTunBoots");
+	public static Item ultraAxeOfAunTun = (new RioVWeapon(Config.addItem("Ultra Axe of Aun'Tun"), UltraAxeOfAunTun, true)).setUnlocalizedName("ultraAxeOfAunTun");
+	public static Item tasaravHelmet = (new ItemTasaravHelmet(Config.addItem("Tasarav Mallor's Helmet"), AlerisArmorMaterial, render, 0, "tasarav", false)).setUnlocalizedName("tasaravHelmet");
+	public static Item tasaravChestplate = (new ItemTasaravChestplate(Config.addItem("Tasarav Mallor's Chestplate"), AlerisArmorMaterial, render, 1, "tasarav", false)).setUnlocalizedName("tasaravChestplate");
+	public static Item tasaravLeggings = (new RioVArmor(Config.addItem("Tasarav Mallor's Leggings"), AlerisArmorMaterial, render, 2, "tasarav", false)).setUnlocalizedName("tasaravLeggings");
+	public static Item tasaravBoots = (new RioVArmor(Config.addItem("Tasarav Mallor's Boots"), AlerisArmorMaterial, render, 3, "tasarav", false)).setUnlocalizedName("tasaravBoots");
+	public static Item tasaravSword = (new RioVWeapon(Config.addItem("Tasarav Mallor's Sword"), Aleris, false)).setUnlocalizedName("tasaravSword");
 
 	public static void add()
 	{		
+		MethodUtil.registerItem(kupinumPickaxe, Color.AQUA + "Kupinum Pickaxe");
+		MethodUtil.registerItem(kupinumAxe, Color.AQUA + "Kupinum Axe");
+		MethodUtil.registerItem(kupinumShovel, Color.AQUA + "Kupinum Shovel");
+		MethodUtil.registerItem(kupinumSword, Color.AQUA + "Kupinum Sword");
+		MethodUtil.registerItem(kupinumHelmet, Color.AQUA + "Kupinum Helmet");
+		MethodUtil.registerItem(kupinumChestplate, Color.AQUA + "Kupinum Chestplate");
+		MethodUtil.registerItem(kupinumLeggings, Color.AQUA + "Kupinum Leggings");
+		MethodUtil.registerItem(kupinumBoots, Color.AQUA + "Kupinum Boots");
+		MethodUtil.registerItem(tasaravHelmet, Color.GOLD + "Tasarav Mallor's Helmet");
+		MethodUtil.registerItem(tasaravChestplate, Color.GOLD + "Tasarav Mallor's Chestplate");
+		MethodUtil.registerItem(tasaravLeggings, Color.GOLD + "Tasarav Mallor's Leggings");
+		MethodUtil.registerItem(tasaravBoots, Color.GOLD + "Tasarav Mallor's Boots");
+		MethodUtil.registerItem(tasaravSword, Color.GOLD + "Tasarav Mallor's Sword");
+		MethodUtil.registerItem(supremeAunTunHelmet, Color.DARK_RED + "Supreme Aun'Tun Helmet");
+		MethodUtil.registerItem(supremeAunTunChestplate, Color.DARK_RED + "Supreme Aun'Tun Chestplate");
+		MethodUtil.registerItem(supremeAunTunLeggings, Color.DARK_RED + "Supreme Aun'Tun Leggings");
+		MethodUtil.registerItem(supremeAunTunBoots, Color.DARK_RED + "Supreme Aun'Tun Boots");
 		MethodUtil.registerItem(heart, "Heart");
+		MethodUtil.registerItem(ultraAxeOfAunTun, "Ultra Axe of Aun'Tun");
 		MethodUtil.registerItem(rune, "Runestone");
 		MethodUtil.registerItem(windElement, "The Element of Wind");
 		MethodUtil.registerItem(scroll, "Scroll");
@@ -680,6 +712,13 @@ public class Items
 		MethodUtil.registerItem(infusedDragonSword, Color.DARK_RED + "Infused Dragon Sword");
 	}
 
+	/**PALADIN**/
+	public static Item paladinHelmet;
+	public static Item paladinChestplate;
+	public static Item paladinLeggings;
+	public static Item paladinBoots;
+	public static Item paladinLongsword;
+	
 	public static void RioVPaladin()
 	{
 		if(TheMistsOfRioV.getInstance().riovPaladin)

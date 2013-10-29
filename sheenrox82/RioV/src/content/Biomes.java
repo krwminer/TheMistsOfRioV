@@ -4,6 +4,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import sheenrox82.RioV.src.base.Config;
+import sheenrox82.RioV.src.world.biome.BiomeGenAtlantea;
 import sheenrox82.RioV.src.world.biome.BiomeGenBambooFields;
 import sheenrox82.RioV.src.world.biome.BiomeGenBlindOasis;
 import sheenrox82.RioV.src.world.biome.BiomeGenCanopyOasis;
@@ -26,6 +27,7 @@ public class Biomes
 	public static BiomeGenBase canopyOasis = new BiomeGenCanopyOasis(Config.canopyOasisBiomeID).setColor(5470985);
 	public static BiomeGenBase bambooFields = new BiomeGenBambooFields(Config.bambooFieldsBiomeID);
 	public static BiomeGenBase runes = new BiomeGenRunes(Config.runesBiomeID);
+	public static BiomeGenBase atlantea = new BiomeGenAtlantea(Config.atlanteaBiomeID);
 
 	public static void add()
 	{

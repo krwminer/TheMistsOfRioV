@@ -1,5 +1,6 @@
 package sheenrox82.RioV.src.proxy;
 
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
 import sheenrox82.RioV.src.content.Blocks;
@@ -15,6 +16,7 @@ import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkElf;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkEssence;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDemonAngel;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityHellhound;
+import sheenrox82.RioV.src.entity.mob.hostile.EntityKupinumGuard;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityMage;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityShadow;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityTef;
@@ -32,13 +34,17 @@ import sheenrox82.RioV.src.entity.mob.passive.EntityOrc;
 import sheenrox82.RioV.src.entity.mob.passive.EntityRabbit;
 import sheenrox82.RioV.src.entity.mob.passive.EntitySkeletalHorse;
 import sheenrox82.RioV.src.entity.mob.passive.EntitySoverianOfficer;
+import sheenrox82.RioV.src.entity.mob.passive.EntityTasaravMallor;
 import sheenrox82.RioV.src.entity.mob.passive.EntityWoodElf;
 import sheenrox82.RioV.src.entity.projectile.EntityDarknessArrow;
 import sheenrox82.RioV.src.entity.projectile.EntityVraviniteArrow;
 import sheenrox82.RioV.src.handler.HudHandler;
 import sheenrox82.RioV.src.lib.EntityResourceLocation;
 import sheenrox82.RioV.src.model.ModelDemonAngel;
+import sheenrox82.RioV.src.model.ModelDragonWings;
 import sheenrox82.RioV.src.model.ModelHellhound;
+import sheenrox82.RioV.src.model.ModelTasaravChestplate;
+import sheenrox82.RioV.src.model.ModelTasaravHelmet;
 import sheenrox82.RioV.src.model.ModelTerron;
 import sheenrox82.RioV.src.render.RenderAngel;
 import sheenrox82.RioV.src.render.RenderAunTun;
@@ -52,6 +58,7 @@ import sheenrox82.RioV.src.render.RenderLivingCore;
 import sheenrox82.RioV.src.render.RenderOrc;
 import sheenrox82.RioV.src.render.RenderRabbit;
 import sheenrox82.RioV.src.render.RenderSkeletalHorse;
+import sheenrox82.RioV.src.render.RenderTasaravMallor;
 import sheenrox82.RioV.src.render.RenderTef;
 import sheenrox82.RioV.src.render.boss.RenderChickenBoss;
 import sheenrox82.RioV.src.render.boss.RenderCowBoss;
@@ -84,6 +91,10 @@ import cpw.mods.fml.relauncher.Side;
 
 public class ClientProxy extends CommonProxy 
 {	
+	private static final ModelDragonWings dragonWings = new ModelDragonWings(1.0F);
+	private static final ModelTasaravHelmet tasHelm = new ModelTasaravHelmet(1.0F);
+	private static final ModelTasaravChestplate tasChest = new ModelTasaravChestplate(1.0F);
+
 	@Override
 	public void init() 
 	{
@@ -116,6 +127,8 @@ public class ClientProxy extends CommonProxy
 		RenderingRegistry.registerEntityRenderingHandler(EntityPigBoss.class, new RenderPigBoss());
 		RenderingRegistry.registerEntityRenderingHandler(EntityCowBoss.class, new RenderCowBoss());
 		RenderingRegistry.registerEntityRenderingHandler(EntityChickenBoss.class, new RenderChickenBoss(new ResourceLocation(Util.MOD_ID + ":" + "textures/entity/ChickenBoss.png")));
+		RenderingRegistry.registerEntityRenderingHandler(EntityKupinumGuard.class, new RenderBipedCore(EntityResourceLocation.adventurer));
+		RenderingRegistry.registerEntityRenderingHandler(EntityTasaravMallor.class, new RenderTasaravMallor());
 		TickRegistry.registerTickHandler(hudHandler, Side.CLIENT);
 		RenderingRegistry.registerEntityRenderingHandler(EntityVraviniteArrow.class, new RenderVraviniteArrow());
 		RenderingRegistry.registerEntityRenderingHandler(EntityAunTunMinion.class, new RenderBipedCore(EntityResourceLocation.auntun));
@@ -163,5 +176,20 @@ public class ClientProxy extends CommonProxy
 	public static int addArmor(String armorName)
 	{
 		return RenderingRegistry.addNewArmourRendererPrefix(armorName);
+	}
+
+	@Override
+	public ModelBiped getArmorModel(int id){
+		switch (id) {
+		case 0:
+			return dragonWings;
+		case 1:
+			return tasHelm;
+		case 2:
+			return tasChest;
+		default:
+			break;
+		}
+		return dragonWings; //default, if whenever you should have passed on a wrong id
 	}
 }

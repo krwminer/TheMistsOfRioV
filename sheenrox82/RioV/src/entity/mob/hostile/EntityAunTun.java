@@ -34,7 +34,7 @@ public class EntityAunTun extends EntityBossCore
 	public EntityAunTun(World par1World)
 	{
 		super(par1World);
-		this.setSize(3F, 9F);
+		this.setSize(9F, 28F);
 		this.experienceValue = 70;
 		this.getNavigator().setCanSwim(true);
 		this.tasks.addTask(1, new EntityAISwimming(this));
@@ -57,13 +57,13 @@ public class EntityAunTun extends EntityBossCore
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntitySilverfish.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityWitch.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityDarkEssence.class, 0, true));
-		this.tasks.addTask(5, new EntityAIWander(this, 0.56D));
+		this.tasks.addTask(5, new EntityAIWander(this, 0.62D));
 		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
-		tasks.addTask(4, new EntityAIAttackOnCollide(this, 0.56D, true));
-		this.setCurrentItemOrArmor(4, new ItemStack(Items.auntunMinionHelmet));
-		this.setCurrentItemOrArmor(3, new ItemStack(Items.auntunMinionChestplate));
-		this.setCurrentItemOrArmor(2, new ItemStack(Items.auntunMinionLeggings));
-		this.setCurrentItemOrArmor(1, new ItemStack(Items.auntunMinionBoots));
+		tasks.addTask(4, new EntityAIAttackOnCollide(this, 0.62D, true));
+		this.setCurrentItemOrArmor(4, new ItemStack(Items.supremeAunTunHelmet));
+		this.setCurrentItemOrArmor(3, new ItemStack(Items.supremeAunTunChestplate));
+		this.setCurrentItemOrArmor(2, new ItemStack(Items.supremeAunTunLeggings));
+		this.setCurrentItemOrArmor(1, new ItemStack(Items.supremeAunTunBoots));
 		
 		if(TheMistsOfRioV.getInstance().riovValis)
 		{
@@ -76,20 +76,15 @@ public class EntityAunTun extends EntityBossCore
 	{
 		super.onDeath(par1DamageSource);
 		if(this.worldObj.isRemote)
-		Minecraft.getMinecraft().thePlayer.addChatMessage("Aun'Tun: *Grroowwwwwwwwwlllll*");
+		Minecraft.getMinecraft().thePlayer.addChatMessage("Aun'Tun: *Rupture");
 		
 		if(this.worldObj.isRemote)
-		Minecraft.getMinecraft().thePlayer.addChatMessage("Aun'Tun was killed!");
+		Minecraft.getMinecraft().thePlayer.addChatMessage("Aun'Tun was destroyed!");
 	}
 	
 	@Override
 	public void onLivingUpdate()
 	{
-		if (!this.worldObj.isRemote)
-		{
-
-		}
-		
 		if (!this.worldObj.isRemote)
 		{
 			if (this.isWet())
@@ -104,7 +99,7 @@ public class EntityAunTun extends EntityBossCore
 		}
 
 
-		for (int i = 0; i < 2; ++i)
+		for (int i = 0; i < 145; ++i)
 		{
 			this.worldObj.spawnParticle("largesmoke", this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D);
 		}
@@ -126,28 +121,29 @@ public class EntityAunTun extends EntityBossCore
 
 	static
 	{
-		defaultHeldItem = new ItemStack(Items.axeOfAunTun);
+		defaultHeldItem = new ItemStack(Items.ultraAxeOfAunTun);
 	}
 	
 	@Override
 	protected void dropFewItems(boolean par1, int par2)
 	{
-		this.dropItem(Items.agonite.itemID, 10);
-		this.dropItem(Items.darkMatter.itemID, 20);
-		this.dropItem(Items.dragonSoul.itemID, 10);
-		this.dropItem(Items.onyx.itemID, 20);
-		this.dropItem(Items.axeOfAunTun.itemID, 1);
+		this.dropItem(Items.aleris.itemID, 64);
+		this.dropItem(Items.darkMatter.itemID, 64);
+		this.dropItem(Items.dragonSoul.itemID, 64);
+		this.dropItem(Items.aleris.itemID, 64);
+		this.dropItem(Items.supremeAunTunHelmet.itemID, 1);
+		this.dropItem(Items.supremeAunTunChestplate.itemID, 1);
+		this.dropItem(Items.supremeAunTunLeggings.itemID, 1);
+		this.dropItem(Items.supremeAunTunBoots.itemID, 1);
+		this.dropItem(Items.ultraAxeOfAunTun.itemID, 1);
 	}
 
 	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-		// Max Health - default 20.0D - min 0.0D - max Double.MAX_VALUE
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(10000.0D);
-		// Movement Speed - default 0.699D - min 0.0D - max Double.MAX_VALUE
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(30000.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
-		// Attack Damage - default 2.0D - min 0.0D - max Doubt.MAX_VALUE
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(300.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(32.0D);
 	}
 }

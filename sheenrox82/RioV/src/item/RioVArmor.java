@@ -164,7 +164,7 @@ public class RioVArmor extends ItemArmor
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "amethystBoots");
 		}
-		if (itemID == Items.auntunMinionHelmet.itemID)
+		if (itemID == Items.auntunMinionHelmet.itemID || itemID == Items.supremeAunTunHelmet.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "auntunMinionHelmet");
 		}
@@ -172,11 +172,15 @@ public class RioVArmor extends ItemArmor
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "auntunMinionChestplate");
 		}
-		if (itemID == Items.auntunMinionLeggings.itemID)
+		if (itemID == Items.supremeAunTunChestplate.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "supremeAunTunChestplate");
+		}
+		if (itemID == Items.auntunMinionLeggings.itemID || itemID == Items.supremeAunTunLeggings.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "auntunMinionLeggings");
 		}
-		if (itemID == Items.auntunMinionBoots.itemID)
+		if (itemID == Items.auntunMinionBoots.itemID || itemID == Items.supremeAunTunBoots.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "auntunMinionBoots");
 		}
@@ -196,6 +200,14 @@ public class RioVArmor extends ItemArmor
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "galokinBoots");
 		}
+		if (itemID == Items.tasaravLeggings.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "tasaravLeggings");
+		}
+		if (itemID == Items.tasaravBoots.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "tasaravBoots");
+		}
 		if (itemID == Items.garnetHelmet.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "garnetHelmet");
@@ -211,6 +223,22 @@ public class RioVArmor extends ItemArmor
 		if (itemID == Items.garnetBoots.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "garnetBoots");
+		}
+		if (itemID == Items.kupinumHelmet.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumHelmet");
+		}
+		if (itemID == Items.kupinumChestplate.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumChestplate");
+		}
+		if (itemID == Items.kupinumLeggings.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumLeggings");
+		}
+		if (itemID == Items.kupinumBoots.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumBoots");
 		}
 		if (itemID == Items.mythrilHelmet.itemID)
 		{
