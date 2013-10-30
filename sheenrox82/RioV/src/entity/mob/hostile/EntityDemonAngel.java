@@ -158,7 +158,7 @@ public class EntityDemonAngel extends EntityBossCore
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(1500.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(18.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(17.0D);
 	}
 
 	@Override
