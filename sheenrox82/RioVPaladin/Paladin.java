@@ -7,7 +7,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid="RioVPaladin") 
+@Mod(modid="RioVPaladin", name="RioVPaladin") 
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 
 public class Paladin

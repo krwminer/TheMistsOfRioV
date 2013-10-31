@@ -5,6 +5,7 @@
 *.war
 *.ear
 
+/thaumcraft
 /cpw
 /ibxm
 /net/minecraft
