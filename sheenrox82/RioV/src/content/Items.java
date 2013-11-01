@@ -16,6 +16,7 @@ import sheenrox82.RioV.src.item.RioVBucket;
 import sheenrox82.RioV.src.item.RioVConsumable;
 import sheenrox82.RioV.src.item.RioVDoor;
 import sheenrox82.RioV.src.item.RioVDrinkable;
+import sheenrox82.RioV.src.item.RioVExplosives;
 import sheenrox82.RioV.src.item.RioVItem;
 import sheenrox82.RioV.src.item.RioVPickaxe;
 import sheenrox82.RioV.src.item.RioVPotions;
@@ -158,7 +159,7 @@ public class Items
 	public static Item slateFragment = (new RioVItem(Config.addItem("Slate Fragment"))).setUnlocalizedName("slateFragment");
 	public static Item garnet = (new RioVItem(Config.addItem("Garnet"))).setUnlocalizedName("garnet");
 	public static Item agonite = (new RioVItem(Config.addItem("Agonite"))).setUnlocalizedName("agonite");
-	public static Item darkMatter = (new RioVItem(Config.addItem("Dark Matter"))).setUnlocalizedName("darkMatter");
+	public static Item darkMatter = (new RioVExplosives(Config.addItem("Dark Matter"))).setUnlocalizedName("darkMatter");
 	public static Item mythrilIngot = (new RioVItem(Config.addItem("Mythril Ingot"))).setUnlocalizedName("mythrilIngot");
 	public static Item dragonSoul = (new RioVItem(Config.addItem("Dragon Soul Gem"))).setUnlocalizedName("dragonSoul");
 	public static Item nironite = (new RioVItem(Config.addItem("Nironite"))).setUnlocalizedName("nironite");

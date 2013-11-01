@@ -37,6 +37,7 @@ import sheenrox82.RioV.src.entity.mob.passive.EntitySkeletalHorse;
 import sheenrox82.RioV.src.entity.mob.passive.EntitySoverianOfficer;
 import sheenrox82.RioV.src.entity.mob.passive.EntityTasaravMallor;
 import sheenrox82.RioV.src.entity.mob.passive.EntityWoodElf;
+import sheenrox82.RioV.src.entity.projectile.EntityDarkMatter;
 import sheenrox82.RioV.src.entity.projectile.EntityDarknessArrow;
 import sheenrox82.RioV.src.entity.projectile.EntityVraviniteArrow;
 import sheenrox82.RioV.src.util.MethodUtil;
@@ -80,6 +81,7 @@ public class EntityLoader
 		MethodUtil.registerEntity(EntityCowBoss.class, "Cow - Boss");
 		MethodUtil.registerEntity(EntityKupinumGuard.class, "Kupinum Guard");
 		MethodUtil.registerEntity(EntityTasaravMallor.class, "Tasarav Mallor");
+		MethodUtil.registerEntity(EntityDarkMatter.class, "Dark Matter");
 
 		MethodUtil.registerEgg(EntityAdv.class);
 		MethodUtil.registerEgg(EntityMage.class);
