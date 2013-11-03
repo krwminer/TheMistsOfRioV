@@ -27,8 +27,8 @@ import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkElf;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkEssence;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDemonAngel;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityMage;
+import sheenrox82.RioV.src.entity.mob.hostile.EntityPaladin;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityTerron;
-import sheenrox82.RioVPaladin.EntityPaladin;
 
 public class EntitySoverianOfficer extends EntityMobDeadBody
 {
@@ -59,15 +59,8 @@ public class EntitySoverianOfficer extends EntityMobDeadBody
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityWitch.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityDarkEssence.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityAdv.class, 0, true));
-
-		if(TheMistsOfRioV.getInstance().riovPaladin)
-		{
-			targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPaladin.class, 0, true));
-		}
-
 		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
 		tasks.addTask(4, new EntityAIAttackOnCollide(this, 0.56D, true));
-
 		this.setCurrentItemOrArmor(4, new ItemStack(Items.onyxHelmet));
 		this.setCurrentItemOrArmor(3, new ItemStack(Items.onyxChestplate));
 		this.setCurrentItemOrArmor(2, new ItemStack(Items.onyxLeggings));

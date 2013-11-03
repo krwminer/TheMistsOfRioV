@@ -58,10 +58,6 @@ public class EntityHellhound extends EntityMobDeadBody
 			isImmuneToFire = true;
 		}
 
-		if(TheMistsOfRioV.getInstance().riovPaladin)
-		{
-		}
-
 		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
 		tasks.addTask(4, new EntityAIAttackOnCollide(this,  0.56D, true));
 

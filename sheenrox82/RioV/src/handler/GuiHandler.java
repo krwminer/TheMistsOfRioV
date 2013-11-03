@@ -87,7 +87,7 @@ public class GuiHandler implements IGuiHandler
 		{
 			return new ContainerAbstractor(player.inventory, (TileEntityAbstractor) tile_entity);
 		}
-		
+
 		return null;
 	}
 
@@ -143,7 +143,7 @@ public class GuiHandler implements IGuiHandler
 		{
 			return new GuiAbstractor(player.inventory, (TileEntityAbstractor) tile_entity);
 		}
-		
+
 		return null;
 	}
 }

@@ -245,7 +245,7 @@ public class BlockBlackFire extends BlockFire
 	@Override
 	public void onBlockAdded(World par1World, int par2, int par3, int par4)
 	{
-		if ((par1World.getBlockId(par2, par3 - 1, par4) != Blocks.blackQuartzBlock.blockID) || (!Blocks.blindOasisPortal.tryToCreatePortal(par1World, par2, par3, par4)))
+		if ((par1World.getBlockId(par2, par3 - 1, par4) != Blocks.blackQuartz.blockID) || (!Blocks.blindOasisPortal.tryToCreatePortal(par1World, par2, par3, par4)))
 		{
 			if ((!par1World.doesBlockHaveSolidTopSurface(par2, par3 - 1, par4)) && (!canNeighborBurn(par1World, par2, par3, par4)))
 			{

@@ -26,6 +26,7 @@ import sheenrox82.RioV.src.item.RioVSummoners;
 import sheenrox82.RioV.src.item.RioVVoidHolder;
 import sheenrox82.RioV.src.item.RioVWand;
 import sheenrox82.RioV.src.item.RioVWeapon;
+import sheenrox82.RioV.src.item.metadata.ItemLeaves;
 import sheenrox82.RioV.src.item.unique.ItemBamboo;
 import sheenrox82.RioV.src.item.unique.ItemBowOfWurTun;
 import sheenrox82.RioV.src.item.unique.ItemDragonChestplate;
@@ -402,9 +403,24 @@ public class Items
 	public static Item tasaravLeggings = (new RioVArmor(Config.addItem("Tasarav Mallor's Leggings"), AlerisArmorMaterial, render, 2, "tasarav", false)).setUnlocalizedName("tasaravLeggings");
 	public static Item tasaravBoots = (new RioVArmor(Config.addItem("Tasarav Mallor's Boots"), AlerisArmorMaterial, render, 3, "tasarav", false)).setUnlocalizedName("tasaravBoots");
 	public static Item tasaravSword = (new RioVWeapon(Config.addItem("Tasarav Mallor's Sword"), Aleris, false)).setUnlocalizedName("tasaravSword");
+	public static Item leafMeta = (new ItemLeaves(Config.addItem("Leaves (Metadata)"))).setUnlocalizedName("leafMeta");
+	public static Item paladinHelmet = (new RioVArmor(Config.addItem("Paladin Helmet"), FlameArmorMaterial, render, 0, "paladin", false)).setUnlocalizedName("paladinHelmet");
+	public static Item paladinChestplate = (new RioVArmor(Config.addItem("Paladin Chestplate"), FlameArmorMaterial, render, 1, "paladin", false)).setUnlocalizedName("paladinChestplate");
+	public static Item paladinLeggings = (new RioVArmor(Config.addItem("Paladin Leggings"), FlameArmorMaterial, render, 2, "paladin", false)).setUnlocalizedName("paladinLeggings");
+	public static Item paladinBoots = (new RioVArmor(Config.addItem("Paladin Boots"), FlameArmorMaterial, render, 3, "paladin", false)).setUnlocalizedName("paladinBoots");
+	public static Item paladinLongsword = (new RioVWeapon(Config.addItem("Paladin Longsword"), InfusedOnyx, false)).setUnlocalizedName("paladinLongsword");
+	public static Item iceWand = (new RioVWand(Config.addItem("Ice Wand"), 0, 1, 1)).setUnlocalizedName("iceWand");
+	public static Item graviWand = (new RioVWand(Config.addItem("Gravi Wand"), 0, 1, 3)).setUnlocalizedName("graviWand");
 
 	public static void add()
 	{		
+		MethodUtil.registerItem(graviWand, "Gravi Wand");
+		MethodUtil.registerItem(iceWand, "Ice Wand");
+		MethodUtil.registerItem(paladinHelmet, "Paladin Helmet");
+		MethodUtil.registerItem(paladinChestplate, "Paladin Chestplate");
+		MethodUtil.registerItem(paladinLeggings, "Paladin Leggings");
+		MethodUtil.registerItem(paladinBoots, "Paladin Boots");
+		MethodUtil.registerItem(paladinLongsword, "Paladin Longsword");
 		MethodUtil.registerItem(kupinumPickaxe, Color.AQUA + "Kupinum Pickaxe");
 		MethodUtil.registerItem(kupinumAxe, Color.AQUA + "Kupinum Axe");
 		MethodUtil.registerItem(kupinumShovel, Color.AQUA + "Kupinum Shovel");
@@ -711,31 +727,6 @@ public class Items
 		MethodUtil.registerItem(infusedDragonAxe, Color.DARK_RED + "Infused Dragon Axe");
 		MethodUtil.registerItem(infusedDragonShovel, Color.DARK_RED + "Infused Dragon Shovel");
 		MethodUtil.registerItem(infusedDragonSword, Color.DARK_RED + "Infused Dragon Sword");
-	}
-
-	/**PALADIN**/
-	public static Item paladinHelmet;
-	public static Item paladinChestplate;
-	public static Item paladinLeggings;
-	public static Item paladinBoots;
-	public static Item paladinLongsword;
-	
-	public static void RioVPaladin()
-	{
-		if(TheMistsOfRioV.getInstance().riovPaladin)
-		{
-			paladinHelmet = (new RioVArmor(8000, FlameArmorMaterial, render, 0, "paladin", false)).setUnlocalizedName("paladinHelmet");
-			paladinChestplate = (new RioVArmor(8001, FlameArmorMaterial, render, 1, "paladin", false)).setUnlocalizedName("paladinChestplate");
-			paladinLeggings = (new RioVArmor(8002, FlameArmorMaterial, render, 2, "paladin", false)).setUnlocalizedName("paladinLeggings");
-			paladinBoots = (new RioVArmor(8003, FlameArmorMaterial, render, 3, "paladin", false)).setUnlocalizedName("paladinBoots");
-			paladinLongsword = (new RioVWeapon(8004, InfusedOnyx, false)).setUnlocalizedName("paladinLongsword");
-
-			MethodUtil.registerItem(paladinHelmet, "Paladin Helmet");
-			MethodUtil.registerItem(paladinChestplate, "Paladin Chestplate");
-			MethodUtil.registerItem(paladinLeggings, "Paladin Leggings");
-			MethodUtil.registerItem(paladinBoots, "Paladin Boots");
-			MethodUtil.registerItem(paladinLongsword, "Paladin Longsword");
-		}
 	}
 
 	public static Item infusedBloodwoodPickaxe;

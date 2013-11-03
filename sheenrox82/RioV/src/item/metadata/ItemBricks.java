@@ -1,11 +1,11 @@
-package sheenrox82.RioV.src.item.unique;
+package sheenrox82.RioV.src.item.metadata;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemPlanksColored extends ItemBlock
+public class ItemBricks extends ItemBlock
 {
-	public ItemPlanksColored(int par1)
+	public ItemBricks(int par1)
 	{
 		super(par1);
 		setHasSubtypes(true);
@@ -18,67 +18,51 @@ public class ItemPlanksColored extends ItemBlock
 		{
 		case 0:
 		{
-			name = "white"; break;
+			name = "sapphire"; break;
 		}
 		case 1:
 		{
-			name = "orange"; break;
+			name = "topaz"; break;
 		}
 		case 2:
 		{
-			name = "magenta"; break;
+			name = "amethyst"; break;
 		}
 		case 3:
 		{
-			name = "lightBlue"; break;
+			name = "onyx"; break;
 		}
 		case 4:
 		{
-			name = "yellow"; break;
+			name = "blindonite"; break;
 		}
 		case 5:
 		{
-			name = "lime"; break;
+			name = "dragon"; break;
 		}
 		case 6:
 		{
-			name = "pink"; break;
+			name = "vravinite"; break;
 		}
 		case 7:
 		{
-			name = "gray"; break;
+			name = "aleris"; break;
 		}
 		case 8:
 		{
-			name = "lightGray"; break;
+			name = "jaavik"; break;
 		}
 		case 9:
 		{
-			name = "cyan"; break;
+			name = "nironite"; break;
 		}
 		case 10:
 		{
-			name = "purple"; break;
+			name = "garnet"; break;
 		}
 		case 11:
 		{
-			name = "blue"; break;
-		}
-		case 12:
-		{
-			name = "brown"; break;
-		}
-		case 13:
-		{
-			name = "green"; break;
-		}
-		case 14:
-		{
-			name = "red"; break;
-		}
-		case 15:
-		{
-			name = "black"; break;
+			name = "drakiuz"; break;
 		}
 		default: name = "broken";
 		}

@@ -27,7 +27,6 @@ public class TheMistsOfRioV
 	public static CommonProxy commonProxy;
 	public CreativeTabs tab = new CreativeTabRioV(Util.MOD_ID);
 	public GuiHandler guiHandler = new GuiHandler();
-	public boolean riovPaladin;
 	public boolean riovValis;
 	public boolean natura;
 	public boolean aether;

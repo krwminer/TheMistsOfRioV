@@ -39,7 +39,7 @@ public class Crafting
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.plankColored, 1, 13), new Object[] {Block.planks,  new ItemStack(Item.dyePowder, 1, 2)});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.plankColored, 1, 14), new Object[] {Block.planks,  new ItemStack(Item.dyePowder, 1, 1)});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.plankColored, 1, 15), new Object[] {Block.planks,  new ItemStack(Item.dyePowder, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(Blocks.blackQuartzBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), Items.burnedQuartz);
+		GameRegistry.addRecipe(new ItemStack(Blocks.blackQuartz, 1, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), Items.burnedQuartz);
 		GameRegistry.addRecipe(new ItemStack(Blocks.garnetBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), Items.garnet);
 		GameRegistry.addRecipe(new ItemStack(Blocks.nironiteBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), Items.nironite);
 		GameRegistry.addRecipe(new ItemStack(Blocks.dragonBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), Items.dragonSoul);
@@ -51,7 +51,7 @@ public class Crafting
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.spicedWine, 1), new Object[] {Items.pepperSpices, Items.wine});
 		GameRegistry.addRecipe(new ItemStack(Items.onyx, 9), "X", Character.valueOf('X'), Blocks.onyxBlock);
 		GameRegistry.addRecipe(new ItemStack(Items.amethyst, 9), "X", Character.valueOf('X'), Blocks.amethystBlock);
-		GameRegistry.addRecipe(new ItemStack(Items.burnedQuartz, 9), "X", Character.valueOf('X'), Blocks.blackQuartzBlock);
+		GameRegistry.addRecipe(new ItemStack(Items.burnedQuartz, 9), "X", Character.valueOf('X'), new ItemStack(Blocks.blackQuartz, 1, 1));
 		GameRegistry.addRecipe(new ItemStack(Items.garnet, 9), "X", Character.valueOf('X'), Blocks.garnetBlock);
 		GameRegistry.addRecipe(new ItemStack(Items.nironite, 9), "X", Character.valueOf('X'), Blocks.nironiteBlock);
 		GameRegistry.addRecipe(new ItemStack(Items.dragonSoul, 9), "X", Character.valueOf('X'), Blocks.dragonBlock);
@@ -65,7 +65,7 @@ public class Crafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.lamp, 1), "XZX", "ZAZ", "XZX", Character.valueOf('X'), Block.planks, Character.valueOf('A'), Block.torchWood, Character.valueOf('Z'), Block.glass);
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.purpleFeather, 1), new Object[] {Item.feather, new ItemStack(Item.dyePowder, 1, 5)});
 		GameRegistry.addRecipe(new ItemStack(Items.darknessArrow, 5), "  *", " D ", "X  ", Character.valueOf('*'), Items.ingotOfFlame, Character.valueOf('D'), Items.blackBone, Character.valueOf('X'), Items.purpleFeather);
-		GameRegistry.addRecipe(new ItemStack(Items.blindOasisActivator, 1), "  *", " X ", "*  ", Character.valueOf('*'), Items.onyx, Character.valueOf('X'), Blocks.blackQuartzBlock);
+		GameRegistry.addRecipe(new ItemStack(Items.blindOasisActivator, 1), "  *", " X ", "*  ", Character.valueOf('*'), Items.onyx, Character.valueOf('X'), new ItemStack(Blocks.blackQuartz, 1, 1));
 		GameRegistry.addRecipe(new ItemStack(Blocks.blindoniteBlock, 1), "XX", "XX", Character.valueOf('X'), Items.blindonite);
 		GameRegistry.addRecipe(new ItemStack(Items.vaerynActivator, 1), "  *", " X ", "*  ", Character.valueOf('*'), Items.blindonite, Character.valueOf('X'), Blocks.blindoniteBlock);
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.glimmerwoodPlanks, 4), new Object[] {Blocks.glimmerwoodLog});

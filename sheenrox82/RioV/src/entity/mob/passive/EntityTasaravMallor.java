@@ -31,8 +31,8 @@ import sheenrox82.RioV.src.entity.mob.core.EntityTameableDeadBody;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTun;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTunBodyguard;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTunMinion;
+import sheenrox82.RioV.src.entity.mob.hostile.EntityPaladin;
 import sheenrox82.RioV.src.tileentity.TileEntityShrine;
-import sheenrox82.RioVPaladin.EntityPaladin;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -61,12 +61,7 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		this.targetTasks.addTask(4, new EntityAITargetNonTamed(this, EntityAunTun.class, 0, false));
 		this.targetTasks.addTask(4, new EntityAITargetNonTamed(this, EntityAunTunBodyguard.class, 0, false));
 		this.targetTasks.addTask(4, new EntityAITargetNonTamed(this, EntityAunTunMinion.class, 0, false));
-
-		if(TheMistsOfRioV.getInstance().riovPaladin)
-		{
-			tasks.addTask(1, new EntityAITargetNonTamed(this, EntityPaladin.class, 0, true));
-		}
-
+		tasks.addTask(1, new EntityAITargetNonTamed(this, EntityPaladin.class, 0, true));
 		this.setCurrentItemOrArmor(4, new ItemStack(Items.tasaravHelmet));
 		this.setCurrentItemOrArmor(3, new ItemStack(Items.tasaravChestplate));
 		this.setCurrentItemOrArmor(2, new ItemStack(Items.tasaravLeggings));
@@ -364,7 +359,7 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		this.isTasaravAlive = false;
 		TileEntityShrine.isTasaravDead = true;
 	}
-	
+
 	@Override
 	public ItemStack getHeldItem()
 	{

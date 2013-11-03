@@ -5,7 +5,6 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.SpawnListEntry;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
-import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntityChickenBoss;
 import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntityCowBoss;
 import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntityPigBoss;
@@ -19,6 +18,7 @@ import sheenrox82.RioV.src.entity.mob.hostile.EntityDemonAngel;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityHellhound;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityKupinumGuard;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityMage;
+import sheenrox82.RioV.src.entity.mob.hostile.EntityPaladin;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityShadow;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityTef;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityTefGuard;
@@ -39,9 +39,9 @@ import sheenrox82.RioV.src.entity.mob.passive.EntityTasaravMallor;
 import sheenrox82.RioV.src.entity.mob.passive.EntityWoodElf;
 import sheenrox82.RioV.src.entity.projectile.EntityDarkMatter;
 import sheenrox82.RioV.src.entity.projectile.EntityDarknessArrow;
+import sheenrox82.RioV.src.entity.projectile.EntityPinkEssence;
 import sheenrox82.RioV.src.entity.projectile.EntityVraviniteArrow;
 import sheenrox82.RioV.src.util.MethodUtil;
-import sheenrox82.RioVPaladin.EntityPaladin;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class EntityLoader 
@@ -82,6 +82,8 @@ public class EntityLoader
 		MethodUtil.registerEntity(EntityKupinumGuard.class, "Kupinum Guard");
 		MethodUtil.registerEntity(EntityTasaravMallor.class, "Tasarav Mallor");
 		MethodUtil.registerEntity(EntityDarkMatter.class, "Dark Matter");
+		MethodUtil.registerEntity(EntityPaladin.class, "Paladin");
+		MethodUtil.registerEntity(EntityPinkEssence.class, "Pink Essence");
 
 		MethodUtil.registerEgg(EntityAdv.class);
 		MethodUtil.registerEgg(EntityMage.class);
@@ -113,6 +115,7 @@ public class EntityLoader
 		MethodUtil.registerEgg(EntityCowBoss.class);
 		MethodUtil.registerEgg(EntityKupinumGuard.class);
 		MethodUtil.registerEgg(EntityAunTun.class);
+		MethodUtil.registerEgg(EntityPaladin.class);
 	}
 
 	public static void addOverworldSpawning()
@@ -130,10 +133,11 @@ public class EntityLoader
 		SpawnListEntry darkElfSpawn = new SpawnListEntry(EntityDarkElf.class, 2, 4, 8);
 		SpawnListEntry galokinSpawn = new SpawnListEntry(EntityGalokin.class, 2, 4, 8);
 		SpawnListEntry orcSpawn = new SpawnListEntry(EntityOrc.class, 2, 4, 8);
-		SpawnListEntry sovSpawn = new SpawnListEntry(EntitySoverianOfficer.class, 1, 2, 6);
-		SpawnListEntry chickBossSpawn = new SpawnListEntry(EntityChickenBoss.class, 1, 2, 4);
-		SpawnListEntry pigBossSpawn = new SpawnListEntry(EntityPigBoss.class, 1, 2, 4);
-		SpawnListEntry cowBossSpawn = new SpawnListEntry(EntityCowBoss.class, 1, 2, 3);
+		SpawnListEntry sovSpawn = new SpawnListEntry(EntitySoverianOfficer.class, 1, 2, 4);
+		SpawnListEntry chickBossSpawn = new SpawnListEntry(EntityChickenBoss.class, 1, 1, 2);
+		SpawnListEntry pigBossSpawn = new SpawnListEntry(EntityPigBoss.class, 1, 1, 2);
+		SpawnListEntry cowBossSpawn = new SpawnListEntry(EntityCowBoss.class, 1, 1, 2);
+		SpawnListEntry paladinSpawn = new SpawnListEntry(EntityPaladin.class, 1, 2, 6);
 
 		for(int i = 0; i < plains.length; i++)
 		{
@@ -158,6 +162,7 @@ public class EntityLoader
 			mountain[i].getSpawnableList(EnumCreatureType.creature).add(sovSpawn);
 			mountain[i].getSpawnableList(EnumCreatureType.creature).add(pigBossSpawn);
 			mountain[i].getSpawnableList(EnumCreatureType.creature).add(cowBossSpawn);
+			mountain[i].getSpawnableList(EnumCreatureType.creature).add(paladinSpawn);
 		}
 		
 		for(int i = 0; i < frozen.length; i++)
@@ -261,19 +266,5 @@ public class EntityLoader
 		EntityRegistry.addSpawn(EntityGalokin.class, 2, 4, 8, EnumCreatureType.monster, BiomeGenBase.plains, BiomeGenBase.jungle, BiomeGenBase.forest, BiomeGenBase.swampland);
 		EntityRegistry.addSpawn(EntityOrc.class, 2, 4, 8, EnumCreatureType.monster, BiomeGenBase.plains, BiomeGenBase.jungle, BiomeGenBase.forest);
 
-	}
-	public static void addPMobs()
-	{
-		if(TheMistsOfRioV.getInstance().riovPaladin)
-		{
-			MethodUtil.registerEntity(EntityPaladin.class, "Paladin");
-			EntityRegistry.addSpawn(EntityPaladin.class, 2, 1, 1, EnumCreatureType.creature, BiomeGenBase.plains,BiomeGenBase.jungle,BiomeGenBase.extremeHills,BiomeGenBase.desert, BiomeGenBase.desertHills,BiomeGenBase.taiga, BiomeGenBase.taigaHills,BiomeGenBase.jungleHills,BiomeGenBase.beach,BiomeGenBase.extremeHillsEdge,BiomeGenBase.forest,BiomeGenBase.forestHills,BiomeGenBase.frozenOcean,BiomeGenBase.frozenRiver,BiomeGenBase.iceMountains,BiomeGenBase.icePlains,BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore,BiomeGenBase.swampland);
-
-			MethodUtil.registerEgg(EntityPaladin.class);
-		}
-		else
-		{
-
-		}
 	}
 }

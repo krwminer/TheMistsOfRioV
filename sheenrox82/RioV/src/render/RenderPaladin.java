@@ -1,4 +1,4 @@
-package sheenrox82.RioVPaladin;
+package sheenrox82.RioV.src.render;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderBiped;
@@ -11,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDemonAngel;
+import sheenrox82.RioV.src.entity.mob.hostile.EntityPaladin;
 import sheenrox82.RioV.src.util.Util;
 
 

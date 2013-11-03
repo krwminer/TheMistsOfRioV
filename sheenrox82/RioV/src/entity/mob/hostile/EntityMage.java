@@ -1,5 +1,7 @@
 package sheenrox82.RioV.src.entity.mob.hostile;
 
+import java.util.Random;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAISwimming;
@@ -33,16 +35,16 @@ public class EntityMage extends EntityMobDeadBody
 
 	@Override
 	protected void entityInit()
-    {
-        super.entityInit();
-        this.dataWatcher.addObject(16, new Byte((byte)0));
-    }
-    
+	{
+		super.entityInit();
+		this.dataWatcher.addObject(16, new Byte((byte)0));
+	}
+
 	@Override
-    protected boolean isValidLightLevel()
-    {
-        return true;
-    }
+	protected boolean isValidLightLevel()
+	{
+		return true;
+	}
 
 	@Override
 	public void onLivingUpdate()
@@ -124,28 +126,44 @@ public class EntityMage extends EntityMobDeadBody
 		}
 		if (var1 == 4)
 		{
-			
+
 		}
 		if (var1 == 5)
 		{
-			
+
 		}
 		if (var1 == 6)
 		{
-			
+
 		}
 		if (var1 == 7)
 		{
 			this.dropItem(Items.mythrilIngot.itemID, 1);
 		}
 	}
-	
+
 	@Override
 	protected void dropRareDrop(int par1)
 	{
-		this.dropItem(Items.fireballWand.itemID, 1);
+		Random rand = new Random();
+		int random = rand.nextInt(3);
+
+		if(random == 0)
+		{
+			this.dropItem(Items.fireballWand.itemID, 1);
+		}
+		
+		if(random == 1)
+		{
+			this.dropItem(Items.iceWand.itemID, 1);
+		}
+		
+		if(random == 2)
+		{
+			this.dropItem(Items.graviWand.itemID, 1);
+		}
 	}
-	
+
 	@Override
 	protected void applyEntityAttributes()
 	{

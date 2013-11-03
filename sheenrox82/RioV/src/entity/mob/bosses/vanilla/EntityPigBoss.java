@@ -32,7 +32,6 @@ public class EntityPigBoss extends EntityMobDeadBody implements IBossDisplayData
         this.setSize(3F, 3F);
         this.getNavigator().setAvoidsWater(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIPanic(this, 0.56D));
         this.tasks.addTask(2, this.aiControlledByPlayer = new EntityAIControlledByPlayer(this, 0.3F));
         this.tasks.addTask(4, new EntityAITempt(this, 0.56D, Item.carrotOnAStick.itemID, false));
         this.tasks.addTask(4, new EntityAITempt(this, 0.56D, Item.carrot.itemID, false));

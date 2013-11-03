@@ -4,7 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlowing;
 import net.minecraft.block.material.Material;
 import sheenrox82.RioV.src.base.Config;
-import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.block.BlockAnvil;
 import sheenrox82.RioV.src.block.BlockBamboo;
 import sheenrox82.RioV.src.block.BlockBlackFire;
@@ -31,6 +30,7 @@ import sheenrox82.RioV.src.block.BlockMist;
 import sheenrox82.RioV.src.block.BlockPlanks;
 import sheenrox82.RioV.src.block.BlockPlantCore;
 import sheenrox82.RioV.src.block.BlockRedFire;
+import sheenrox82.RioV.src.block.BlockRioVCake;
 import sheenrox82.RioV.src.block.BlockRioVDoor;
 import sheenrox82.RioV.src.block.BlockRioVFence;
 import sheenrox82.RioV.src.block.BlockRioVFenceGate;
@@ -56,9 +56,10 @@ import sheenrox82.RioV.src.block.BlockVaerynPortal;
 import sheenrox82.RioV.src.block.BlockVoidFlowing;
 import sheenrox82.RioV.src.block.BlockVoidStill;
 import sheenrox82.RioV.src.block.BlockWhiteFire;
-import sheenrox82.RioV.src.item.unique.ItemBricks;
-import sheenrox82.RioV.src.item.unique.ItemPlanksColored;
-import sheenrox82.RioV.src.item.unique.ItemStainedGlass;
+import sheenrox82.RioV.src.item.metadata.ItemBlackQuartzBlock;
+import sheenrox82.RioV.src.item.metadata.ItemBricks;
+import sheenrox82.RioV.src.item.metadata.ItemPlanksColored;
+import sheenrox82.RioV.src.item.metadata.ItemStainedGlass;
 import sheenrox82.RioV.src.util.Color;
 import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
@@ -96,7 +97,7 @@ public class Blocks
 	public static final Block cherryPlant = (new BlockPlantCore(Config.addBlock("Cherry Plant"))).setCreativeTab(null).setUnlocalizedName("cherryPlant");
 	public static final Block amethystOre = (new BlockCoreOne(Config.addBlock("Amethyst Ore"))).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("amethystOre");
 	public static final Block lamp = (new BlockCoreOne(Config.addBlock("Lamp"))).setHardness(0.0F).setStepSound(Block.soundGlassFootstep).setLightValue(0.9F).setUnlocalizedName("lamp");
-	public static final Block blackQuartzBlock = (new BlockBlackQuartz(Config.addBlock("Black Quartz Block"))).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blackQuartzBlock_side");
+	public static final Block blackQuartz = (new BlockBlackQuartz(Config.addBlock("Black Quartz Block"))).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blackQuartz");
 	public static final Block blueFlower = (new BlockPlantCore(Config.addBlock("Blue Flower"))).setUnlocalizedName("blueFlower");
 	public static final BlockBlindOasisPortal blindOasisPortal = (BlockBlindOasisPortal)(new BlockBlindOasisPortal(Config.addBlock("Blind Oasis Portal"))).setUnlocalizedName("blindOasisPortal");
 	public static final BlockBlackFire blackFire = (BlockBlackFire)(new BlockBlackFire(Config.addBlock("Black Fire"))).setLightValue(1.0F).setUnlocalizedName("blackFire").setTextureName("blackFire");
@@ -201,10 +202,12 @@ public class Blocks
 	public static final BlockMist mist = (BlockMist)(new BlockMist(Config.addBlock("Mist"))).setCreativeTab(null).setLightValue(1.0F).setUnlocalizedName("mist");
 	public static final Block coconut = (new BlockBush(Config.addBlock("Coconut"))).setCreativeTab(null).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("coconut");
 	public static final Block shrine = (new BlockShrine(Config.addBlock("Shrine"))).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("shrine");
+    public static final Block chocolateCake = (new BlockRioVCake(Config.addBlock("Chocolate Cake"))).setHardness(0.5F).setStepSound(Block.soundClothFootstep).setUnlocalizedName("chocolateCake");
 
 	public static void add()
 	{	
-		GameRegistry.registerBlock(stainedGlass, ItemStainedGlass.class, Util.MOD_ID + (stainedGlass.getUnlocalizedName().substring(5)));		
+		GameRegistry.registerBlock(stainedGlass, ItemStainedGlass.class, Util.MOD_ID + (stainedGlass.getUnlocalizedName().substring(5)));	
+		GameRegistry.registerBlock(blackQuartz, ItemBlackQuartzBlock.class, Util.MOD_ID + (blackQuartz.getUnlocalizedName().substring(5)));		
 		GameRegistry.registerBlock(bricks, ItemBricks.class, Util.MOD_ID + (bricks.getUnlocalizedName().substring(5)));		
 		GameRegistry.registerBlock(plankColored, ItemPlanksColored.class, Util.MOD_ID + (plankColored.getUnlocalizedName().substring(5)));		
 		MethodUtil.registerBlock(steamingBloodFlowing, Color.DARK_RED + "Steaming Blood Flowing");
@@ -213,6 +216,7 @@ public class Blocks
 		MethodUtil.registerBlock(bloodBerryBush, Color.DARK_RED + "Blood Berry Bush");
 		MethodUtil.registerBlock(bloodFlower, Color.DARK_RED + "Blood Flower");
 		MethodUtil.registerBlock(waterFilledGlowstone, Color.AQUA + "Hydrogenic Glowstone");
+		MethodUtil.registerBlock(chocolateCake, "Chocolate Cake");
 		MethodUtil.registerBlock(paleBush, "Pale Bush");
 		MethodUtil.registerBlock(hydrogenicPortal, Color.AQUA + "Hydrogenic Portal");
 		MethodUtil.registerBlock(mist, "Mist");
@@ -308,7 +312,6 @@ public class Blocks
 		MethodUtil.registerBlock(blindOasisPortal, "Blind Oasis Portal");
 		MethodUtil.registerBlock(blackRock, "Black Stone");
 		MethodUtil.registerBlock(blueFlower, "Blue Flower");
-		MethodUtil.registerBlock(blackQuartzBlock, "Black Quartz Block");
 		MethodUtil.registerBlock(lamp, "Lamp");
 		MethodUtil.registerBlock(amethystOre, "Amethyst Ore");
 		MethodUtil.registerBlock(cherryPlant, "Cherry Plant");

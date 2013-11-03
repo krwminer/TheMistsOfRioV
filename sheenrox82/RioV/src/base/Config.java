@@ -34,7 +34,6 @@ public class Config
 	public static int bambooFieldsBiomeID;
 	public static int runesBiomeID;
 	public static boolean HUD;
-	public static boolean allowCoinDrop;
 	public static boolean showToolInfo;
 
 	public static void initialize(FMLPreInitializationEvent event)
@@ -55,7 +54,6 @@ public class Config
 		flamonorBiomeID = config.get("Biome IDs", "Flamonor Biome ID (Flamonor Dimension)", 29).getInt(flamonorBiomeID);
 		sanctuatiteBiomeID = config.get("Biome IDs", "Sanctuatite Biome ID (Sanctuatite Dimension)", 30).getInt(sanctuatiteBiomeID);
 		atlanteaBiomeID = config.get("Biome IDs", "Atlantea Biome ID (Atlantea Dimension)", 31).getInt(atlanteaBiomeID);
-		allowCoinDrop = config.get("Misc", "Allow coin drop on servers?", true).getBoolean(allowCoinDrop);
 		showToolInfo = config.get("Misc", "Show Tool Info?", true).getBoolean(showToolInfo);
 		canopyOasisBiomeID = config.get("Biome IDs", "Canopy Oasis Biome ID (Overworld Dimension)", 31).getInt(canopyOasisBiomeID);
 		bambooFieldsBiomeID = config.get("Biome IDs", "Bamboo Fiels Biome ID (Overworld Dimension)", 32).getInt(bambooFieldsBiomeID);

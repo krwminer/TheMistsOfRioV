@@ -318,11 +318,10 @@ public class RioVWeapon extends ItemSword
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumSword");
 		}
-		if(TheMistsOfRioV.getInstance().riovPaladin)
+		if(itemID == Items.paladinLongsword.itemID) 
 		{
-			if(itemID == Items.paladinLongsword.itemID) this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paladinLongsword");
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paladinLongsword");
 		}
-
 		if(TheMistsOfRioV.getInstance().natura)
 		{
 			if(itemID == Items.infusedBloodwoodSword.itemID || itemID == Items.infusedGhostwoodSword.itemID || itemID == Items.infusedDarkwoodSword.itemID || itemID == Items.infusedFusewoodSword.itemID || itemID == Items.infusedNetherquartzSword.itemID)
@@ -337,7 +336,7 @@ public class RioVWeapon extends ItemSword
 			if(itemID == Items.infusedGravititeSword.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Gravitite Sword");	
 		}
 	}
-	
+
 	public String getName()
 	{
 		return this.unlocalizedName;

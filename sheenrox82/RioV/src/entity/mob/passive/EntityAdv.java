@@ -32,9 +32,9 @@ import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkEssence;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDemonAngel;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityHellhound;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityMage;
+import sheenrox82.RioV.src.entity.mob.hostile.EntityPaladin;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityTerron;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityVravinite;
-import sheenrox82.RioVPaladin.EntityPaladin;
 
 public class EntityAdv extends EntityMobDeadBody
 {
@@ -71,11 +71,7 @@ public class EntityAdv extends EntityMobDeadBody
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityWitch.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityDarkEssence.class, 0, true));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityVravinite.class, 0, true));
-
-		if(TheMistsOfRioV.getInstance().riovPaladin)
-		{
-			targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPaladin.class, 0, true));
-		}
+		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPaladin.class, 0, true));
 
 		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
 		tasks.addTask(4, new EntityAIAttackOnCollide(this, 0.56D, true));
@@ -239,14 +235,14 @@ public class EntityAdv extends EntityMobDeadBody
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(8.0D);
 	}
-	
+
 	@Override
 	public boolean interact(EntityPlayer par1EntityPlayer)
-    {
+	{
 		par1EntityPlayer.playSound(Sound.hello, 1, 1);
-		
+
 		if(!this.worldObj.isRemote)
-		par1EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Hello to you too, " + par1EntityPlayer.username + "!"));
+			par1EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Hello to you too, " + par1EntityPlayer.username + "!"));
 		return true;
-    }
+	}
 }

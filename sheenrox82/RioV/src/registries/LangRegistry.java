@@ -40,5 +40,11 @@ public class LangRegistry
 		LanguageRegistry.instance().addStringLocalization("tile.stainedGlass.pattern2.name", "A Relaxing Melody");
 		LanguageRegistry.instance().addStringLocalization("tile.stainedGlass.pattern3.name", "A Sunshine from a Thousand Suns");
 		LanguageRegistry.instance().addStringLocalization("tile.stainedGlass.pattern4.name", "Dark Gothic Shades");
+		LanguageRegistry.instance().addStringLocalization("item.leafMeta.glimmerwoodLeaf.name", "Glimmerwood Leaf");
+		LanguageRegistry.instance().addStringLocalization("item.leafMeta.paleLeaf.name", "Pale Leaf");
+		LanguageRegistry.instance().addStringLocalization("item.leafMeta.cherryBlossomLeaf.name", "Cherry Blossom Leaf");
+		LanguageRegistry.instance().addStringLocalization("tile.blackQuartz.default.name", "Black Quartz Block");
+		LanguageRegistry.instance().addStringLocalization("tile.blackQuartz.chiseled.name", "Chiseled Black Quartz Block");
+		LanguageRegistry.instance().addStringLocalization("tile.blackQuartz.lines.name", "Lined Black Quartz Block");
 	}
 }

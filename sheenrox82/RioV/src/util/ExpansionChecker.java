@@ -10,22 +10,6 @@ public class ExpansionChecker
 {
 	public static void check()
 	{
-		if(Loader.isModLoaded("RioVPaladin"))
-		{
-			FMLLog.info(Util.MOD_NAME + ": Paladin detected, initiating.");
-			TheMistsOfRioV.getInstance().riovPaladin = true;
-			if(TheMistsOfRioV.getInstance().riovPaladin = true)
-			{
-				Items.RioVPaladin();
-				EntityLoader.addPMobs();
-			}
-		}
-		else
-		{
-			FMLLog.info(Util.MOD_NAME + ": Paladin wasn't detected, not initializing.");
-			TheMistsOfRioV.getInstance().riovPaladin = false;
-		}
-
 		try
 		{
 			Class.forName("sheenrox82.RioVValis.Valis");

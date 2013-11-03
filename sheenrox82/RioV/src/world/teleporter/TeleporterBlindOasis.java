@@ -67,7 +67,7 @@ public class TeleporterBlindOasis extends Teleporter
 						boolean flag = j1 < 0;
 
 						/** change this block **/
-						this.worldServerInstance.setBlock(k1, l1, i2, flag ? Blocks.blackQuartzBlock.blockID : 0);
+						this.worldServerInstance.setBlock(k1, l1, i2, flag ? Blocks.blackQuartz.blockID : 0);
 					}
 				}
 			}
@@ -413,7 +413,7 @@ public class TeleporterBlindOasis extends Teleporter
 						flag = l2 < 0;
 
 						/** change this block **/
-						this.worldServerInstance.setBlock(k3, j3, i4, flag ? Blocks.blackQuartzBlock.blockID : 0);
+						this.worldServerInstance.setBlock(k3, j3, i4, flag ? Blocks.blackQuartz.blockID : 0);
 					}
 				}
 			}
@@ -430,7 +430,7 @@ public class TeleporterBlindOasis extends Teleporter
 					flag = i3 == 0 || i3 == 3 || l2 == -1 || l2 == 3;
 
 					/** change these blocks **/
-					this.worldServerInstance.setBlock(k3, j3, i4, flag ? Blocks.blackQuartzBlock.blockID : Blocks.blindOasisPortal.blockID, 0, 2);
+					this.worldServerInstance.setBlock(k3, j3, i4, flag ? Blocks.blackQuartz.blockID : Blocks.blindOasisPortal.blockID, 0, 2);
 				}
 			}
 			for (i3 = 0; i3 < 4; ++i3)

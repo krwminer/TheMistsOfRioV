@@ -12,8 +12,7 @@ import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Enchantments;
 import sheenrox82.RioV.src.content.EntityLoader;
 import sheenrox82.RioV.src.content.Items;
-import sheenrox82.RioV.src.event.EventBonemealGrow;
-import sheenrox82.RioV.src.event.EventEntityDeath;
+import sheenrox82.RioV.src.event.Events;
 import sheenrox82.RioV.src.handler.ConnectionHandler;
 import sheenrox82.RioV.src.handler.FuelHandler;
 import sheenrox82.RioV.src.handler.HudHandler;
@@ -64,8 +63,7 @@ public class Registry
 				"Soverian Overlord will destroy the land of RioV and leave it in ashes. " +
 				"This is The Mists of RioV.";
 		Config.initialize(initEvent);
-		MinecraftForge.EVENT_BUS.register(new EventEntityDeath());
-		MinecraftForge.EVENT_BUS.register(new EventBonemealGrow());
+		MinecraftForge.EVENT_BUS.register(new Events());
 		MinecraftForge.EVENT_BUS.register(new HudHandler());
 		MinecraftForge.EVENT_BUS.register(new SoundHandler());
 		Items.add();

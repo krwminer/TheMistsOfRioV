@@ -88,11 +88,11 @@ public class BlockBlindOasisPortal extends BlockBreakable
 	{
 		byte b0 = 0;
 		byte b1 = 0;
-		if (par1World.getBlockId(par2 - 1, par3, par4) == Blocks.blackQuartzBlock.blockID || par1World.getBlockId(par2 + 1, par3, par4) == Blocks.blackQuartzBlock.blockID)
+		if (par1World.getBlockId(par2 - 1, par3, par4) == Blocks.blackQuartz.blockID || par1World.getBlockId(par2 + 1, par3, par4) == Blocks.blackQuartz.blockID)
 		{
 			b0 = 1;
 		}
-		if (par1World.getBlockId(par2, par3, par4 - 1) == Blocks.blackQuartzBlock.blockID || par1World.getBlockId(par2, par3, par4 + 1) == Blocks.blackQuartzBlock.blockID)
+		if (par1World.getBlockId(par2, par3, par4 - 1) == Blocks.blackQuartz.blockID || par1World.getBlockId(par2, par3, par4 + 1) == Blocks.blackQuartz.blockID)
 		{
 			b1 = 1;
 		}
@@ -119,7 +119,7 @@ public class BlockBlindOasisPortal extends BlockBreakable
 						int j1 = par1World.getBlockId(par2 + b0 * l, par3 + i1, par4 + b1 * l);
 						if (flag)
 						{
-							if (j1 != Blocks.blackQuartzBlock.blockID)
+							if (j1 != Blocks.blackQuartz.blockID)
 							{
 								return false;
 							}
@@ -157,7 +157,7 @@ public class BlockBlindOasisPortal extends BlockBreakable
 		{
 			;
 		}
-		if (par1World.getBlockId(par2, i1 - 1, par4) != Blocks.blackQuartzBlock.blockID)
+		if (par1World.getBlockId(par2, i1 - 1, par4) != Blocks.blackQuartz.blockID)
 		{
 			par1World.setBlockToAir(par2, par3, par4);
 		}
@@ -168,7 +168,7 @@ public class BlockBlindOasisPortal extends BlockBreakable
 			{
 				;
 			}
-			if (j1 == 3 && par1World.getBlockId(par2, i1 + j1, par4) == Blocks.blackQuartzBlock.blockID)
+			if (j1 == 3 && par1World.getBlockId(par2, i1 + j1, par4) == Blocks.blackQuartz.blockID)
 			{
 				boolean flag = par1World.getBlockId(par2 - 1, par3, par4) == this.blockID || par1World.getBlockId(par2 + 1, par3, par4) == this.blockID;
 				boolean flag1 = par1World.getBlockId(par2, par3, par4 - 1) == this.blockID || par1World.getBlockId(par2, par3, par4 + 1) == this.blockID;
@@ -178,7 +178,7 @@ public class BlockBlindOasisPortal extends BlockBreakable
 				}
 				else
 				{
-					if ((par1World.getBlockId(par2 + b0, par3, par4 + b1) != Blocks.blackQuartzBlock.blockID || par1World.getBlockId(par2 - b0, par3, par4 - b1) != this.blockID) && (par1World.getBlockId(par2 - b0, par3, par4 - b1) != Blocks.blackQuartzBlock.blockID || par1World.getBlockId(par2 + b0, par3, par4 + b1) != this.blockID))
+					if ((par1World.getBlockId(par2 + b0, par3, par4 + b1) != Blocks.blackQuartz.blockID || par1World.getBlockId(par2 - b0, par3, par4 - b1) != this.blockID) && (par1World.getBlockId(par2 - b0, par3, par4 - b1) != Blocks.blackQuartz.blockID || par1World.getBlockId(par2 + b0, par3, par4 + b1) != this.blockID))
 					{
 						par1World.setBlockToAir(par2, par3, par4);
 					}

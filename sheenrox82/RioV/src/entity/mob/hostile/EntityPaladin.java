@@ -1,4 +1,4 @@
-package sheenrox82.RioVPaladin;
+package sheenrox82.RioV.src.entity.mob.hostile;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -15,12 +15,6 @@ import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.entity.mob.core.EntityMobDeadBody;
-import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTunBodyguard;
-import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTunMinion;
-import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkElf;
-import sheenrox82.RioV.src.entity.mob.hostile.EntityDemonAngel;
-import sheenrox82.RioV.src.entity.mob.hostile.EntityMage;
-import sheenrox82.RioV.src.entity.mob.hostile.EntityTerron;
 import sheenrox82.RioV.src.entity.mob.passive.EntityAdv;
 import sheenrox82.RioV.src.entity.mob.passive.EntityAltruEssence;
 

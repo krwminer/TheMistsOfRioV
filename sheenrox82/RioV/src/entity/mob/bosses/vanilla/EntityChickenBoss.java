@@ -32,7 +32,6 @@ public class EntityChickenBoss extends EntityMob implements IBossDisplayData
         this.setSize(2F, 4F);
         this.timeUntilNextEgg = this.rand.nextInt(6000) + 6000;
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIPanic(this, 0.56D));
         this.tasks.addTask(3, new EntityAITempt(this, 0.56D, Item.seeds.itemID, false));
         this.tasks.addTask(5, new EntityAIWander(this, 0.56D));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));

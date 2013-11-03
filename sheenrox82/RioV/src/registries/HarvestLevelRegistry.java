@@ -107,6 +107,9 @@ public class HarvestLevelRegistry
 		MinecraftForge.setToolClass(Items.vravinitePickaxe, "pickaxe", 12);
 		MinecraftForge.setToolClass(Items.vraviniteAxe, "axe", 12);
 		MinecraftForge.setToolClass(Items.vraviniteShovel, "shovel", 12);
+		MinecraftForge.setToolClass(Items.kupinumPickaxe, "pickaxe", 12);
+		MinecraftForge.setToolClass(Items.kupinumAxe, "axe", 12);
+		MinecraftForge.setToolClass(Items.kupinumShovel, "shovel", 12);
 		//12's
 
 		//13's

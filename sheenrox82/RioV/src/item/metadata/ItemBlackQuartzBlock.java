@@ -1,11 +1,11 @@
-package sheenrox82.RioV.src.item.unique;
+package sheenrox82.RioV.src.item.metadata;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemStainedGlass extends ItemBlock
+public class ItemBlackQuartzBlock extends ItemBlock
 {
-	public ItemStainedGlass(int par1)
+	public ItemBlackQuartzBlock(int par1)
 	{
 		super(par1);
 		setHasSubtypes(true);
@@ -18,19 +18,15 @@ public class ItemStainedGlass extends ItemBlock
 		{
 		case 0:
 		{
-			name = "pattern1"; break;
+			name = "default"; break;
 		}
 		case 1:
 		{
-			name = "pattern2"; break;
+			name = "chiseled"; break;
 		}
 		case 2:
 		{
-			name = "pattern3"; break;
-		}
-		case 3:
-		{
-			name = "pattern4"; break;
+			name = "lines"; break;
 		}
 		default: name = "broken";
 		}
