@@ -101,7 +101,6 @@ public class Registry
 		EntityLoader.addOverworldSpawning();
 		EntityLoader.addNetherSpawning();
 		EntityLoader.addEndSpawning();
-		EntityLoader.addNightSpawning();
 		EntityLoader.addDimensionSpawning();
 		BiomeGenBase.extremeHills.theBiomeDecorator.treesPerChunk = 15;
 		BiomeGenBase.plains.theBiomeDecorator.treesPerChunk = 1;

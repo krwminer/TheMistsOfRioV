@@ -9,9 +9,7 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.event.EventPriority;
 import net.minecraftforge.event.ForgeSubscribe;
-
 import org.lwjgl.opengl.GL11;
-
 import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.util.PlayerNBT;
 import cpw.mods.fml.relauncher.Side;
@@ -20,7 +18,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GuiMagickaBar extends Gui
 {
-	ResourceLocation icons = new ResourceLocation("skyrimcraftii", "textures/gui/icons.png");
 	public Minecraft mc;
 
 	public GuiMagickaBar(Minecraft mc)
