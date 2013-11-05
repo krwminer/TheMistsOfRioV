@@ -137,7 +137,7 @@ public class EntityLoader
 		SpawnListEntry chickBossSpawn = new SpawnListEntry(EntityChickenBoss.class, 1, 1, 2);
 		SpawnListEntry pigBossSpawn = new SpawnListEntry(EntityPigBoss.class, 1, 1, 2);
 		SpawnListEntry cowBossSpawn = new SpawnListEntry(EntityCowBoss.class, 1, 1, 2);
-		SpawnListEntry paladinSpawn = new SpawnListEntry(EntityPaladin.class, 1, 2, 6);
+		SpawnListEntry paladinSpawn = new SpawnListEntry(EntityPaladin.class, 1, 2, 3);
 
 		for(int i = 0; i < plains.length; i++)
 		{
@@ -152,6 +152,15 @@ public class EntityLoader
 				plains[i].getSpawnableList(EnumCreatureType.creature).add(chickBossSpawn);
 				plains[i].getSpawnableList(EnumCreatureType.creature).add(pigBossSpawn);
 				plains[i].getSpawnableList(EnumCreatureType.creature).add(cowBossSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.monster).add(advSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.monster).add(mageSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.monster).add(darkElfSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.monster).add(galokinSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.monster).add(orcSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.monster).add(sovSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.monster).add(chickBossSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.monster).add(pigBossSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.monster).add(cowBossSpawn);
 			}
 		}
 		
@@ -168,6 +177,15 @@ public class EntityLoader
 				mountain[i].getSpawnableList(EnumCreatureType.creature).add(pigBossSpawn);
 				mountain[i].getSpawnableList(EnumCreatureType.creature).add(cowBossSpawn);
 				mountain[i].getSpawnableList(EnumCreatureType.creature).add(paladinSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.monster).add(advSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.monster).add(mageSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.monster).add(darkElfSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.monster).add(galokinSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.monster).add(orcSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.monster).add(sovSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.monster).add(pigBossSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.monster).add(cowBossSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.monster).add(paladinSpawn);
 			}
 		}
 		
@@ -181,6 +199,12 @@ public class EntityLoader
 				frozen[i].getSpawnableList(EnumCreatureType.creature).add(galokinSpawn);
 				frozen[i].getSpawnableList(EnumCreatureType.creature).add(orcSpawn);
 				frozen[i].getSpawnableList(EnumCreatureType.creature).add(sovSpawn);
+				frozen[i].getSpawnableList(EnumCreatureType.monster).add(advSpawn);
+				frozen[i].getSpawnableList(EnumCreatureType.monster).add(mageSpawn);
+				frozen[i].getSpawnableList(EnumCreatureType.monster).add(darkElfSpawn);
+				frozen[i].getSpawnableList(EnumCreatureType.monster).add(galokinSpawn);
+				frozen[i].getSpawnableList(EnumCreatureType.monster).add(orcSpawn);
+				frozen[i].getSpawnableList(EnumCreatureType.monster).add(sovSpawn);
 			}
 		}
 		
@@ -194,6 +218,12 @@ public class EntityLoader
 				jungle[i].getSpawnableList(EnumCreatureType.creature).add(galokinSpawn);
 				jungle[i].getSpawnableList(EnumCreatureType.creature).add(orcSpawn);
 				jungle[i].getSpawnableList(EnumCreatureType.creature).add(sovSpawn);
+				jungle[i].getSpawnableList(EnumCreatureType.monster).add(advSpawn);
+				jungle[i].getSpawnableList(EnumCreatureType.monster).add(mageSpawn);
+				jungle[i].getSpawnableList(EnumCreatureType.monster).add(darkElfSpawn);
+				jungle[i].getSpawnableList(EnumCreatureType.monster).add(galokinSpawn);
+				jungle[i].getSpawnableList(EnumCreatureType.monster).add(orcSpawn);
+				jungle[i].getSpawnableList(EnumCreatureType.monster).add(sovSpawn);
 			}
 		}
 		
@@ -207,6 +237,12 @@ public class EntityLoader
 				forest[i].getSpawnableList(EnumCreatureType.creature).add(galokinSpawn);
 				forest[i].getSpawnableList(EnumCreatureType.creature).add(orcSpawn);
 				forest[i].getSpawnableList(EnumCreatureType.creature).add(sovSpawn);
+				forest[i].getSpawnableList(EnumCreatureType.monster).add(advSpawn);
+				forest[i].getSpawnableList(EnumCreatureType.monster).add(mageSpawn);
+				forest[i].getSpawnableList(EnumCreatureType.monster).add(darkElfSpawn);
+				forest[i].getSpawnableList(EnumCreatureType.monster).add(galokinSpawn);
+				forest[i].getSpawnableList(EnumCreatureType.monster).add(orcSpawn);
+				forest[i].getSpawnableList(EnumCreatureType.monster).add(sovSpawn);
 			}
 		}
 		
@@ -222,6 +258,14 @@ public class EntityLoader
 				desert[i].getSpawnableList(EnumCreatureType.creature).add(orcSpawn);
 				desert[i].getSpawnableList(EnumCreatureType.creature).add(sovSpawn);
 				desert[i].getSpawnableList(EnumCreatureType.creature).add(cowBossSpawn);
+				desert[i].getSpawnableList(EnumCreatureType.creature).add(nizonianSpawn);
+				desert[i].getSpawnableList(EnumCreatureType.monster).add(advSpawn);
+				desert[i].getSpawnableList(EnumCreatureType.monster).add(mageSpawn);
+				desert[i].getSpawnableList(EnumCreatureType.monster).add(darkElfSpawn);
+				desert[i].getSpawnableList(EnumCreatureType.monster).add(galokinSpawn);
+				desert[i].getSpawnableList(EnumCreatureType.monster).add(orcSpawn);
+				desert[i].getSpawnableList(EnumCreatureType.monster).add(sovSpawn);
+				desert[i].getSpawnableList(EnumCreatureType.monster).add(cowBossSpawn);
 			}
 		}
 	}
@@ -241,6 +285,10 @@ public class EntityLoader
 			nether[i].getSpawnableList(EnumCreatureType.creature).add(minionSpawn);
 			nether[i].getSpawnableList(EnumCreatureType.creature).add(bodyguardSpawn);
 			nether[i].getSpawnableList(EnumCreatureType.creature).add(hellhoundSpawn);
+			nether[i].getSpawnableList(EnumCreatureType.monster).add(skeleHorseSpawn);
+			nether[i].getSpawnableList(EnumCreatureType.monster).add(minionSpawn);
+			nether[i].getSpawnableList(EnumCreatureType.monster).add(bodyguardSpawn);
+			nether[i].getSpawnableList(EnumCreatureType.monster).add(hellhoundSpawn);
 		}
 	}
 
@@ -255,6 +303,8 @@ public class EntityLoader
 		{
 			end[i].getSpawnableList(EnumCreatureType.creature).add(fairySpawn);
 			end[i].getSpawnableList(EnumCreatureType.creature).add(essenceSpawn);
+			end[i].getSpawnableList(EnumCreatureType.monster).add(fairySpawn);
+			end[i].getSpawnableList(EnumCreatureType.monster).add(essenceSpawn);
 		}
 	}
 
@@ -273,16 +323,5 @@ public class EntityLoader
 		EntityRegistry.addSpawn(EntityRabbit.class, 1, 1, 3, EnumCreatureType.creature, Biomes.sanctuatite);
 		EntityRegistry.addSpawn(EntityKupinumGuard.class, 1, 1, 3, EnumCreatureType.creature, Biomes.atlantea);
 		EntityRegistry.addSpawn(EntityKupinumGuard.class, 1, 1, 3, EnumCreatureType.monster, Biomes.atlantea);
-	}
-
-	public static void addNightSpawning()
-	{
-		EntityRegistry.addSpawn(EntityNizonian.class, 1, 2, 6, EnumCreatureType.monster, BiomeGenBase.desert, BiomeGenBase.beach, BiomeGenBase.desertHills);
-		EntityRegistry.addSpawn(EntityMage.class, 3, 3, 6, EnumCreatureType.monster, BiomeGenBase.plains, BiomeGenBase.desert, BiomeGenBase.taiga, BiomeGenBase.forest, BiomeGenBase.swampland);
-		EntityRegistry.addSpawn(EntityDarkElf.class, 2, 4, 8, EnumCreatureType.monster, BiomeGenBase.plains, BiomeGenBase.jungle, BiomeGenBase.desert, BiomeGenBase.taiga, BiomeGenBase.forest);
-		EntityRegistry.addSpawn(EntityAdv.class, 1, 2, 6, EnumCreatureType.monster, BiomeGenBase.plains, BiomeGenBase.jungle, BiomeGenBase.desert, BiomeGenBase.taiga, BiomeGenBase.forest, BiomeGenBase.swampland);
-		EntityRegistry.addSpawn(EntityGalokin.class, 2, 4, 8, EnumCreatureType.monster, BiomeGenBase.plains, BiomeGenBase.jungle, BiomeGenBase.forest, BiomeGenBase.swampland);
-		EntityRegistry.addSpawn(EntityOrc.class, 2, 4, 8, EnumCreatureType.monster, BiomeGenBase.plains, BiomeGenBase.jungle, BiomeGenBase.forest);
-
 	}
 }
