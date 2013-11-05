@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.Config;
@@ -19,6 +20,7 @@ import sheenrox82.RioV.src.entity.mob.hostile.EntityDemonAngel;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityTef;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityTerron;
 import sheenrox82.RioV.src.util.Color;
+import sheenrox82.RioV.src.util.PlayerNBT;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -37,6 +39,8 @@ public class RioVSummoners extends Item
 	@Override
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer entityplayer, World world, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
 	{
+		PlayerNBT player = PlayerNBT.get(entityplayer);
+
 		if(world.provider.dimensionId == Config.blindOasisID)
 		{
 			if (par1ItemStack.itemID == Items.terronCrystal.itemID)
@@ -44,19 +48,28 @@ public class RioVSummoners extends Item
 				int var4 = 0;
 				if (!world.isRemote)
 				{
-					while (var4 < 1)//1 gets the amount of mobs to spawn at once
+					if(player.getCurrentMagicka() > 3)
 					{
-						EntityTerron var5 = new EntityTerron(world);
-						var5.setPosition(par4, par5+1, par6);
-						world.spawnEntityInWorld(var5);
-						++var4;
+						while (var4 < 1)
+						{
+							if(player.consumeMagicka(3))
+							{
+								EntityTerron var5 = new EntityTerron(world);
+								var5.setPosition(par4, par5+1, par6);
+								world.spawnEntityInWorld(var5);
+								++var4;
+								Minecraft.getMinecraft().thePlayer.addChatMessage("[Terron] has been summoned!");
+								par1ItemStack.damageItem(2, entityplayer);
+							}
+						}
+
+					}
+					else
+					{
+						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka!"));
 					}
 				}
 
-				if(world.isRemote)
-					Minecraft.getMinecraft().thePlayer.addChatMessage("[Terron] has been summoned!");
-				par1ItemStack.damageItem(2, entityplayer);
-				return true;
 			}
 
 			if (par1ItemStack.itemID == Items.tefCrystal.itemID)
@@ -64,40 +77,54 @@ public class RioVSummoners extends Item
 				int var4 = 0;
 				if (!world.isRemote)
 				{
-					while (var4 < 1)//1 gets the amount of mobs to spawn at once
+					if(player.getCurrentMagicka() > 4)
 					{
-						EntityTef var5 = new EntityTef(world);
-						var5.setPosition(par4, par5+1, par6);
-						world.spawnEntityInWorld(var5);
-						++var4;
+						while (var4 < 1)
+						{
+							if(player.consumeMagicka(4))
+							{
+								EntityTef var5 = new EntityTef(world);
+								var5.setPosition(par4, par5+1, par6);
+								world.spawnEntityInWorld(var5);
+								++var4;
+								Minecraft.getMinecraft().thePlayer.addChatMessage("[\u00A74Tef\u00A7f] has been summoned!");
+								par1ItemStack.damageItem(2, entityplayer);
+							}
+						}
+					}
+					else
+					{
+						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka!"));
 					}
 				}
-
-				if(world.isRemote)
-					Minecraft.getMinecraft().thePlayer.addChatMessage("[\u00A74Tef\u00A7f] has been summoned!");
-				par1ItemStack.damageItem(2, entityplayer);
-				return true;
 			}
-			
 
 			if (par1ItemStack.itemID == Items.theDarknessCrystal.itemID)
 			{
 				int var4 = 0;
 				if (!world.isRemote)
 				{
-					while (var4 < 1)//1 gets the amount of mobs to spawn at once
+					if(player.getCurrentMagicka() > 18)
 					{
-						EntityDarkEssence var5 = new EntityDarkEssence(world);
-						var5.setPosition(par4, par5+1, par6);
-						world.spawnEntityInWorld(var5);
-						++var4;
+						while (var4 < 1)
+						{
+							if(player.consumeMagicka(18))
+							{
+								EntityDarkEssence var5 = new EntityDarkEssence(world);
+								var5.setPosition(par4, par5+1, par6);
+								world.spawnEntityInWorld(var5);
+								++var4;
+								Minecraft.getMinecraft().thePlayer.addChatMessage("[\u00A70The Darkness\u00A7f] has arrived!");
+								par1ItemStack.damageItem(2, entityplayer);
+							}
+
+						}
+					}
+					else
+					{
+						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka!"));
 					}
 				}
-
-				if(world.isRemote)
-					Minecraft.getMinecraft().thePlayer.addChatMessage("[\u00A70The Darkness\u00A7f] has arrived!");
-				par1ItemStack.damageItem(2, entityplayer);
-				return true;
 			}
 		}
 
@@ -108,46 +135,55 @@ public class RioVSummoners extends Item
 				int var4 = 0;
 				if (!world.isRemote)
 				{
-					while (var4 < 1)
+					if(player.getCurrentMagicka() > 12)
 					{
-						EntityDemonAngel var5 = new EntityDemonAngel(world);
-						var5.setPosition(par4, par5+1, par6);
-						world.spawnEntityInWorld(var5);
-						++var4;
+
+						while (var4 < 1)
+						{
+							if(player.consumeMagicka(12))
+							{
+								EntityDemonAngel var5 = new EntityDemonAngel(world);
+								var5.setPosition(par4, par5+1, par6);
+								world.spawnEntityInWorld(var5);
+								++var4;
+								Minecraft.getMinecraft().thePlayer.addChatMessage("[\u00A74Demon Angel\u00A7f] has been summoned!");
+								par1ItemStack.damageItem(2, entityplayer);
+							}
+						}
+					}
+					else
+					{
+						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka!"));
 					}
 				}
-
-				if(world.isRemote)
-					Minecraft.getMinecraft().thePlayer.addChatMessage("[\u00A74Demon Angel\u00A7f] has been summoned!");
-				par1ItemStack.damageItem(2, entityplayer);
-				return true;
 			}
-			
+
 			if (par1ItemStack.itemID == Items.auntunSummoner.itemID)
 			{
 				int var4 = 0;
+
 				if (!world.isRemote)
 				{
-					while (var4 < 1)
+					if(player.getCurrentMagicka() > 34)
 					{
-						EntityAunTun var5 = new EntityAunTun(world);
-						var5.setPosition(par4, par5+1, par6);
-						world.spawnEntityInWorld(var5);
-						++var4;
+						while (var4 < 1)
+						{
+							if(player.consumeMagicka(34))
+							{
+								EntityAunTun var5 = new EntityAunTun(world);
+								var5.setPosition(par4, par5+1, par6);
+								world.spawnEntityInWorld(var5);
+								++var4;
+								Minecraft.getMinecraft().thePlayer.addChatMessage(Color.DARK_RED + "Aun'Tun has been summoned!" + Color.WHITE + " Good luck, this'll be a LONG fight.");
+								par1ItemStack.damageItem(2, entityplayer);
+							}
+						}
 					}
-					while (var4 < 10)
+					else
 					{
-						EntityAunTunMinion var5 = new EntityAunTunMinion(world);
-						var5.setPosition(par4, par5+1, par6);
-						world.spawnEntityInWorld(var5);
-						++var4;
+						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka!"));
 					}
 				}
-
-				if(world.isRemote)
-					Minecraft.getMinecraft().thePlayer.addChatMessage(Color.DARK_RED + "Aun'Tun has been summoned!" + Color.WHITE + " Good luck, this'll be a LONG fight.");
-				par1ItemStack.damageItem(2, entityplayer);
-				return true;
 			}
 		}
 
@@ -162,12 +198,12 @@ public class RioVSummoners extends Item
 			var3.add(StatCollector.translateToLocal("A side challenge, given by The Darkness."));
 			var3.add(StatCollector.translateToLocal("Spawned in: Blind Oasis Dimension"));
 		}
-		
+
 		if (var1.itemID == Items.terronCrystal.itemID || var1.itemID == Items.theDarknessCrystal.itemID)
 		{
 			var3.add(StatCollector.translateToLocal("Spawned in: Blind Oasis Dimension"));
 		}
-		
+
 		if (var1.itemID == Items.demonAngelCrystal.itemID || var1.itemID == Items.auntunSummoner.itemID)
 		{
 			var3.add(StatCollector.translateToLocal("Spawned in: Flamonor Dimension"));

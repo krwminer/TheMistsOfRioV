@@ -41,7 +41,7 @@ public class EntityWoodElf extends EntityMobDeadBody implements IRangedAttackMob
 		super(par1World);
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(5, new EntityAIWander(this, 0.56D));
-		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityShadow.class, 0, true));
+		targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityShadow.class, 0, true));
 		this.tasks.addTask(6, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		isImmuneToFire = false;

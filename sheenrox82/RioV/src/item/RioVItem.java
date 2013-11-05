@@ -60,7 +60,7 @@ public class RioVItem extends Item
 	{
 		if(itemID == Items.heart.itemID)
 		{
-			par3EntityPlayer.heal(2);
+			par3EntityPlayer.heal(2);			
 			par3EntityPlayer.inventory.consumeInventoryItem(Items.heart.itemID);
 		}
 		

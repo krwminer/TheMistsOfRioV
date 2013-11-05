@@ -46,7 +46,7 @@ public class Config
 		flamonorID = config.get("Dimension IDs", "Flamonor Dimension ID", 13).getInt();
 		sanctuatiteID = config.get("Dimension IDs", "Sanctuatite Dimension ID", 14).getInt();
 		atlanteaID = config.get("Dimension IDs", "Atlantea Dimension ID", 15).getInt();
-		HUD = config.get("HUD", "Show 'The Mists of RioV - vX.X.X' in the corner in game.", true).getBoolean(HUD);
+		HUD = config.get("HUD", "Use the blue magicka bar instead of text?", true).getBoolean(HUD);
 		blindOasisBiomeID = config.get("Biome IDs", "Blind Oasis Biome ID (Blind Oasis Dimension)", 25).getInt(blindOasisBiomeID);
 		glimmerwoodBiomeID = config.get("Biome IDs", "Glimmerwood Biome ID (Vaeryn Dimension)", 26).getInt(glimmerwoodBiomeID);
 		snowyMountainsBiomeID = config.get("Biome IDs", "Snowy Mountains Biome ID (Overworld Dimension)", 27).getInt(snowyMountainsBiomeID);

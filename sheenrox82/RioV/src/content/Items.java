@@ -411,9 +411,11 @@ public class Items
 	public static Item paladinLongsword = (new RioVWeapon(Config.addItem("Paladin Longsword"), InfusedOnyx, false)).setUnlocalizedName("paladinLongsword");
 	public static Item iceWand = (new RioVWand(Config.addItem("Ice Wand"), 0, 1, 1)).setUnlocalizedName("iceWand");
 	public static Item graviWand = (new RioVWand(Config.addItem("Gravi Wand"), 0, 1, 3)).setUnlocalizedName("graviWand");
+	public static Item magickaPotion = (new RioVDrinkable(Config.addItem("Magicka Potion"), 0, 0, true)).setAlwaysEdible().setUnlocalizedName("magickaPotion");
 
 	public static void add()
 	{		
+		MethodUtil.registerItem(magickaPotion, "Magicka Potion");
 		MethodUtil.registerItem(graviWand, "Gravi Wand");
 		MethodUtil.registerItem(iceWand, "Ice Wand");
 		MethodUtil.registerItem(paladinHelmet, "Paladin Helmet");

@@ -25,7 +25,6 @@ public class EntityPinkEssence extends EntityThrowable
 		super(var1, var2, var4, var6);
 	}
 
-	@SideOnly(Side.CLIENT)
 	@Override
 	public void onUpdate()
 	{

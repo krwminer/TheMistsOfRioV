@@ -2,6 +2,7 @@ package sheenrox82.RioV.src.util;
 
 import java.util.Arrays;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.MinecraftForge;
 import sheenrox82.RioV.src.base.Config;
@@ -13,6 +14,7 @@ import sheenrox82.RioV.src.content.Enchantments;
 import sheenrox82.RioV.src.content.EntityLoader;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.event.Events;
+import sheenrox82.RioV.src.gui.GuiMagickaBar;
 import sheenrox82.RioV.src.handler.ConnectionHandler;
 import sheenrox82.RioV.src.handler.FuelHandler;
 import sheenrox82.RioV.src.handler.HudHandler;
@@ -33,6 +35,7 @@ import sheenrox82.RioV.src.world.provider.WorldProviderBlindOasis;
 import sheenrox82.RioV.src.world.provider.WorldProviderFlamonor;
 import sheenrox82.RioV.src.world.provider.WorldProviderSanctuatite;
 import sheenrox82.RioV.src.world.provider.WorldProviderVaeryn;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -63,9 +66,10 @@ public class Registry
 				"Soverian Overlord will destroy the land of RioV and leave it in ashes. " +
 				"This is The Mists of RioV.";
 		Config.initialize(initEvent);
-		MinecraftForge.EVENT_BUS.register(new Events());
+        MinecraftForge.EVENT_BUS.register(new Events());
 		MinecraftForge.EVENT_BUS.register(new HudHandler());
 		MinecraftForge.EVENT_BUS.register(new SoundHandler());
+		MinecraftForge.EVENT_BUS.register(new GuiMagickaBar(Minecraft.getMinecraft()));
 		Items.add();
 		Blocks.add();
 		Crafting.add();
