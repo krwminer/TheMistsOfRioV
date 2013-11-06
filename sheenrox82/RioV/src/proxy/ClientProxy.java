@@ -16,7 +16,6 @@ import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkElf;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkEssence;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDemonAngel;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityHellhound;
-import sheenrox82.RioV.src.entity.mob.hostile.EntityKupinumGuard;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityMage;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityPaladin;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityShadow;
@@ -133,7 +132,6 @@ public class ClientProxy extends CommonProxy
 		RenderingRegistry.registerEntityRenderingHandler(EntityPigBoss.class, new RenderPigBoss());
 		RenderingRegistry.registerEntityRenderingHandler(EntityCowBoss.class, new RenderCowBoss());
 		RenderingRegistry.registerEntityRenderingHandler(EntityChickenBoss.class, new RenderChickenBoss(new ResourceLocation(Util.MOD_ID + ":" + "textures/entity/ChickenBoss.png")));
-		RenderingRegistry.registerEntityRenderingHandler(EntityKupinumGuard.class, new RenderBipedCore(EntityResourceLocation.adventurer));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTasaravMallor.class, new RenderTasaravMallor());
 		RenderingRegistry.registerEntityRenderingHandler(EntityPaladin.class, new RenderPaladin());
 		RenderingRegistry.registerEntityRenderingHandler(EntityPinkEssence.class, new RenderPinkEssence(new ResourceLocation(Util.MOD_ID + ":" + "pinkEssence.png")));

@@ -113,10 +113,6 @@ public class RioVSpade extends ItemSpade
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisShovel");
 		}
-		if(itemID == Items.kupinumShovel.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumShovel");
-		}
 		if(TheMistsOfRioV.getInstance().natura)
 		{
 			if(itemID == Items.infusedBloodwoodShovel.itemID || itemID == Items.infusedGhostwoodShovel.itemID || itemID == Items.infusedDarkwoodShovel.itemID || itemID == Items.infusedFusewoodShovel.itemID || itemID == Items.infusedNetherquartzShovel.itemID)

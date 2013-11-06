@@ -178,14 +178,6 @@ public class RioVArmor extends ItemArmor
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "garnetLeggings");
 		if (itemID == Items.garnetBoots.itemID)
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "garnetBoots");
-		if (itemID == Items.kupinumHelmet.itemID)
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumHelmet");
-		if (itemID == Items.kupinumChestplate.itemID)
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumChestplate");
-		if (itemID == Items.kupinumLeggings.itemID)
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumLeggings");
-		if (itemID == Items.kupinumBoots.itemID)
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumBoots");
 		if (itemID == Items.mythrilHelmet.itemID)
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "mythrilHelmet");
 		if (itemID == Items.mythrilChestplate.itemID)

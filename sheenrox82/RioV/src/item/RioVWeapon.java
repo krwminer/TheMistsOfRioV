@@ -314,10 +314,6 @@ public class RioVWeapon extends ItemSword
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisSword");
 		}
-		if(itemID == Items.kupinumSword.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumSword");
-		}
 		if(itemID == Items.paladinLongsword.itemID) 
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "paladinLongsword");

@@ -22,14 +22,12 @@ public class Config
 	public static int vaerynID;
 	public static int flamonorID;
 	public static int sanctuatiteID;
-	public static int atlanteaID;
 	public static int blindOasisBiomeID;
 	public static int glimmerwoodBiomeID;
 	public static int snowyMountainsBiomeID;
 	public static int savannahBiomeID;
 	public static int flamonorBiomeID;
 	public static int sanctuatiteBiomeID;
-	public static int atlanteaBiomeID;
 	public static int canopyOasisBiomeID;
 	public static int bambooFieldsBiomeID;
 	public static int runesBiomeID;
@@ -45,7 +43,6 @@ public class Config
 		vaerynID = config.get("Dimension IDs", "Vaeryn Dimension ID", 12).getInt();
 		flamonorID = config.get("Dimension IDs", "Flamonor Dimension ID", 13).getInt();
 		sanctuatiteID = config.get("Dimension IDs", "Sanctuatite Dimension ID", 14).getInt();
-		atlanteaID = config.get("Dimension IDs", "Atlantea Dimension ID", 15).getInt();
 		HUD = config.get("HUD", "Use the blue magicka bar instead of text?", true).getBoolean(HUD);
 		blindOasisBiomeID = config.get("Biome IDs", "Blind Oasis Biome ID (Blind Oasis Dimension)", 25).getInt(blindOasisBiomeID);
 		glimmerwoodBiomeID = config.get("Biome IDs", "Glimmerwood Biome ID (Vaeryn Dimension)", 26).getInt(glimmerwoodBiomeID);
@@ -53,7 +50,6 @@ public class Config
 		savannahBiomeID = config.get("Biome IDs", "Savannah Biome ID (Overworld Dimension)", 28).getInt(savannahBiomeID);
 		flamonorBiomeID = config.get("Biome IDs", "Flamonor Biome ID (Flamonor Dimension)", 29).getInt(flamonorBiomeID);
 		sanctuatiteBiomeID = config.get("Biome IDs", "Sanctuatite Biome ID (Sanctuatite Dimension)", 30).getInt(sanctuatiteBiomeID);
-		atlanteaBiomeID = config.get("Biome IDs", "Atlantea Biome ID (Atlantea Dimension)", 31).getInt(atlanteaBiomeID);
 		showToolInfo = config.get("Misc", "Show Tool Info?", true).getBoolean(showToolInfo);
 		canopyOasisBiomeID = config.get("Biome IDs", "Canopy Oasis Biome ID (Overworld Dimension)", 31).getInt(canopyOasisBiomeID);
 		bambooFieldsBiomeID = config.get("Biome IDs", "Bamboo Fiels Biome ID (Overworld Dimension)", 32).getInt(bambooFieldsBiomeID);

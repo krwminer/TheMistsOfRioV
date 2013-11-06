@@ -155,5 +155,6 @@ public class Crafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.magicBinder, 1), "XXX", "XOX", "XXX", Character.valueOf('O'), Items.orb, Character.valueOf('X'), Blocks.onyxBlock);
 		GameRegistry.addRecipe(new ItemStack(Items.auntunSummoner, 1), "XTX", "TOT", "XTX", Character.valueOf('O'), Items.onyx, Character.valueOf('X'), Items.darkMatter, Character.valueOf('T'), Blocks.skycloud);
 		GameRegistry.addRecipe(new ItemStack(Items.auntunSummoner, 1), "XTX", "TOT", "XTX", Character.valueOf('O'), Item.bucketWater, Character.valueOf('X'), Blocks.skycloud, Character.valueOf('T'), Item.ghastTear);
+		GameRegistry.addRecipe(new ItemStack(Blocks.chocolateCake, 1), "XXX", "XOX", "XXX", Character.valueOf('O'), Item.cake, Character.valueOf('X'), new ItemStack(Item.dyePowder, 1, 4));
 	}
 }

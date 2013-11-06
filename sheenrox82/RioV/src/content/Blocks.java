@@ -23,10 +23,8 @@ import sheenrox82.RioV.src.block.BlockFloorboard;
 import sheenrox82.RioV.src.block.BlockGlimmerGrass;
 import sheenrox82.RioV.src.block.BlockGlimmerwoodChest;
 import sheenrox82.RioV.src.block.BlockGlimmerwoodLog;
-import sheenrox82.RioV.src.block.BlockHydrogenicPortal;
 import sheenrox82.RioV.src.block.BlockInfuser;
 import sheenrox82.RioV.src.block.BlockMagicBinder;
-import sheenrox82.RioV.src.block.BlockMist;
 import sheenrox82.RioV.src.block.BlockPlanks;
 import sheenrox82.RioV.src.block.BlockPlantCore;
 import sheenrox82.RioV.src.block.BlockRedFire;
@@ -198,8 +196,6 @@ public class Blocks
 	public static final Block bloodFlower = (new BlockPlantCore(Config.addBlock("Blood Flower"))).setUnlocalizedName("bloodFlower");
 	public static final Block paleBush = (new BlockBush(Config.addBlock("Pale Bush"))).setUnlocalizedName("paleBush");
 	public static final Block waterFilledGlowstone = (new BlockCoreOne(Config.addBlock("Water Filled Glowstone"))).setCreativeTab(null).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("waterFilledGlowstone");
-	public static final BlockHydrogenicPortal hydrogenicPortal = (BlockHydrogenicPortal)(new BlockHydrogenicPortal(Config.addBlock("Hydrogenic Portal"))).setCreativeTab(null).setUnlocalizedName("hydrogenicPortal");
-	public static final BlockMist mist = (BlockMist)(new BlockMist(Config.addBlock("Mist"))).setCreativeTab(null).setLightValue(1.0F).setUnlocalizedName("mist");
 	public static final Block coconut = (new BlockBush(Config.addBlock("Coconut"))).setCreativeTab(null).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("coconut");
 	public static final Block shrine = (new BlockShrine(Config.addBlock("Shrine"))).setHardness(6.0F).setResistance(6.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("shrine");
     public static final Block chocolateCake = (new BlockRioVCake(Config.addBlock("Chocolate Cake"))).setHardness(0.5F).setStepSound(Block.soundClothFootstep).setUnlocalizedName("chocolateCake");
@@ -218,8 +214,6 @@ public class Blocks
 		MethodUtil.registerBlock(waterFilledGlowstone, Color.AQUA + "Hydrogenic Glowstone");
 		MethodUtil.registerBlock(chocolateCake, "Chocolate Cake");
 		MethodUtil.registerBlock(paleBush, "Pale Bush");
-		MethodUtil.registerBlock(hydrogenicPortal, Color.AQUA + "Hydrogenic Portal");
-		MethodUtil.registerBlock(mist, "Mist");
 		MethodUtil.registerBlock(shrine, "Shrine");
 		MethodUtil.registerBlock(coconut, "Coconut");
 		MethodUtil.registerBlock(runestone, "Runestone Deposit");

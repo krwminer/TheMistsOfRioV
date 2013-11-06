@@ -122,7 +122,7 @@ public class EntityMage extends EntityMobDeadBody
 		}
 		if (var1 == 3)
 		{
-			this.dropItem(Items.mythrilIngot.itemID, 1);
+			this.dropItem(Items.eosPotion.itemID, 1);
 		}
 		if (var1 == 4)
 		{

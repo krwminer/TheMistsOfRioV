@@ -2,34 +2,39 @@ package sheenrox82.RioV.src.handler;
 
 import java.util.EnumSet;
 
-import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiIngame;
+import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.world.World;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
-import net.minecraftforge.event.EventPriority;
-import net.minecraftforge.event.ForgeSubscribe;
 
 import org.lwjgl.opengl.GL11;
 
 import sheenrox82.RioV.src.base.Config;
-import sheenrox82.RioV.src.content.Blocks;
+import sheenrox82.RioV.src.gui.GuiRioVMainMenu;
 import sheenrox82.RioV.src.util.Util;
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class HudHandler extends Container implements ITickHandler 
 {
+    private EntityPlayerSP player;
+    private static boolean initialized = false;
+    
 	@Override
-	public void tickStart(EnumSet<TickType> type, Object... tickData) {
-
+	public void tickStart(EnumSet<TickType> type, Object... tickData) 
+	{
+		final Minecraft minecraft = FMLClientHandler.instance().getClient();
+        
+        if(type.equals(EnumSet.of(TickType.CLIENT)))
+        {
+                player = minecraft.thePlayer;
+                if(minecraft.currentScreen instanceof GuiMainMenu)
+                minecraft.displayGuiScreen(new GuiRioVMainMenu());
+        }
 	}
 
 	@Override

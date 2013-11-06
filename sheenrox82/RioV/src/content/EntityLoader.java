@@ -16,7 +16,6 @@ import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkElf;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDarkEssence;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityDemonAngel;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityHellhound;
-import sheenrox82.RioV.src.entity.mob.hostile.EntityKupinumGuard;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityMage;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityPaladin;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityShadow;
@@ -79,7 +78,6 @@ public class EntityLoader
 		MethodUtil.registerEntity(EntityPigBoss.class, "Pig - Boss");
 		MethodUtil.registerEntity(EntityWoodElf.class, "Dark Wood Elf Assassin");
 		MethodUtil.registerEntity(EntityCowBoss.class, "Cow - Boss");
-		MethodUtil.registerEntity(EntityKupinumGuard.class, "Kupinum Guard");
 		MethodUtil.registerEntity(EntityTasaravMallor.class, "Tasarav Mallor");
 		MethodUtil.registerEntity(EntityDarkMatter.class, "Dark Matter");
 		MethodUtil.registerEntity(EntityPaladin.class, "Paladin");
@@ -113,7 +111,6 @@ public class EntityLoader
 		MethodUtil.registerEgg(EntityDemonAngel.class);
 		MethodUtil.registerEgg(EntityDarkEssence.class);
 		MethodUtil.registerEgg(EntityCowBoss.class);
-		MethodUtil.registerEgg(EntityKupinumGuard.class);
 		MethodUtil.registerEgg(EntityAunTun.class);
 		MethodUtil.registerEgg(EntityPaladin.class);
 	}
@@ -321,7 +318,5 @@ public class EntityLoader
 		EntityRegistry.addSpawn(EntityDove.class, 1, 1, 3, EnumCreatureType.creature, Biomes.sanctuatite);
 		EntityRegistry.addSpawn(EntityAngel.class, 1, 1, 3, EnumCreatureType.creature, Biomes.sanctuatite);
 		EntityRegistry.addSpawn(EntityRabbit.class, 1, 1, 3, EnumCreatureType.creature, Biomes.sanctuatite);
-		EntityRegistry.addSpawn(EntityKupinumGuard.class, 1, 1, 3, EnumCreatureType.creature, Biomes.atlantea);
-		EntityRegistry.addSpawn(EntityKupinumGuard.class, 1, 1, 3, EnumCreatureType.monster, Biomes.atlantea);
 	}
 }

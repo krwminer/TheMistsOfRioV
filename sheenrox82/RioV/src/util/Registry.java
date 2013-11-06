@@ -30,12 +30,10 @@ import sheenrox82.RioV.src.tileentity.TileEntityInfuser;
 import sheenrox82.RioV.src.tileentity.TileEntityShrine;
 import sheenrox82.RioV.src.tileentity.TileEntitySkywoodChest;
 import sheenrox82.RioV.src.world.WorldGen;
-import sheenrox82.RioV.src.world.provider.WorldProviderAtlantea;
 import sheenrox82.RioV.src.world.provider.WorldProviderBlindOasis;
 import sheenrox82.RioV.src.world.provider.WorldProviderFlamonor;
 import sheenrox82.RioV.src.world.provider.WorldProviderSanctuatite;
 import sheenrox82.RioV.src.world.provider.WorldProviderVaeryn;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -91,7 +89,6 @@ public class Registry
 		MethodUtil.registerDimension(Config.vaerynID, WorldProviderVaeryn.class);
 		MethodUtil.registerDimension(Config.flamonorID, WorldProviderFlamonor.class);
 		MethodUtil.registerDimension(Config.sanctuatiteID, WorldProviderSanctuatite.class);
-		MethodUtil.registerDimension(Config.atlanteaID, WorldProviderAtlantea.class);
 	}
 
 	public static void init(FMLInitializationEvent init)

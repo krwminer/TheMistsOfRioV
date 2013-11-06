@@ -27,7 +27,6 @@ public class Biomes
 	public static BiomeGenBase canopyOasis = new BiomeGenCanopyOasis(Config.canopyOasisBiomeID).setColor(5470985);
 	public static BiomeGenBase bambooFields = new BiomeGenBambooFields(Config.bambooFieldsBiomeID);
 	public static BiomeGenBase runes = new BiomeGenRunes(Config.runesBiomeID);
-	public static BiomeGenBase atlantea = new BiomeGenAtlantea(Config.atlanteaBiomeID);
 
 	public static void add()
 	{

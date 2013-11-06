@@ -116,10 +116,6 @@ public class RioVPickaxe extends ItemPickaxe
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "alerisPickaxe");
 		}
-		if(itemID == Items.kupinumPickaxe.itemID)
-		{
-			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "kupinumPickaxe");
-		}
 		if(TheMistsOfRioV.getInstance().natura)
 		{
 			if(itemID == Items.infusedBloodwoodPickaxe.itemID || itemID == Items.infusedGhostwoodPickaxe.itemID || itemID == Items.infusedDarkwoodPickaxe.itemID || itemID == Items.infusedFusewoodPickaxe.itemID || itemID == Items.infusedNetherquartzPickaxe.itemID)
