@@ -52,51 +52,53 @@ public class EntityPaladin extends EntityMobDeadBody implements IBossDisplayData
 		}
 	}
 	
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
 		this.dataWatcher.addObject(16, new Integer(100));
 	}
 	
+	@Override
 	protected boolean isValidLightLevel()
     {
         return true;
     }
 	
+	@Override
 	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.writeEntityToNBT(par1NBTTagCompound);
 	}
 	
+	@Override
 	public void onLivingUpdate()
 	{
-		if (!this.worldObj.isRemote)
-		{
-		}
 		super.onLivingUpdate();
 	}
 	
+	@Override
 	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.readEntityFromNBT(par1NBTTagCompound);
 	}
 
+	@Override
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-		// Max Health - default 20.0D - min 0.0D - max Double.MAX_VALUE
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(100.0D);
-		// Movement Speed - default 0.699D - min 0.0D - max Double.MAX_VALUE
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.56D);
-		// Attack Damage - default 2.0D - min 0.0D - max Doubt.MAX_VALUE
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(10.0D);
 	}
 	
+	@Override
 	public ItemStack getHeldItem()
 	{
 		return defaultHeldItem;
@@ -107,6 +109,7 @@ public class EntityPaladin extends EntityMobDeadBody implements IBossDisplayData
 		defaultHeldItem = new ItemStack(Items.paladinLongsword);
 	}
 
+	@Override
 	protected void dropFewItems(boolean par1, int par2)
 	{
 		this.dropItem(Items.paladinLongsword.itemID, 1);

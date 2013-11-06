@@ -32,6 +32,7 @@ public class EntityFairy extends EntityFlyingDeadBody
         this.experienceValue = 5;
     }
 	
+	@Override
 	public void onLivingUpdate()
 	{
 		
@@ -43,12 +44,14 @@ public class EntityFairy extends EntityFlyingDeadBody
 		super.onLivingUpdate();
 	}
 	
+	@Override
     protected void entityInit()
     {
         super.entityInit();
         this.dataWatcher.addObject(16, Byte.valueOf((byte)0));
     }
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
@@ -56,6 +59,7 @@ public class EntityFairy extends EntityFlyingDeadBody
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
 	}
 
+	@Override
     protected void updateEntityActionState()
     {
         if (!this.worldObj.isRemote && this.worldObj.difficultySetting == 0)
@@ -132,9 +136,6 @@ public class EntityFairy extends EntityFlyingDeadBody
         }
     }
 
-    /**
-     * True if the ghast has an unobstructed line of travel to the waypoint.
-     */
     private boolean isCourseTraversable(double par1, double par3, double par5, double par7)
     {
         double d4 = (this.waypointX - this.posX) / par7;
@@ -155,16 +156,19 @@ public class EntityFairy extends EntityFlyingDeadBody
         return true;
     }
 
+	@Override
     protected int getDropItemId()
     {
         return Items.orb.itemID;
     }
 
+	@Override
     protected float getSoundVolume()
     {
         return 10.0F;
     }
 
+	@Override
     public int getMaxSpawnedInChunk()
     {
         return 1;

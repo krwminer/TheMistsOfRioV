@@ -37,22 +37,26 @@ public class EntityGalokin extends EntityMobDeadBody
 		}
 	}
 	
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
 		this.dataWatcher.addObject(16, new Byte((byte)0));
 	}
 
+	@Override
 	protected boolean isValidLightLevel()
 	{
 		return true;
 	}
 
+	@Override
 	public void onLivingUpdate()
 	{
 		super.onLivingUpdate();
 	}
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
@@ -61,11 +65,13 @@ public class EntityGalokin extends EntityMobDeadBody
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(17.0D);
 	}
 	
+	@Override
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
 
+	@Override
 	public ItemStack getHeldItem()
 	{
 		return defaultHeldItem;
@@ -76,6 +82,7 @@ public class EntityGalokin extends EntityMobDeadBody
 		defaultHeldItem = new ItemStack(Items.galokinSword);
 	}
 
+	@Override
 	protected void dropFewItems(boolean par1, int par2)
 	{
 		int var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);

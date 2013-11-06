@@ -106,7 +106,6 @@ public class EntityDemonAngel extends EntityBossCore
 				if (this.field_70846_g == 1)
 				{
 					this.attackTime = 1;
-					//this.func_70844_e(true);
 				}
 				else if (this.field_70846_g <= 4)
 				{
@@ -116,7 +115,6 @@ public class EntityDemonAngel extends EntityBossCore
 				{
 					this.attackTime = 1;
 					this.field_70846_g = 0;
-					//this.func_70844_e(false);
 				}
 
 				if (this.field_70846_g > 1)

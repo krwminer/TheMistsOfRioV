@@ -66,6 +66,7 @@ public class EntityVravinite extends EntityMobDeadBody implements IRangedAttackM
 		}
 	}
 
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
@@ -73,11 +74,13 @@ public class EntityVravinite extends EntityMobDeadBody implements IRangedAttackM
 		this.dataWatcher.addObject(13, new Byte((byte)0));
 	}
 
+	@Override
 	protected boolean isValidLightLevel()
 	{
 		return true;
 	}
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
@@ -86,11 +89,13 @@ public class EntityVravinite extends EntityMobDeadBody implements IRangedAttackM
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(4.0D);
 	}
 	
+	@Override
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
 
+	@Override
 	public boolean attackEntityAsMob(Entity par1Entity)
 	{
 		if (super.attackEntityAsMob(par1Entity))
@@ -103,6 +108,7 @@ public class EntityVravinite extends EntityMobDeadBody implements IRangedAttackM
 		}
 	}
 	
+	@Override
 	protected void dropFewItems(boolean par1, int par2)
 	{
 		int var1 = this.rand.nextInt(8);
@@ -141,14 +147,6 @@ public class EntityVravinite extends EntityMobDeadBody implements IRangedAttackM
 		}
 	}
 
-	public void initCreature()
-	{
-		this.tasks.addTask(4, this.aiArrowAttack);
-	}
-
-	/**
-	 * sets this entity's combat AI.
-	 */
 	public void setCombatTask()
 	{
 		this.tasks.removeTask(this.aiAttackOnCollide);

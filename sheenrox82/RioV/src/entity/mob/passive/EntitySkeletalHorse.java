@@ -28,16 +28,13 @@ public class EntitySkeletalHorse extends EntityHorse
 		this.isImmuneToFire = true;
 	}
 
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
 	}
 
-	protected boolean isValidLightLevel()
-	{
-		return true;
-	}
-
+	@Override
 	public void onLivingUpdate()
 	{
 		if (!this.worldObj.isRemote)
@@ -66,11 +63,13 @@ public class EntitySkeletalHorse extends EntityHorse
 		super.onLivingUpdate();
 	}
 
+	@Override
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
@@ -78,22 +77,26 @@ public class EntitySkeletalHorse extends EntityHorse
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
 	}
 
+	@Override
 	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.writeEntityToNBT(par1NBTTagCompound);
 
 	}
 
+	@Override
 	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.readEntityFromNBT(par1NBTTagCompound);
 	}
 
+	@Override
 	protected void dropFewItems(boolean par1, int par2)
 	{
 		this.dropItem(Items.blackBone.itemID, 1);
 	}
 
+	@Override
 	public boolean getCanSpawnHere()
     {
         return true;

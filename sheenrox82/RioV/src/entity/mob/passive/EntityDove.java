@@ -20,29 +20,26 @@ public class EntityDove extends EntityAmbientCreatureDeadBody
 		this.setSize(0.5F, 0.9F);
 	}
 
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
 		this.dataWatcher.addObject(16, new Byte((byte)0));
 	}
 
+	@Override
 	public boolean canBePushed()
 	{
 		return false;
 	}
 
-	protected void collideWithEntity(Entity par1Entity) {}
-
-	protected void collideWithNearbyEntities() {}
-
+	@Override
 	protected boolean isAIEnabled()
 	{
 		return true;
 	}
 
-	/**
-	 * Called to update the entity's position/logic.
-	 */
+	@Override
 	public void onUpdate()
 	{
 		super.onUpdate();
@@ -50,6 +47,7 @@ public class EntityDove extends EntityAmbientCreatureDeadBody
 		this.motionY *= -0.6000000238418579D;
 	}
 
+	@Override
 	protected void updateAITasks()
 	{
 		super.updateAITasks();
@@ -76,37 +74,13 @@ public class EntityDove extends EntityAmbientCreatureDeadBody
 		this.rotationYaw += f1;
 	}
 
-	/**
-	 * returns if this entity triggers Block.onEntityWalking on the blocks they walk on. used for spiders and wolves to
-	 * prevent them from trampling crops
-	 */
+	@Override
 	protected boolean canTriggerWalking()
 	{
 		return false;
 	}
 
-	/**
-	 * Called when the mob is falling. Calculates and applies fall damage.
-	 */
-	protected void fall(float par1) {}
-
-	/**
-	 * Takes in the distance the entity has fallen this tick and whether its on the ground to update the fall distance
-	 * and deal fall damage if landing on the ground.  Args: distanceFallenThisTick, onGround
-	 */
-	protected void updateFallState(double par1, boolean par3) {}
-
-	/**
-	 * Return whether this entity should NOT trigger a pressure plate or a tripwire.
-	 */
-	public boolean doesEntityNotTriggerPressurePlate()
-	{
-		return true;
-	}
-
-	/**
-	 * Called when the entity is attacked.
-	 */
+	@Override
 	public boolean attackEntityFrom(DamageSource par1DamageSource, float par2)
 	{
 		if (this.isEntityInvulnerable())
@@ -120,27 +94,21 @@ public class EntityDove extends EntityAmbientCreatureDeadBody
 		}
 	}
 
-	/**
-	 * (abstract) Protected helper method to read subclass entity data from NBT.
-	 */
+	@Override
 	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.readEntityFromNBT(par1NBTTagCompound);
 		this.dataWatcher.updateObject(16, Byte.valueOf(par1NBTTagCompound.getByte("BatFlags")));
 	}
 
-	/**
-	 * (abstract) Protected helper method to write subclass entity data to NBT.
-	 */
+	@Override
 	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.writeEntityToNBT(par1NBTTagCompound);
 		par1NBTTagCompound.setByte("BatFlags", this.dataWatcher.getWatchableObjectByte(16));
 	}
 
-	/**
-	 * Checks if the entity's current position is a valid location to spawn this entity.
-	 */
+	@Override
 	public boolean getCanSpawnHere()
 	{
 		int i = MathHelper.floor_double(this.boundingBox.minY);

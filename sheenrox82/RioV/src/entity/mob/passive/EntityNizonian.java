@@ -67,22 +67,20 @@ public class EntityNizonian extends EntityMobDeadBody
 
 	}
 
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
 		this.dataWatcher.addObject(16, new Byte((byte)0));
 	}
 
+	@Override
 	protected boolean isValidLightLevel()
 	{
 		return true;
 	}
 
-	protected void attackEntity(Entity par1Entity, float par2)
-	{
-
-	}
-
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
@@ -91,6 +89,7 @@ public class EntityNizonian extends EntityMobDeadBody
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(7.0D);
 	}
 
+	@Override
 	public boolean isAIEnabled()
 	{
 		return true;

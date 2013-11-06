@@ -44,6 +44,7 @@ public class EntityAltruEssence extends EntityMob
 		}
 	}
 	
+	@Override
 	public void onLivingUpdate()
 	{
 		if (this.rand.nextInt(24) == 0)
@@ -64,6 +65,7 @@ public class EntityAltruEssence extends EntityMob
 		super.onLivingUpdate();
 	}
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
@@ -72,17 +74,20 @@ public class EntityAltruEssence extends EntityMob
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(14.0D);
 	}
 
+	@Override
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
 	
+	@Override
     protected void entityInit()
     {
         super.entityInit();
         this.dataWatcher.addObject(16, new Byte((byte)0));
     }
     
+	@Override
     protected boolean isValidLightLevel()
     {
         return true;

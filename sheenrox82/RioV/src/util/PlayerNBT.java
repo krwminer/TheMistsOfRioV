@@ -19,13 +19,13 @@ public class PlayerNBT implements IExtendedEntityProperties
 {
 	public final static String EXT_PROP_NAME = "PlayerNBT";
 	private final EntityPlayer player;
-	public static final int MAGICKA_WATCHER = 20;
-	public static int maxMana = 50;
+	public static final int EOS_WATCHER = 20;
+	public static int maxEos = 50;
 
 	public PlayerNBT(EntityPlayer player)
 	{
 		this.player = player;
-		this.player.getDataWatcher().addObject(MAGICKA_WATCHER, this.maxMana);
+		this.player.getDataWatcher().addObject(EOS_WATCHER, this.maxEos);
 	}
 
 	public static void register(EntityPlayer player)
@@ -42,8 +42,8 @@ public class PlayerNBT implements IExtendedEntityProperties
 	public void saveNBTData(NBTTagCompound compound)
 	{
 		NBTTagCompound properties = new NBTTagCompound();
-		properties.setInteger("CurrentMana", this.player.getDataWatcher().getWatchableObjectInt(MAGICKA_WATCHER));
-		properties.setInteger("MaxMana", this.maxMana);
+		properties.setInteger("CurrentEos", this.player.getDataWatcher().getWatchableObjectInt(EOS_WATCHER));
+		properties.setInteger("MaxEos", this.maxEos);
 		compound.setTag(EXT_PROP_NAME, properties);
 	}
 
@@ -51,8 +51,8 @@ public class PlayerNBT implements IExtendedEntityProperties
 	public void loadNBTData(NBTTagCompound compound)
 	{
 		NBTTagCompound properties = (NBTTagCompound) compound.getTag(EXT_PROP_NAME);
-		this.player.getDataWatcher().updateObject(MAGICKA_WATCHER, properties.getInteger("CurrentMana"));
-		this.maxMana = properties.getInteger("MaxMana");
+		this.player.getDataWatcher().updateObject(EOS_WATCHER, properties.getInteger("CurrentEos"));
+		this.maxEos = properties.getInteger("MaxEos");
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class PlayerNBT implements IExtendedEntityProperties
 
 		try 
 		{
-			outputStream.writeInt(this.maxMana);
+			outputStream.writeInt(this.maxEos);
 		} 
 		catch (Exception ex) 
 		{
@@ -83,34 +83,34 @@ public class PlayerNBT implements IExtendedEntityProperties
 		}
 	}
 
-	public final boolean consumeMagicka(int amount)
+	public final boolean consumeEos(int amount)
 	{
-		int mana = this.player.getDataWatcher().getWatchableObjectInt(MAGICKA_WATCHER);
+		int mana = this.player.getDataWatcher().getWatchableObjectInt(EOS_WATCHER);
 		boolean sufficient = amount <= mana;
 		mana -= (amount < mana ? amount : mana);
-		this.player.getDataWatcher().updateObject(MAGICKA_WATCHER, mana);
+		this.player.getDataWatcher().updateObject(EOS_WATCHER, mana);
 		return sufficient;
 	}
 
 
-	public final void replenishMagicka()
+	public final void replenishEos()
 	{
-		this.player.getDataWatcher().updateObject(MAGICKA_WATCHER, this.maxMana);
+		this.player.getDataWatcher().updateObject(EOS_WATCHER, this.maxEos);
 	}
 
-	public final int getCurrentMagicka()
+	public final int getCurrentEos()
 	{
-		return this.player.getDataWatcher().getWatchableObjectInt(MAGICKA_WATCHER);
+		return this.player.getDataWatcher().getWatchableObjectInt(EOS_WATCHER);
 	}
 
-	public final void setCurrentMagicka(int amount)
+	public final void setCurrentEos(int amount)
 	{
-		this.player.getDataWatcher().updateObject(MAGICKA_WATCHER, (amount < this.maxMana ? amount : this.maxMana));
+		this.player.getDataWatcher().updateObject(EOS_WATCHER, (amount < this.maxEos ? amount : this.maxEos));
 	}
 
-	public void setMaxMagicka(int amount)
+	public void setMaxEos(int amount)
 	{
-		this.maxMana = 50;
+		this.maxEos = 50;
 		this.sync();
 	}
 

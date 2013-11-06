@@ -48,11 +48,11 @@ public class RioVSummoners extends Item
 				int var4 = 0;
 				if (!world.isRemote)
 				{
-					if(player.getCurrentMagicka() > 3)
+					if(player.getCurrentEos() > 3)
 					{
 						while (var4 < 1)
 						{
-							if(player.consumeMagicka(3))
+							if(player.consumeEos(3))
 							{
 								EntityTerron var5 = new EntityTerron(world);
 								var5.setPosition(par4, par5+1, par6);
@@ -66,7 +66,7 @@ public class RioVSummoners extends Item
 					}
 					else
 					{
-						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka!"));
+						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough Eos!"));
 					}
 				}
 
@@ -77,11 +77,11 @@ public class RioVSummoners extends Item
 				int var4 = 0;
 				if (!world.isRemote)
 				{
-					if(player.getCurrentMagicka() > 4)
+					if(player.getCurrentEos() > 4)
 					{
 						while (var4 < 1)
 						{
-							if(player.consumeMagicka(4))
+							if(player.consumeEos(4))
 							{
 								EntityTef var5 = new EntityTef(world);
 								var5.setPosition(par4, par5+1, par6);
@@ -94,7 +94,7 @@ public class RioVSummoners extends Item
 					}
 					else
 					{
-						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka!"));
+						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough Eos!"));
 					}
 				}
 			}
@@ -104,11 +104,11 @@ public class RioVSummoners extends Item
 				int var4 = 0;
 				if (!world.isRemote)
 				{
-					if(player.getCurrentMagicka() > 18)
+					if(player.getCurrentEos() > 18)
 					{
 						while (var4 < 1)
 						{
-							if(player.consumeMagicka(18))
+							if(player.consumeEos(18))
 							{
 								EntityDarkEssence var5 = new EntityDarkEssence(world);
 								var5.setPosition(par4, par5+1, par6);
@@ -122,7 +122,7 @@ public class RioVSummoners extends Item
 					}
 					else
 					{
-						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka!"));
+						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough Eos!"));
 					}
 				}
 			}
@@ -135,12 +135,12 @@ public class RioVSummoners extends Item
 				int var4 = 0;
 				if (!world.isRemote)
 				{
-					if(player.getCurrentMagicka() > 12)
+					if(player.getCurrentEos() > 12)
 					{
 
 						while (var4 < 1)
 						{
-							if(player.consumeMagicka(12))
+							if(player.consumeEos(12))
 							{
 								EntityDemonAngel var5 = new EntityDemonAngel(world);
 								var5.setPosition(par4, par5+1, par6);
@@ -153,7 +153,7 @@ public class RioVSummoners extends Item
 					}
 					else
 					{
-						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka!"));
+						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough Eos!"));
 					}
 				}
 			}
@@ -164,11 +164,11 @@ public class RioVSummoners extends Item
 
 				if (!world.isRemote)
 				{
-					if(player.getCurrentMagicka() > 34)
+					if(player.getCurrentEos() > 34)
 					{
 						while (var4 < 1)
 						{
-							if(player.consumeMagicka(34))
+							if(player.consumeEos(34))
 							{
 								EntityAunTun var5 = new EntityAunTun(world);
 								var5.setPosition(par4, par5+1, par6);
@@ -181,7 +181,7 @@ public class RioVSummoners extends Item
 					}
 					else
 					{
-						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka!"));
+						entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough Eos!"));
 					}
 				}
 			}

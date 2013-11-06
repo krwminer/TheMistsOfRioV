@@ -68,6 +68,7 @@ public class EntitySoverianOfficer extends EntityMobDeadBody
 
 	}
 
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
@@ -80,6 +81,7 @@ public class EntitySoverianOfficer extends EntityMobDeadBody
 		return true; //don't care about the light level to spawn
 	}
 
+	@Override
 	public ItemStack getHeldItem()
 	{
 		return defaultHeldItem;
@@ -90,16 +92,13 @@ public class EntitySoverianOfficer extends EntityMobDeadBody
 		defaultHeldItem = new ItemStack(Items.onyxSword);
 	}
 
-	protected void attackEntity(Entity par1Entity, float par2)
-	{
-
-	}
-
+	@Override
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
 
+	@Override
 	protected void dropFewItems(boolean par1, int par2)
 	{
 		int var1 = this.rand.nextInt(10);
@@ -138,6 +137,7 @@ public class EntitySoverianOfficer extends EntityMobDeadBody
 
 	}
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();

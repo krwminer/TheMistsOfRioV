@@ -97,20 +97,20 @@ public class RioVDrinkable extends ItemFood
 			}
 		}
 
-		if(itemStack.itemID == Items.magickaPotion.itemID)
+		if(itemStack.itemID == Items.eosPotion.itemID)
 		{
 			PlayerNBT player = PlayerNBT.get(entityPlayer);
 
-			if(player.getCurrentMagicka() == 0)
+			if(player.getCurrentEos() == 0)
 			{
 				--itemStack.stackSize;
-				player.replenishMagicka();
+				player.replenishEos();
 				entityPlayer.getFoodStats().addStats(this);
 				world.playSoundAtEntity(entityPlayer, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
 				this.onFoodEaten(itemStack, world, entityPlayer);
 				return itemStack.stackSize <= 0 ? new ItemStack(Item.glassBottle) : itemStack;		
 			}
-			else if(player.getCurrentMagicka() != 0)
+			else if(player.getCurrentEos() != 0)
 			{
 
 			}
@@ -137,7 +137,7 @@ public class RioVDrinkable extends ItemFood
 	{
 		PlayerNBT player = PlayerNBT.get(par3EntityPlayer);
 
-		if(itemID == Items.magickaPotion.itemID && player.getCurrentMagicka() != 0)
+		if(itemID == Items.eosPotion.itemID && player.getCurrentEos() != 0)
 		{
 
 		}
@@ -160,6 +160,10 @@ public class RioVDrinkable extends ItemFood
 		if(itemID == Items.spicedWine.itemID)
 		{
 			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "spicedWine");
+		}
+		if(itemID == Items.eosPotion.itemID)
+		{
+			this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "eosPotion");
 		}
 	}
 }

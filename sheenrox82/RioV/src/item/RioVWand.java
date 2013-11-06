@@ -55,7 +55,7 @@ public class RioVWand extends Item
 			{
 				if (this.firetick == this.firemax && this.firemax != 0)
 				{
-					if(player.consumeMagicka(2))
+					if(player.consumeEos(2))
 					{
 						Vec3 look = entityplayer.getLookVec();
 						EntityLargeFireball fireball2 = new EntityLargeFireball(world, entityplayer, 1, 1, 1);
@@ -100,7 +100,7 @@ public class RioVWand extends Item
 			{
 				if (this.firetick == this.firemax && this.firemax != 0)
 				{
-					if(player.consumeMagicka(2))
+					if(player.consumeEos(2))
 					{
 						world.spawnEntityInWorld(new EntitySnowball(world, entityplayer));
 
@@ -128,7 +128,7 @@ public class RioVWand extends Item
 			{
 				if (this.firetick == this.firemax && this.firemax != 0)
 				{
-					if(player.consumeMagicka(2))
+					if(player.consumeEos(2))
 					{
 						world.spawnEntityInWorld(new EntityPinkEssence(world, entityplayer));
 
@@ -150,10 +150,10 @@ public class RioVWand extends Item
 			}
 		}
 
-		if(player.getCurrentMagicka() == 0)
+		if(player.getCurrentEos() == 0)
 		{
 			if(!world.isRemote)
-				entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough magicka.."));
+				entityplayer.sendChatToPlayer(ChatMessageComponent.createFromText("You do not have enough Eos!"));
 		}
 		return itemstack;
 	}

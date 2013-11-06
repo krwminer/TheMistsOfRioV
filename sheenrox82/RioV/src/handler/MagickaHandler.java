@@ -30,8 +30,8 @@ public class MagickaHandler implements IPacketHandler
 
 		try 
 		{
-			props.setMaxMagicka(inputStream.readInt());
-			props.setCurrentMagicka(inputStream.readInt());
+			props.setMaxEos(inputStream.readInt());
+			props.setCurrentEos(inputStream.readInt());
 		} 
 		catch (IOException e) 
 		{
@@ -39,6 +39,6 @@ public class MagickaHandler implements IPacketHandler
 			return;
 		}
 		
-		System.out.println("[PACKET] Mana from packet: " + props.getCurrentMagicka() + "/" + props.maxMana);
+		System.out.println("[PACKET] Mana from packet: " + props.getCurrentEos() + "/" + props.maxEos);
 	}
 }

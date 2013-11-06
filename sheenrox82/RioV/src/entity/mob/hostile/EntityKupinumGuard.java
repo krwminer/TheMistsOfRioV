@@ -72,17 +72,20 @@ public class EntityKupinumGuard extends EntityMobDeadBody
 		this.setCurrentItemOrArmor(1, new ItemStack(Items.kupinumBoots));
 	}
 
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
 		this.dataWatcher.addObject(16, new Byte((byte)0));
 	}
 
+	@Override
 	protected boolean isValidLightLevel()
 	{
 		return true;
 	}
 
+	@Override
 	public ItemStack getHeldItem()
 	{
 		return defaultHeldItem;
@@ -93,6 +96,7 @@ public class EntityKupinumGuard extends EntityMobDeadBody
 		defaultHeldItem = new ItemStack(Items.kupinumSword);
 	}
 	
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
@@ -101,11 +105,13 @@ public class EntityKupinumGuard extends EntityMobDeadBody
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(18.0D);
 	}
 	
+	@Override
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
 
+	@Override
 	protected void dropFewItems(boolean par1, int par2)
 	{
 		int var1 = this.rand.nextInt(6);

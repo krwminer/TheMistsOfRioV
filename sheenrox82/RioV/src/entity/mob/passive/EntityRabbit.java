@@ -58,28 +58,26 @@ public class EntityRabbit extends EntityTameableDeadBody
         this.setTamed(false);
     }
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(8.0D);
 	}
 
-    /**
-     * Returns true if the newer Entity AI code should be run
-     */
+	@Override
     public boolean isAIEnabled()
     {
         return true;
     }
 
-    /**
-     * main AI tick function, replaces updateEntityActionState
-     */
+	@Override
     protected void updateAITick()
     {
         this.dataWatcher.updateObject(18, Float.valueOf(this.getHealth()));
     }
 
+	@Override
     protected void entityInit()
     {
         super.entityInit();
@@ -87,46 +85,33 @@ public class EntityRabbit extends EntityTameableDeadBody
         this.dataWatcher.addObject(19, new Byte((byte)0));
     }
 
+	@Override
     public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
     {
         super.writeEntityToNBT(par1NBTTagCompound);
        
     }
 
-    /**
-     * (abstract) Protected helper method to read subclass entity data from NBT.
-     */
+	@Override
     public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
     {
         super.readEntityFromNBT(par1NBTTagCompound);
         
     }
 
+	@Override
     protected float getSoundVolume()
     {
         return 0.4F;
     }
 
-    /**
-     * Returns the item ID for the item the mob drops on death.
-     */
+	@Override
     protected int getDropItemId()
     {
         return -1;
     }
 
-    /**
-     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
-     * use this to react to sunlight and start to burn.
-     */
-    public void onLivingUpdate()
-    {
-        super.onLivingUpdate();
-    }
-
-    /**
-     * Called to update the entity's position/logic.
-     */
+	@Override
     public void onUpdate()
     {
         super.onUpdate();
@@ -153,23 +138,19 @@ public class EntityRabbit extends EntityTameableDeadBody
         return (this.field_70924_f + (this.field_70926_e - this.field_70924_f) * par1) * 0.15F * (float)Math.PI;
     }
 
+	@Override
     public float getEyeHeight()
     {
         return this.height * 0.8F;
     }
 
-    /**
-     * The speed it takes to move the entityliving's rotationPitch through the faceEntity method. This is only currently
-     * use in wolves.
-     */
+	@Override
     public int getVerticalFaceSpeed()
     {
         return this.isSitting() ? 20 : super.getVerticalFaceSpeed();
     }
 
-    /**
-     * Called when the entity is attacked.
-     */
+	@Override
     public boolean attackEntityFrom(DamageSource par1DamageSource, float par2)
     {
         if (this.isEntityInvulnerable())
@@ -190,12 +171,14 @@ public class EntityRabbit extends EntityTameableDeadBody
         }
     }
 
+	@Override
     public boolean attackEntityAsMob(Entity par1Entity)
     {
         int i = this.isTamed() ? 4 : 2;
         return par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this), (float)i);
     }
 
+	@Override
     public void setTamed(boolean par1)
     {
         super.setTamed(par1);
@@ -210,9 +193,7 @@ public class EntityRabbit extends EntityTameableDeadBody
         }
     }
 
-    /**
-     * Called when a player interacts with a mob. e.g. gets milk from a cow, gets into the saddle on a pig.
-     */
+	@Override
     public boolean interact(EntityPlayer par1EntityPlayer)
     {
         ItemStack itemstack = par1EntityPlayer.inventory.getCurrentItem();
@@ -292,6 +273,7 @@ public class EntityRabbit extends EntityTameableDeadBody
     }
 
     @SideOnly(Side.CLIENT)
+	@Override
     public void handleHealthUpdate(byte par1)
     {
         if (par1 == 8)
@@ -330,9 +312,7 @@ public class EntityRabbit extends EntityTameableDeadBody
         }
     }
 
-    /**
-     * Returns true if the mob is currently able to mate with the specified mob.
-     */
+	@Override
     public boolean canMateWith(EntityAnimal par1EntityAnimal)
     {
         if (par1EntityAnimal == this)
@@ -359,14 +339,13 @@ public class EntityRabbit extends EntityTameableDeadBody
         return this.dataWatcher.getWatchableObjectByte(19) == 1;
     }
 
-    /**
-     * Determines if an entity can be despawned, used on idle far away entities
-     */
+	@Override
     protected boolean canDespawn()
     {
         return !this.isTamed() && this.ticksExisted > 2400;
     }
 
+	@Override
     public boolean func_142018_a(EntityLivingBase par1EntityLivingBase, EntityLivingBase par2EntityLivingBase)
     {
         if (!(par1EntityLivingBase instanceof EntityCreeper) && !(par1EntityLivingBase instanceof EntityGhast))
@@ -390,6 +369,7 @@ public class EntityRabbit extends EntityTameableDeadBody
 		return false;
     }
 
+	@Override
     public EntityAgeable createChild(EntityAgeable par1EntityAgeable)
     {
         return this.spawnBabyAnimal(par1EntityAgeable);

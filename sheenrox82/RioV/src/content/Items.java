@@ -26,7 +26,6 @@ import sheenrox82.RioV.src.item.RioVSummoners;
 import sheenrox82.RioV.src.item.RioVVoidHolder;
 import sheenrox82.RioV.src.item.RioVWand;
 import sheenrox82.RioV.src.item.RioVWeapon;
-import sheenrox82.RioV.src.item.metadata.ItemLeaves;
 import sheenrox82.RioV.src.item.unique.ItemBamboo;
 import sheenrox82.RioV.src.item.unique.ItemBowOfWurTun;
 import sheenrox82.RioV.src.item.unique.ItemDragonChestplate;
@@ -403,7 +402,6 @@ public class Items
 	public static Item tasaravLeggings = (new RioVArmor(Config.addItem("Tasarav Mallor's Leggings"), AlerisArmorMaterial, render, 2, "tasarav", false)).setUnlocalizedName("tasaravLeggings");
 	public static Item tasaravBoots = (new RioVArmor(Config.addItem("Tasarav Mallor's Boots"), AlerisArmorMaterial, render, 3, "tasarav", false)).setUnlocalizedName("tasaravBoots");
 	public static Item tasaravSword = (new RioVWeapon(Config.addItem("Tasarav Mallor's Sword"), Aleris, false)).setUnlocalizedName("tasaravSword");
-	public static Item leafMeta = (new ItemLeaves(Config.addItem("Leaves (Metadata)"))).setUnlocalizedName("leafMeta");
 	public static Item paladinHelmet = (new RioVArmor(Config.addItem("Paladin Helmet"), FlameArmorMaterial, render, 0, "paladin", false)).setUnlocalizedName("paladinHelmet");
 	public static Item paladinChestplate = (new RioVArmor(Config.addItem("Paladin Chestplate"), FlameArmorMaterial, render, 1, "paladin", false)).setUnlocalizedName("paladinChestplate");
 	public static Item paladinLeggings = (new RioVArmor(Config.addItem("Paladin Leggings"), FlameArmorMaterial, render, 2, "paladin", false)).setUnlocalizedName("paladinLeggings");
@@ -411,11 +409,11 @@ public class Items
 	public static Item paladinLongsword = (new RioVWeapon(Config.addItem("Paladin Longsword"), InfusedOnyx, false)).setUnlocalizedName("paladinLongsword");
 	public static Item iceWand = (new RioVWand(Config.addItem("Ice Wand"), 0, 1, 1)).setUnlocalizedName("iceWand");
 	public static Item graviWand = (new RioVWand(Config.addItem("Gravi Wand"), 0, 1, 3)).setUnlocalizedName("graviWand");
-	public static Item magickaPotion = (new RioVDrinkable(Config.addItem("Magicka Potion"), 0, 0, true)).setAlwaysEdible().setUnlocalizedName("magickaPotion");
+	public static Item eosPotion = (new RioVDrinkable(Config.addItem("Eos Potion"), 0, 0, true)).setAlwaysEdible().setUnlocalizedName("eosPotion");
 
 	public static void add()
 	{		
-		MethodUtil.registerItem(magickaPotion, "Magicka Potion");
+		MethodUtil.registerItem(eosPotion, "Eos Potion");
 		MethodUtil.registerItem(graviWand, "Gravi Wand");
 		MethodUtil.registerItem(iceWand, "Ice Wand");
 		MethodUtil.registerItem(paladinHelmet, "Paladin Helmet");

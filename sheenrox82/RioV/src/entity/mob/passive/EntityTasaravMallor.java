@@ -68,6 +68,7 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		this.setCurrentItemOrArmor(1, new ItemStack(Items.tasaravBoots));
 	}
 
+	@Override
 	public void setAttackTarget(EntityLivingBase par1EntityLivingBase)
 	{
 		super.setAttackTarget(par1EntityLivingBase);
@@ -96,22 +97,26 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		}
 	}
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(100.0D);
 	}
 
+	@Override
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
 
+	@Override
 	protected void updateAITick()
 	{
 		this.dataWatcher.updateObject(18, Float.valueOf(this.getHealth()));
 	}
 
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
@@ -119,6 +124,7 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		this.dataWatcher.addObject(19, new Byte((byte)0));
 	}
 
+	@Override
 	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.writeEntityToNBT(par1NBTTagCompound);
@@ -131,6 +137,7 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		return (this.dataWatcher.getWatchableObjectByte(16) & 2) != 0;
 	}
 
+	@Override
 	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.readEntityFromNBT(par1NBTTagCompound);
@@ -138,31 +145,25 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		this.isTasaravAlive = par1NBTTagCompound.getBoolean("TasaravAlive");
 	}
 
+	@Override
 	protected float getSoundVolume()
 	{
 		return 0.4F;
 	}
 
-	/**
-	 * Returns the item ID for the item the mob drops on death.
-	 */
+	@Override
 	protected int getDropItemId()
 	{
 		return -1;
 	}
 
-	/**
-	 * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
-	 * use this to react to sunlight and start to burn.
-	 */
+	@Override
 	public void onLivingUpdate()
 	{
 		super.onLivingUpdate();
 	}
 
-	/**
-	 * Called to update the entity's position/logic.
-	 */
+	@Override
 	public void onUpdate()
 	{
 		super.onUpdate();
@@ -183,25 +184,19 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		}
 	}
 
-	@SideOnly(Side.CLIENT)
-	public float getInterestedAngle(float par1)
-	{
-		return (this.field_70924_f + (this.field_70926_e - this.field_70924_f) * par1) * 0.15F * (float)Math.PI;
-	}
-
+	@Override
 	public float getEyeHeight()
 	{
 		return this.height * 0.8F;
 	}
 
+	@Override
 	public int getVerticalFaceSpeed()
 	{
 		return this.isSitting() ? 20 : super.getVerticalFaceSpeed();
 	}
 
-	/**
-	 * Called when the entity is attacked.
-	 */
+	@Override
 	public boolean attackEntityFrom(DamageSource par1DamageSource, float par2)
 	{
 		if (this.isEntityInvulnerable())
@@ -222,12 +217,14 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		}
 	}
 
+	@Override
 	public boolean attackEntityAsMob(Entity par1Entity)
 	{
 		int i = this.isTamed() ? 40 : 30;
 		return par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this), (float)i);
 	}
 
+	@Override
 	public void setTamed(boolean par1)
 	{
 		super.setTamed(par1);
@@ -242,6 +239,7 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		}
 	}
 
+	@Override
 	public boolean interact(EntityPlayer par1EntityPlayer)
 	{
 		ItemStack itemstack = par1EntityPlayer.inventory.getCurrentItem();
@@ -325,6 +323,7 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		return this.dataWatcher.getWatchableObjectByte(19) == 1;
 	}
 
+	@Override
 	public boolean func_142018_a(EntityLivingBase par1EntityLivingBase, EntityLivingBase par2EntityLivingBase)
 	{
 		if (!(par1EntityLivingBase instanceof EntityCreeper) && !(par1EntityLivingBase instanceof EntityGhast))
@@ -347,6 +346,7 @@ public class EntityTasaravMallor extends EntityTameableDeadBody
 		}
 	}
 
+	@Override
 	protected boolean canDespawn()
 	{
 		return !this.isTamed() && this.ticksExisted > 2400;

@@ -22,6 +22,7 @@ public class EntityBossCore extends EntityMob implements IBossDisplayData
 		super.applyEntityAttributes();
 	}
 	
+	@Override
 	public boolean canDespawn()
 	{
 		return false;

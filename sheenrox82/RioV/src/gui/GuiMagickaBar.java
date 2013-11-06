@@ -38,11 +38,11 @@ public class GuiMagickaBar extends Gui
 		PlayerNBT props = PlayerNBT.get(mc.thePlayer);
 		GuiIngame gig = new GuiIngame(Minecraft.getMinecraft());
 		FontRenderer fontrenderer = Minecraft.getMinecraft().fontRenderer;
-		ResourceLocation icons = new ResourceLocation("riov", "textures/gui/mana_bar.png");
+		ResourceLocation icons = new ResourceLocation("riov", "textures/gui/eos_bar.png");
 		int width = event.resolution.getScaledWidth();
 		int height = event.resolution.getScaledHeight();
 
-		if (props == null || props.maxMana == 0)
+		if (props == null || props.maxEos == 0)
 		{
 			return;
 		}
@@ -53,7 +53,7 @@ public class GuiMagickaBar extends Gui
 			{
 				GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 				Minecraft.getMinecraft().renderEngine.bindTexture(icons);
-				float magicka = (int)(((float) props.getCurrentMagicka() / props.maxMana) * 80);
+				float magicka = (int)(((float) props.getCurrentEos() / props.maxEos) * 80);
 				this.drawTexturedModalRect(20, height - 20, 0, 49, 102, 14);
 				this.drawTexturedModalRect(31, height - 16, 11, 64, (int)magicka, 6);
 			}
@@ -64,7 +64,7 @@ public class GuiMagickaBar extends Gui
 			if(!mc.thePlayer.capabilities.isCreativeMode)
 			{
 				GL11.glPushMatrix();
-				fontrenderer.drawStringWithShadow("Magicka: " + props.getCurrentMagicka() + "/" + props.maxMana, 32, height - 18, 16777215);
+				fontrenderer.drawStringWithShadow("Eos: " + props.getCurrentEos() + "/" + props.maxEos, 32, height - 18, 16777215);
 				GL11.glPopMatrix();
 			}
 		}

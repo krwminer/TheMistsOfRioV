@@ -90,11 +90,13 @@ public class EntityTef extends EntityBossCore
 			Minecraft.getMinecraft().thePlayer.addChatMessage("Tef was killed!");
 	}
 
+	@Override
 	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.writeEntityToNBT(par1NBTTagCompound);
 	}
 
+	@Override
 	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.readEntityFromNBT(par1NBTTagCompound);

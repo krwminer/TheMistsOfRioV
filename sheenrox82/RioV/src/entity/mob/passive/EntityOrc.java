@@ -79,17 +79,20 @@ public class EntityOrc extends EntityMobDeadBody
 		this.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
 	}
 
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
 		this.dataWatcher.addObject(16, new Byte((byte)0));
 	}
 
+	@Override
 	protected boolean isValidLightLevel()
 	{
 		return true;
 	}
 
+	@Override
 	public ItemStack getHeldItem()
 	{
 		return defaultHeldItem;
@@ -100,11 +103,7 @@ public class EntityOrc extends EntityMobDeadBody
 		defaultHeldItem = new ItemStack(Items.amethystSword);
 	}
 
-	protected void attackEntity(Entity par1Entity, float par2)
-	{
-
-	}
-
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
@@ -113,11 +112,13 @@ public class EntityOrc extends EntityMobDeadBody
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(10.0D);
 	}
 
+	@Override
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
 
+	@Override
 	protected void dropFewItems(boolean par1, int par2)
 	{
 		int var1 = this.rand.nextInt(10);

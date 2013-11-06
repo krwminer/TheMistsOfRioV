@@ -129,7 +129,7 @@ public class EntityLoader
 
 		SpawnListEntry advSpawn = new SpawnListEntry(EntityAdv.class, 1, 2, 6);
 		SpawnListEntry nizonianSpawn = new SpawnListEntry(EntityNizonian.class, 1, 2, 6);
-		SpawnListEntry mageSpawn = new SpawnListEntry(EntityMage.class, 3, 3, 6);
+		SpawnListEntry mageSpawn = new SpawnListEntry(EntityMage.class, 4, 1, 3);
 		SpawnListEntry darkElfSpawn = new SpawnListEntry(EntityDarkElf.class, 2, 4, 8);
 		SpawnListEntry galokinSpawn = new SpawnListEntry(EntityGalokin.class, 2, 4, 8);
 		SpawnListEntry orcSpawn = new SpawnListEntry(EntityOrc.class, 2, 4, 8);

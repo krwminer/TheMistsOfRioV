@@ -17,7 +17,8 @@ public class EntityAngel extends EntityMobDeadBody
 {
 	public static final ItemStack defaultHeldItem;
 
-	public EntityAngel(World par1World) {
+	public EntityAngel(World par1World) 
+	{
 
 		super(par1World);
 		this.isImmuneToFire = true;
@@ -28,17 +29,20 @@ public class EntityAngel extends EntityMobDeadBody
 		tasks.addTask(4, new EntityAIAttackOnCollide(this, 0.56D, true));
 	}
 
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
 		this.dataWatcher.addObject(16, new Byte((byte)0));
 	}
 
+	@Override
 	protected boolean isValidLightLevel()
 	{
 		return true;
 	}
 
+	
 	public void onLivingUpdate()
 	{
 		if (this.rand.nextInt(24) == 0)
@@ -55,11 +59,13 @@ public class EntityAngel extends EntityMobDeadBody
 		super.onLivingUpdate();
 	}
 
+	
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
 
+	
 	public ItemStack getHeldItem()
 	{
 		return defaultHeldItem;
@@ -70,6 +76,7 @@ public class EntityAngel extends EntityMobDeadBody
 		defaultHeldItem = new ItemStack(Items.skywoodSword);
 	}
 
+	@Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
@@ -78,6 +85,7 @@ public class EntityAngel extends EntityMobDeadBody
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(4.0D);
 	}
 
+	@Override
 	protected void dropFewItems(boolean par1, int par2)
 	{
 		int var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
