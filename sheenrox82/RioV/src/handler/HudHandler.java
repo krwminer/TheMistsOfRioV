@@ -5,6 +5,7 @@ import java.util.EnumSet;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.GuiDownloadTerrain;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,20 +22,25 @@ import cpw.mods.fml.common.TickType;
 
 public class HudHandler extends Container implements ITickHandler 
 {
-    private EntityPlayerSP player;
-    private static boolean initialized = false;
-    
+	private EntityPlayerSP player;
+	private static boolean initialized = false;
+	
 	@Override
 	public void tickStart(EnumSet<TickType> type, Object... tickData) 
 	{
 		final Minecraft minecraft = FMLClientHandler.instance().getClient();
-        
-        if(type.equals(EnumSet.of(TickType.CLIENT)))
-        {
-                player = minecraft.thePlayer;
-                if(minecraft.currentScreen instanceof GuiMainMenu)
-                minecraft.displayGuiScreen(new GuiRioVMainMenu());
-        }
+
+		if(type.equals(EnumSet.of(TickType.CLIENT)))
+		{
+			if(minecraft.currentScreen instanceof GuiMainMenu)
+				minecraft.displayGuiScreen(new GuiRioVMainMenu());
+		}
+		
+		if(type.equals(EnumSet.of(TickType.CLIENT)))
+		{
+			if(minecraft.currentScreen instanceof GuiDownloadTerrain)
+				WavHandler.stopSound();
+		}
 	}
 
 	@Override
@@ -62,7 +68,7 @@ public class HudHandler extends Container implements ITickHandler
 			}
 		}
 	}
-	
+
 	@Override
 	public EnumSet<TickType> ticks() 
 	{

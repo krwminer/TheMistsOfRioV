@@ -16,7 +16,8 @@ public class Sound
 		SOUND_PREFIX + "darkness.ogg",
 		SOUND_PREFIX + "exhale.ogg",
 		SOUND_PREFIX + "hello.ogg",
-		SOUND_PREFIX + "pain.ogg"
+		SOUND_PREFIX + "pain.ogg",
+		SOUND_PREFIX + "menuMusic.ogg"
 		};
 	
 	public static final String portal = SOUND_PREFIX + "portal";
@@ -29,4 +30,5 @@ public class Sound
 	public static final String exhale = SOUND_PREFIX + "exhale";
 	public static final String hello = SOUND_PREFIX + "hello";
 	public static final String pain = SOUND_PREFIX + "pain";
+	public static final String menuMusic = SOUND_PREFIX + "menuMusic";
 }

@@ -1,10 +1,7 @@
 package sheenrox82.RioV.src.gui;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
@@ -14,7 +11,6 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiButtonLanguage;
 import net.minecraft.client.gui.GuiConfirmOpenLink;
 import net.minecraft.client.gui.GuiLanguage;
-import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.gui.GuiScreen;
@@ -35,10 +31,11 @@ import net.minecraft.world.demo.DemoWorldServer;
 import net.minecraft.world.storage.ISaveFormat;
 import net.minecraft.world.storage.WorldInfo;
 
-import org.apache.commons.io.Charsets;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.Project;
 
+import sheenrox82.RioV.src.handler.HudHandler;
+import sheenrox82.RioV.src.handler.WavHandler;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.client.GuiModList;
 
@@ -100,6 +97,10 @@ public class GuiRioVMainMenu extends GuiScreen
 			this.field_92025_p = "" + EnumChatFormatting.BOLD + "Notice!" + EnumChatFormatting.RESET + " Java 1.5 compatibility will be dropped in Minecraft 1.6";
 			this.field_104024_v = "http://tinyurl.com/javappc";
 		}
+
+		WavHandler.setUpSound("BackgroundMusic.wav");
+
+		WavHandler.playSound(0);
 	}
 
 	/**
@@ -146,8 +147,8 @@ public class GuiRioVMainMenu extends GuiScreen
 		}
 
 		this.func_130020_g();
-		this.buttonList.add(new GuiRioVButton(0, this.width / 2 - 100, 188, I18n.getString("menu.options")));
-		this.buttonList.add(new GuiRioVButton(4, this.width / 2 - 100, 210, I18n.getString("menu.quit")));
+		this.buttonList.add(new GuiRioVButton(0, this.width / 2 - 100, 166, I18n.getString("menu.options")));
+		this.buttonList.add(new GuiRioVButton(4, this.width / 2 - 100, 188, I18n.getString("menu.quit")));
 		this.buttonList.add(new GuiButtonLanguage(5, 2, 2));
 		Object var4 = this.field_104025_t;
 
@@ -187,13 +188,13 @@ public class GuiRioVMainMenu extends GuiScreen
 	private void addSingleplayerMultiplayerButtons(int par1, int par2)
 	{
 		GL11.glPushMatrix();
-		this.buttonList.add(new GuiRioVButton(1, this.width / 2 - 100, 100, I18n.getString("menu.singleplayer")));
-		this.buttonList.add(new GuiRioVButton(2, this.width / 2 - 100, 122, I18n.getString("menu.multiplayer")));
-		this.buttonList.add(new GuiRioVButton(8, this.width / 2 - 100, 144, I18n.getString("Connect to the official RioV Server!")));
-		fmlModButton = new GuiRioVButton(6, this.width / 2 - 100, 166, "Mods");
+		this.buttonList.add(new GuiRioVButton(1, this.width / 2 - 100, 78, I18n.getString("menu.singleplayer")));
+		this.buttonList.add(new GuiRioVButton(2, this.width / 2 - 100, 100, I18n.getString("menu.multiplayer")));
+		this.buttonList.add(new GuiRioVButton(8, this.width / 2 - 100, 122, I18n.getString("Join the Official RioV Server!")));
+		fmlModButton = new GuiRioVButton(6, this.width / 2 - 100, 144, "Mods");
 		this.buttonList.add(fmlModButton);
 
-		minecraftRealmsButton = new GuiButton(14, this.width / 2 - 100, 232, I18n.getString("menu.online"));
+		minecraftRealmsButton = new GuiButton(14, this.width / 2 - 100, 210, I18n.getString("menu.online"));
 		this.buttonList.add(minecraftRealmsButton);
 		this.minecraftRealmsButton.drawButton = false;
 		GL11.glPopMatrix();
@@ -215,34 +216,36 @@ public class GuiRioVMainMenu extends GuiScreen
 		}
 	}
 
-	/**
-	 * Fired when a control is clicked. This is the equivalent of ActionListener.actionPerformed(ActionEvent e).
-	 */
 	protected void actionPerformed(GuiButton par1GuiButton)
 	{
 		if (par1GuiButton.id == 0)
 		{
 			this.mc.displayGuiScreen(new GuiOptions(this, this.mc.gameSettings));
+			WavHandler.stopSound();
 		}
 
 		if (par1GuiButton.id == 5)
 		{
 			this.mc.displayGuiScreen(new GuiLanguage(this, this.mc.gameSettings, this.mc.getLanguageManager()));
+			WavHandler.stopSound();
 		}
 
 		if (par1GuiButton.id == 1)
 		{
 			this.mc.displayGuiScreen(new GuiSelectWorld(this));
+			WavHandler.stopSound();
 		}
 
 		if (par1GuiButton.id == 2)
 		{
 			this.mc.displayGuiScreen(new GuiMultiplayer(this));
+			WavHandler.stopSound();
 		}
 
 		if (par1GuiButton.id == 14 && this.minecraftRealmsButton.drawButton)
 		{
 			this.func_140005_i();
+			WavHandler.stopSound();
 		}
 
 		if (par1GuiButton.id == 4)
@@ -253,16 +256,19 @@ public class GuiRioVMainMenu extends GuiScreen
 		if (par1GuiButton.id == 6)
 		{
 			this.mc.displayGuiScreen(new GuiModList(this));
+			WavHandler.stopSound();
 		}
 
 		if (par1GuiButton.id == 8)
 		{
 			this.mc.displayGuiScreen(new GuiConnecting(new GuiRioVMainMenu(), mc, "play.AvondaleRPG.net", 25565));
+			WavHandler.stopSound();
 		}
 
 		if (par1GuiButton.id == 11)
 		{
 			this.mc.launchIntegratedServer("Demo_World", "Demo_World", DemoWorldServer.demoWorldSettings);
+			WavHandler.stopSound();
 		}
 
 		if (par1GuiButton.id == 12)
@@ -273,6 +279,7 @@ public class GuiRioVMainMenu extends GuiScreen
 			if (var3 != null)
 			{
 				GuiYesNo var4 = GuiSelectWorld.getDeleteWorldScreen(this, var3.getWorldName(), 12);
+				WavHandler.stopSound();
 				this.mc.displayGuiScreen(var4);
 			}
 		}
