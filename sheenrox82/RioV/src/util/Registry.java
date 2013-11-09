@@ -19,6 +19,7 @@ import sheenrox82.RioV.src.handler.ConnectionHandler;
 import sheenrox82.RioV.src.handler.FuelHandler;
 import sheenrox82.RioV.src.handler.HudHandler;
 import sheenrox82.RioV.src.handler.SoundHandler;
+import sheenrox82.RioV.src.races.data.RaceData;
 import sheenrox82.RioV.src.recipe.AnvilCraftingManager;
 import sheenrox82.RioV.src.registries.HarvestLevelRegistry;
 import sheenrox82.RioV.src.registries.LangRegistry;
@@ -64,7 +65,7 @@ public class Registry
 				"Soverian Overlord will destroy the land of RioV and leave it in ashes. " +
 				"This is The Mists of RioV.";
 		Config.initialize(initEvent);
-        MinecraftForge.EVENT_BUS.register(new Events());
+		MinecraftForge.EVENT_BUS.register(new Events());
 		MinecraftForge.EVENT_BUS.register(new HudHandler());
 		MinecraftForge.EVENT_BUS.register(new SoundHandler());
 		MinecraftForge.EVENT_BUS.register(new GuiMagickaBar(Minecraft.getMinecraft()));
@@ -75,7 +76,7 @@ public class Registry
 		Enchantments.add();
 		LangRegistry.addNames();
 		HarvestLevelRegistry.addHarvestLevels();
-		
+		RaceData.check();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerTileEntity(TileEntityAbstractor.class, "Abstractor");
 		GameRegistry.registerTileEntity(TileEntityInfuser.class, "Infuser");
@@ -84,11 +85,14 @@ public class Registry
 		GameRegistry.registerTileEntity(TileEntityBloodChest.class, "BloodChest");
 		GameRegistry.registerTileEntity(TileEntitySkywoodChest.class, "SkywoodChest");
 		GameRegistry.registerTileEntity(TileEntityShrine.class, "Shrine");
+		GameRegistry.registerWorldGenerator(new WorldGen());
 		NetworkRegistry.instance().registerGuiHandler(TheMistsOfRioV.getInstance(), TheMistsOfRioV.getInstance().guiHandler);
+		NetworkRegistry.instance().registerConnectionHandler(new ConnectionHandler());
 		MethodUtil.registerDimension(Config.blindOasisID, WorldProviderBlindOasis.class);
 		MethodUtil.registerDimension(Config.vaerynID, WorldProviderVaeryn.class);
 		MethodUtil.registerDimension(Config.flamonorID, WorldProviderFlamonor.class);
 		MethodUtil.registerDimension(Config.sanctuatiteID, WorldProviderSanctuatite.class);
+		AnvilCraftingManager.instance = new AnvilCraftingManager();
 	}
 
 	public static void init(FMLInitializationEvent init)
@@ -99,14 +103,11 @@ public class Registry
 		EntityLoader.addNetherSpawning();
 		EntityLoader.addEndSpawning();
 		EntityLoader.addDimensionSpawning();
+		ExpansionChecker.check();
 		BiomeGenBase.extremeHills.theBiomeDecorator.treesPerChunk = 15;
 		BiomeGenBase.plains.theBiomeDecorator.treesPerChunk = 1;
 		BiomeGenBase.forest.theBiomeDecorator.treesPerChunk = 46;
 		BiomeGenBase.plains.theBiomeDecorator.bigMushroomsPerChunk = 1;
 		BiomeGenBase.plains.theBiomeDecorator.flowersPerChunk = 30;
-		GameRegistry.registerWorldGenerator(new WorldGen());
-		NetworkRegistry.instance().registerConnectionHandler(new ConnectionHandler());
-        AnvilCraftingManager.instance = new AnvilCraftingManager();
-        ExpansionChecker.check();
 	}
 }

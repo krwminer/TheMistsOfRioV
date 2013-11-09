@@ -14,7 +14,7 @@ public class RioVExplosives extends Item
 {
 	public RioVExplosives(int var1)
 	{
-		super(var1);
+		super(var1 - 256);
 		this.maxStackSize = 1;
 		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
