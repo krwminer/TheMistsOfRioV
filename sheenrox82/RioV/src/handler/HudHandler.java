@@ -5,6 +5,7 @@ import java.util.EnumSet;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.GuiCreateWorld;
 import net.minecraft.client.gui.GuiDownloadTerrain;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.GuiMainMenu;
@@ -24,7 +25,7 @@ public class HudHandler extends Container implements ITickHandler
 {
 	private EntityPlayerSP player;
 	private static boolean initialized = false;
-	
+
 	@Override
 	public void tickStart(EnumSet<TickType> type, Object... tickData) 
 	{
@@ -33,13 +34,17 @@ public class HudHandler extends Container implements ITickHandler
 		if(type.equals(EnumSet.of(TickType.CLIENT)))
 		{
 			if(minecraft.currentScreen instanceof GuiMainMenu)
+			{
 				minecraft.displayGuiScreen(new GuiRioVMainMenu());
-		}
-		
-		if(type.equals(EnumSet.of(TickType.CLIENT)))
-		{
+			}
 			if(minecraft.currentScreen instanceof GuiDownloadTerrain)
-				WavHandler.stopSound();
+			{
+				WavHandler.stopSound();			
+			}
+			if(minecraft.currentScreen == null)
+			{
+				WavHandler.stopSound();			
+			}
 		}
 	}
 

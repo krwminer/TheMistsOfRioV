@@ -11,9 +11,9 @@ import org.lwjgl.opengl.GL11;
 import sheenrox82.RioV.src.container.ContainerRioVWorkbench;
 import sheenrox82.RioV.src.lib.GuiResourceLocation;
 
-public class GuiRioVWorkbench extends GuiContainer
+public class GuiWorkbench extends GuiContainer
 {
-	public GuiRioVWorkbench(InventoryPlayer player_inventory, World par2World, int par3, int par4, int par5)
+	public GuiWorkbench(InventoryPlayer player_inventory, World par2World, int par3, int par4, int par5)
 	{
 		super(new ContainerRioVWorkbench(player_inventory, par2World, par3, par4, par5));
 	}

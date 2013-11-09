@@ -21,7 +21,7 @@ import sheenrox82.RioV.src.gui.GuiInfuser;
 import sheenrox82.RioV.src.gui.GuiLargeBag;
 import sheenrox82.RioV.src.gui.GuiMagicBinder;
 import sheenrox82.RioV.src.gui.GuiMediumBag;
-import sheenrox82.RioV.src.gui.GuiRioVWorkbench;
+import sheenrox82.RioV.src.gui.GuiWorkbench;
 import sheenrox82.RioV.src.gui.GuiSheenBag;
 import sheenrox82.RioV.src.gui.GuiSmallBag;
 import sheenrox82.RioV.src.inventory.InventoryBagLarge;
@@ -103,7 +103,7 @@ public class GuiHandler implements IGuiHandler
 		
 		if (id == BlockRioVWorkbench.idForActivation)
 		{
-			return new GuiRioVWorkbench(player.inventory, world, x, y, z);
+			return new GuiWorkbench(player.inventory, world, x, y, z);
 		}
 
 		if (id == BlockAnvil.id)
