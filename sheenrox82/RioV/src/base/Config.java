@@ -33,6 +33,7 @@ public class Config
 	public static int runesBiomeID;
 	public static boolean HUD;
 	public static boolean showToolInfo;
+	public static boolean allowBreathing;
 
 	public static void initialize(FMLPreInitializationEvent event)
 	{
@@ -44,6 +45,7 @@ public class Config
 		flamonorID = config.get("Dimension IDs", "Flamonor Dimension ID", 13).getInt();
 		sanctuatiteID = config.get("Dimension IDs", "Sanctuatite Dimension ID", 14).getInt();
 		HUD = config.get("HUD", "Use the blue magicka bar instead of text?", true).getBoolean(HUD);
+		allowBreathing = config.get("Misc", "Allow Mob Breathing Sounds? (CLIENT SIDE)", true).getBoolean(allowBreathing);
 		blindOasisBiomeID = config.get("Biome IDs", "Blind Oasis Biome ID (Blind Oasis Dimension)", 25).getInt(blindOasisBiomeID);
 		glimmerwoodBiomeID = config.get("Biome IDs", "Glimmerwood Biome ID (Vaeryn Dimension)", 26).getInt(glimmerwoodBiomeID);
 		snowyMountainsBiomeID = config.get("Biome IDs", "Snowy Mountains Biome ID (Overworld Dimension)", 27).getInt(snowyMountainsBiomeID);

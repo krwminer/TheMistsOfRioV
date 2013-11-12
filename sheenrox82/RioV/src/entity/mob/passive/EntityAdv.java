@@ -1,5 +1,7 @@
 package sheenrox82.RioV.src.entity.mob.passive;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -20,6 +22,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.world.World;
+import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.content.Sound;
@@ -244,5 +247,17 @@ public class EntityAdv extends EntityMobDeadBody
 		if(!this.worldObj.isRemote)
 			par1EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Hello to you too, " + par1EntityPlayer.username + "!"));
 		return true;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	protected String getLivingSound()
+	{
+		if(Config.allowBreathing)
+		{
+			return Sound.exhale;
+		}
+		
+		return null;
 	}
 }

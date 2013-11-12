@@ -25,12 +25,13 @@ import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.content.Sound;
 import sheenrox82.RioV.src.entity.mob.core.EntityMobDeadBody;
-import sheenrox82.RioV.src.entity.mob.passive.EntityAltruEssence;
-import sheenrox82.RioV.src.entity.mob.passive.EntitySkeletalHorse;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class EntityDarkElf extends EntityMobDeadBody implements IRangedAttackMob
 {
@@ -42,11 +43,11 @@ public class EntityDarkElf extends EntityMobDeadBody implements IRangedAttackMob
 		super(par1World);
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(5, new EntityAIWander(this, 0.56D));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 		this.tasks.addTask(6, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		isImmuneToFire = false;
-		
+
 		if(TheMistsOfRioV.getInstance().riovValis)
 		{
 			isImmuneToFire = true;
@@ -254,26 +255,32 @@ public class EntityDarkElf extends EntityMobDeadBody implements IRangedAttackMob
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.62D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(4.0D);
 	}
-	
+
 	@Override
+	@SideOnly(Side.CLIENT)
 	protected String getLivingSound()
 	{
-		return Sound.exhale;
+		if(Config.allowBreathing)
+		{
+			return Sound.exhale;
+		}
+		
+		return null;
 	}
-	
+
 	@Override
 	protected String getHurtSound()
 	{
 		return Sound.pain;
 	}
-	
+
 	@Override
 	public boolean interact(EntityPlayer par1EntityPlayer)
-    {
+	{
 		par1EntityPlayer.playSound(Sound.hello, 1, 1);
-		
+
 		if(!this.worldObj.isRemote)
-		par1EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Hello to you too, " + par1EntityPlayer.username + "!"));
+			par1EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("Hello to you too, " + par1EntityPlayer.username + "!"));
 		return true;
-    }
+	}
 }

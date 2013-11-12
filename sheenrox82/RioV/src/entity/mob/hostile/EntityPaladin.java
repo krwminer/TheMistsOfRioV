@@ -1,5 +1,7 @@
 package sheenrox82.RioV.src.entity.mob.hostile;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -12,8 +14,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.content.Sound;
 import sheenrox82.RioV.src.entity.mob.core.EntityMobDeadBody;
 import sheenrox82.RioV.src.entity.mob.passive.EntityAdv;
 import sheenrox82.RioV.src.entity.mob.passive.EntityAltruEssence;
@@ -115,4 +119,15 @@ public class EntityPaladin extends EntityMobDeadBody implements IBossDisplayData
 		this.dropItem(Items.paladinLongsword.itemID, 1);
 	}
 
+	@Override
+	@SideOnly(Side.CLIENT)
+	protected String getLivingSound()
+	{
+		if(Config.allowBreathing)
+		{
+			return Sound.exhale;
+		}
+		
+		return null;
+	}
 }

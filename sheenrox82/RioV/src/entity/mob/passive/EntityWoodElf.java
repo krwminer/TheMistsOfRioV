@@ -2,6 +2,8 @@ package sheenrox82.RioV.src.entity.mob.passive;
 
 import java.util.Calendar;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -25,6 +27,7 @@ import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.content.Sound;
@@ -252,9 +255,15 @@ public class EntityWoodElf extends EntityMobDeadBody implements IRangedAttackMob
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	protected String getLivingSound()
 	{
-		return Sound.exhale;
+		if(Config.allowBreathing)
+		{
+			return Sound.exhale;
+		}
+		
+		return null;
 	}
 	
 	@Override

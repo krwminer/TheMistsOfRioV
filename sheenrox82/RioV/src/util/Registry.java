@@ -76,7 +76,7 @@ public class Registry
 		Enchantments.add();
 		LangRegistry.addNames();
 		HarvestLevelRegistry.addHarvestLevels();
-		RaceData.check();
+		//RaceData.check();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerTileEntity(TileEntityAbstractor.class, "Abstractor");
 		GameRegistry.registerTileEntity(TileEntityInfuser.class, "Infuser");

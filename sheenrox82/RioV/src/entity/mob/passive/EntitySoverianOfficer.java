@@ -1,5 +1,7 @@
 package sheenrox82.RioV.src.entity.mob.passive;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -19,6 +21,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.world.World;
+import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.content.Sound;
@@ -147,9 +150,15 @@ public class EntitySoverianOfficer extends EntityMobDeadBody
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	protected String getLivingSound()
 	{
-		return Sound.exhale;
+		if(Config.allowBreathing)
+		{
+			return Sound.exhale;
+		}
+		
+		return null;
 	}
 	
 	@Override
