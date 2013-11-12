@@ -6,7 +6,6 @@ import sheenrox82.RioV.src.creativetab.CreativeTabRioV;
 import sheenrox82.RioV.src.handler.GuiHandler;
 import sheenrox82.RioV.src.handler.MagickaHandler;
 import sheenrox82.RioV.src.proxy.CommonProxy;
-import sheenrox82.RioV.src.social.irc.IRC;
 import sheenrox82.RioV.src.util.Registry;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.common.FMLLog;
@@ -33,7 +32,6 @@ public class TheMistsOfRioV
 	public boolean natura;
 	public boolean aether;
 	public boolean thaumcraft;
-	public static String server = "";
 	
 	public static TheMistsOfRioV getInstance()
 	{
@@ -44,8 +42,6 @@ public class TheMistsOfRioV
 	public void preInit(FMLPreInitializationEvent initEvent)
 	{
 		Registry.preInit(initEvent);
-		IRC irc = new IRC();
-		irc.run();
 	}
 
 	@Mod.EventHandler

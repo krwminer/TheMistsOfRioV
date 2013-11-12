@@ -15,6 +15,7 @@ import net.minecraft.inventory.Container;
 import org.lwjgl.opengl.GL11;
 
 import sheenrox82.RioV.src.base.Config;
+import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.gui.GuiRioVMainMenu;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.client.FMLClientHandler;
@@ -31,19 +32,22 @@ public class HudHandler extends Container implements ITickHandler
 	{
 		final Minecraft minecraft = FMLClientHandler.instance().getClient();
 
-		if(type.equals(EnumSet.of(TickType.CLIENT)))
+		if(TheMistsOfRioV.getInstance().aether = false)
 		{
-			if(minecraft.currentScreen instanceof GuiMainMenu)
+			if(type.equals(EnumSet.of(TickType.CLIENT)))
 			{
-				minecraft.displayGuiScreen(new GuiRioVMainMenu());
-			}
-			if(minecraft.currentScreen instanceof GuiDownloadTerrain)
-			{
-				WavHandler.stopSound();			
-			}
-			if(minecraft.currentScreen == null)
-			{
-				WavHandler.stopSound();			
+				if(minecraft.currentScreen instanceof GuiMainMenu)
+				{
+					minecraft.displayGuiScreen(new GuiRioVMainMenu());
+				}
+				if(minecraft.currentScreen instanceof GuiDownloadTerrain)
+				{
+					WavHandler.stopSound();			
+				}
+				if(minecraft.currentScreen == null)
+				{
+					WavHandler.stopSound();			
+				}
 			}
 		}
 	}
