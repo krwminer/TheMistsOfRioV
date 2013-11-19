@@ -134,7 +134,7 @@ public class EntityMage extends EntityMobDeadBody
 		}
 		if (var1 == 6)
 		{
-
+			this.dropItem(Items.iceWand.itemID, 1);
 		}
 		if (var1 == 7)
 		{
@@ -155,7 +155,7 @@ public class EntityMage extends EntityMobDeadBody
 		
 		if(random == 1)
 		{
-			this.dropItem(Items.iceWand.itemID, 1);
+			
 		}
 		
 		if(random == 2)

@@ -30,8 +30,11 @@ public class Config
 	public static int sanctuatiteBiomeID;
 	public static int canopyOasisBiomeID;
 	public static int bambooFieldsBiomeID;
+	public static int posY;
+	public static int posX;
 	public static int runesBiomeID;
 	public static boolean HUD;
+	public static boolean EOS;
 	public static boolean showToolInfo;
 	public static boolean allowBreathing;
 
@@ -44,7 +47,8 @@ public class Config
 		vaerynID = config.get("Dimension IDs", "Vaeryn Dimension ID", 12).getInt();
 		flamonorID = config.get("Dimension IDs", "Flamonor Dimension ID", 13).getInt();
 		sanctuatiteID = config.get("Dimension IDs", "Sanctuatite Dimension ID", 14).getInt();
-		HUD = config.get("HUD", "Use the blue magicka bar instead of text?", true).getBoolean(HUD);
+		HUD = config.get("HUD", "Show 'The Mists of RioV - vX.X.X' on screen?", true).getBoolean(HUD);
+		EOS = config.get("HUD", "Use the purple Eos bar instead of text?", true).getBoolean(EOS);
 		allowBreathing = config.get("Misc", "Allow Mob Breathing Sounds? (CLIENT SIDE)", true).getBoolean(allowBreathing);
 		blindOasisBiomeID = config.get("Biome IDs", "Blind Oasis Biome ID (Blind Oasis Dimension)", 25).getInt(blindOasisBiomeID);
 		glimmerwoodBiomeID = config.get("Biome IDs", "Glimmerwood Biome ID (Vaeryn Dimension)", 26).getInt(glimmerwoodBiomeID);
@@ -56,6 +60,8 @@ public class Config
 		canopyOasisBiomeID = config.get("Biome IDs", "Canopy Oasis Biome ID (Overworld Dimension)", 31).getInt(canopyOasisBiomeID);
 		bambooFieldsBiomeID = config.get("Biome IDs", "Bamboo Fiels Biome ID (Overworld Dimension)", 32).getInt(bambooFieldsBiomeID);
 		runesBiomeID = config.get("Biome IDs", "Runes Biome ID (Overworld Dimension)", 33).getInt(runesBiomeID);
+		posX = config.get("HUD", "Position X of the 'The Mists of RioV - vX.X.X'", 2).getInt(posX);
+		posY = config.get("HUD", "Position Y of the 'The Mists of RioV - vX.X.X'", 2).getInt(posY);
 
 		config.load();
 	}

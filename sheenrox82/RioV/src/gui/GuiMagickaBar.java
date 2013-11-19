@@ -20,6 +20,7 @@ public class GuiMagickaBar extends Gui
 {
 	public Minecraft mc;
 
+	@SideOnly(Side.CLIENT)
 	public GuiMagickaBar(Minecraft mc)
 	{
 		super();
@@ -47,7 +48,7 @@ public class GuiMagickaBar extends Gui
 			return;
 		}
 
-		if(Config.HUD)
+		if(Config.EOS)
 		{
 			if(!mc.thePlayer.capabilities.isCreativeMode)
 			{
@@ -59,7 +60,7 @@ public class GuiMagickaBar extends Gui
 			}
 		}
 
-		if(!Config.HUD)
+		if(!Config.EOS)
 		{
 			if(!mc.thePlayer.capabilities.isCreativeMode)
 			{

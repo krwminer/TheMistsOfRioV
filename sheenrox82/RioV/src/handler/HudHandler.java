@@ -5,7 +5,6 @@ import java.util.EnumSet;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.GuiCreateWorld;
 import net.minecraft.client.gui.GuiDownloadTerrain;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.GuiMainMenu;
@@ -21,6 +20,8 @@ import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class HudHandler extends Container implements ITickHandler 
 {
@@ -28,26 +29,24 @@ public class HudHandler extends Container implements ITickHandler
 	private static boolean initialized = false;
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void tickStart(EnumSet<TickType> type, Object... tickData) 
 	{
 		final Minecraft minecraft = FMLClientHandler.instance().getClient();
 
-		if(TheMistsOfRioV.getInstance().aether = false)
+		if(type.equals(EnumSet.of(TickType.CLIENT)) && !TheMistsOfRioV.getInstance().aether)
 		{
-			if(type.equals(EnumSet.of(TickType.CLIENT)))
+			if(minecraft.currentScreen instanceof GuiMainMenu)
 			{
-				if(minecraft.currentScreen instanceof GuiMainMenu)
-				{
-					minecraft.displayGuiScreen(new GuiRioVMainMenu());
-				}
-				if(minecraft.currentScreen instanceof GuiDownloadTerrain)
-				{
-					WavHandler.stopSound();			
-				}
-				if(minecraft.currentScreen == null)
-				{
-					WavHandler.stopSound();			
-				}
+				minecraft.displayGuiScreen(new GuiRioVMainMenu());
+			}
+			if(minecraft.currentScreen instanceof GuiDownloadTerrain)
+			{
+				WavHandler.stopSound();			
+			}
+			if(minecraft.currentScreen == null)
+			{
+				WavHandler.stopSound();			
 			}
 		}
 	}
@@ -70,7 +69,7 @@ public class HudHandler extends Container implements ITickHandler
 					{
 						mc.mcProfiler.startSection("debug");
 						GL11.glPushMatrix();
-						fontrenderer.drawStringWithShadow(Config.color + Util.MOD_NAME + " - " + Util.VERSION, 2, 2, 16777215);
+						fontrenderer.drawStringWithShadow(Config.color + Util.MOD_NAME + " - " + Util.VERSION, Config.posX, Config.posY, 16777215);
 						GL11.glPopMatrix();
 					}
 				}

@@ -1,13 +1,17 @@
 package sheenrox82.RioV.src.base;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.MinecraftForge;
 import sheenrox82.RioV.src.creativetab.CreativeTabRioV;
+import sheenrox82.RioV.src.gui.GuiMagickaBar;
 import sheenrox82.RioV.src.handler.GuiHandler;
 import sheenrox82.RioV.src.handler.MagickaHandler;
 import sheenrox82.RioV.src.proxy.CommonProxy;
 import sheenrox82.RioV.src.util.Registry;
 import sheenrox82.RioV.src.util.Util;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Instance;
@@ -32,7 +36,7 @@ public class TheMistsOfRioV
 	public boolean natura;
 	public boolean aether;
 	public boolean thaumcraft;
-	
+
 	public static TheMistsOfRioV getInstance()
 	{
 		return instance;
@@ -54,6 +58,10 @@ public class TheMistsOfRioV
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		FMLLog.info("[" + Util.MOD_NAME + "] Loading...");
+		if (FMLCommonHandler.instance().getEffectiveSide().isClient())
+		{
+			MinecraftForge.EVENT_BUS.register(new GuiMagickaBar(Minecraft.getMinecraft()));
+		}
 		BiomeDictionary.registerAllBiomes();
 		Config.initPost();
 		FMLLog.info("[" + Util.MOD_NAME + "] Loaded! Have fun!");

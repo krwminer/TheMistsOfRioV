@@ -2,7 +2,6 @@ package sheenrox82.RioV.src.util;
 
 import java.util.Arrays;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.MinecraftForge;
 import sheenrox82.RioV.src.base.Config;
@@ -14,12 +13,10 @@ import sheenrox82.RioV.src.content.Enchantments;
 import sheenrox82.RioV.src.content.EntityLoader;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.event.Events;
-import sheenrox82.RioV.src.gui.GuiMagickaBar;
 import sheenrox82.RioV.src.handler.ConnectionHandler;
 import sheenrox82.RioV.src.handler.FuelHandler;
 import sheenrox82.RioV.src.handler.HudHandler;
 import sheenrox82.RioV.src.handler.SoundHandler;
-import sheenrox82.RioV.src.races.data.RaceData;
 import sheenrox82.RioV.src.recipe.AnvilCraftingManager;
 import sheenrox82.RioV.src.registries.HarvestLevelRegistry;
 import sheenrox82.RioV.src.registries.LangRegistry;
@@ -68,7 +65,6 @@ public class Registry
 		MinecraftForge.EVENT_BUS.register(new Events());
 		MinecraftForge.EVENT_BUS.register(new HudHandler());
 		MinecraftForge.EVENT_BUS.register(new SoundHandler());
-		MinecraftForge.EVENT_BUS.register(new GuiMagickaBar(Minecraft.getMinecraft()));
 		Items.add();
 		Blocks.add();
 		Crafting.add();
