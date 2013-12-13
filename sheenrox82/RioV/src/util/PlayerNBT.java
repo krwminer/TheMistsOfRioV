@@ -25,7 +25,6 @@ public class PlayerNBT implements IExtendedEntityProperties
 	public PlayerNBT(EntityPlayer player)
 	{
 		this.player = player;
-		this.player.getDataWatcher().addObject(EOS_WATCHER, this.maxEos);
 	}
 
 	public static void register(EntityPlayer player)
@@ -58,6 +57,7 @@ public class PlayerNBT implements IExtendedEntityProperties
 	@Override
 	public void init(Entity entity, World world)
 	{
+		this.player.getDataWatcher().addObject(EOS_WATCHER, this.maxEos);
 	}
 
 	public final void sync()

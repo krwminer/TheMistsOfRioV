@@ -37,6 +37,7 @@ public class Config
 	public static boolean EOS;
 	public static boolean showToolInfo;
 	public static boolean allowBreathing;
+	public static boolean mainMenu;
 
 	public static void initialize(FMLPreInitializationEvent event)
 	{
@@ -49,6 +50,7 @@ public class Config
 		sanctuatiteID = config.get("Dimension IDs", "Sanctuatite Dimension ID", 14).getInt();
 		HUD = config.get("HUD", "Show 'The Mists of RioV - vX.X.X' on screen?", true).getBoolean(HUD);
 		EOS = config.get("HUD", "Use the purple Eos bar instead of text?", true).getBoolean(EOS);
+		mainMenu = config.get("Misc", "Use the RioV Main Menu? (If Aether II is installed this won't affect anything.)", true).getBoolean(mainMenu);
 		allowBreathing = config.get("Misc", "Allow Mob Breathing Sounds? (CLIENT SIDE)", true).getBoolean(allowBreathing);
 		blindOasisBiomeID = config.get("Biome IDs", "Blind Oasis Biome ID (Blind Oasis Dimension)", 25).getInt(blindOasisBiomeID);
 		glimmerwoodBiomeID = config.get("Biome IDs", "Glimmerwood Biome ID (Vaeryn Dimension)", 26).getInt(glimmerwoodBiomeID);

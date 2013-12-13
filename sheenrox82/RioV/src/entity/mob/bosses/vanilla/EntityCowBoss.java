@@ -47,7 +47,7 @@ public class EntityCowBoss extends EntityBossCore
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(10.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(110.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.20000000298023224D);
     }
 

@@ -30,6 +30,7 @@ import sheenrox82.RioV.src.item.unique.ItemBamboo;
 import sheenrox82.RioV.src.item.unique.ItemBowOfWurTun;
 import sheenrox82.RioV.src.item.unique.ItemDragonChestplate;
 import sheenrox82.RioV.src.item.unique.ItemEnforcedBowOfWurTun;
+import sheenrox82.RioV.src.item.unique.ItemGuide;
 import sheenrox82.RioV.src.item.unique.ItemRune;
 import sheenrox82.RioV.src.item.unique.ItemScrollUsable;
 import sheenrox82.RioV.src.item.unique.ItemTasaravChestplate;
@@ -46,12 +47,14 @@ public class Items
 	public static String level2 = "II";
 	public static String level3 = "III";
 
+	static EnumToolMaterial Sapphire = EnumHelper.addToolMaterial("Sapphire", 2, 300, 4F, 1, 10);
+	static EnumToolMaterial Topaz = EnumHelper.addToolMaterial("Topaz", 2, 350, 4F, 1, 10);
+	static EnumToolMaterial InfusedSapphire = EnumHelper.addToolMaterial("Sapphire", 4, 400, 5F, 2, 10);
+	static EnumToolMaterial InfusedTopaz = EnumHelper.addToolMaterial("Topaz", 3, 450, 5F, 2, 10);
 	static EnumToolMaterial Amethyst = EnumHelper.addToolMaterial("Amethyst", 3, 400, 5F, 4, 8);
 	static EnumToolMaterial InfusedAmethyst = EnumHelper.addToolMaterial("InfusedAmethyst", 3, 500, 9F, 5, 9);
 	static EnumToolMaterial Onyx = EnumHelper.addToolMaterial("Onyx", 3, 600, 10F, 5, 10);
 	static EnumToolMaterial InfusedOnyx = EnumHelper.addToolMaterial("InfusedOnyx", 4, 700, 11F, 6, 11);
-	static EnumToolMaterial Sapphire = EnumHelper.addToolMaterial("Sapphire", 2, 300, 4F, 1, 10);
-	static EnumToolMaterial Topaz = EnumHelper.addToolMaterial("Topaz", 2, 350, 4F, 1, 10);
 	static EnumToolMaterial Agonite = EnumHelper.addToolMaterial("Agonite", 8, 1000, 9F, 3, 14);
 	static EnumToolMaterial Dragon = EnumHelper.addToolMaterial("Dragon", 9, 3000, 15F, 10, 15);
 	static EnumToolMaterial Daetori = EnumHelper.addToolMaterial("Daetori", 2, 500, 5F, 9, 12);
@@ -61,8 +64,6 @@ public class Items
 	static EnumToolMaterial Vulron = EnumHelper.addToolMaterial("Vulron", 6, 200, 9F, 6, 12);
 	static EnumToolMaterial InfusedDragon = EnumHelper.addToolMaterial("InfusedDragon", 11, 3400, 18F, 11, 16);
 	static EnumToolMaterial Galokin = EnumHelper.addToolMaterial("Galokin", 4, 400, 6F, 6, 12);
-	static EnumToolMaterial InfusedSapphire = EnumHelper.addToolMaterial("Sapphire", 4, 400, 5F, 2, 10);
-	static EnumToolMaterial InfusedTopaz = EnumHelper.addToolMaterial("Topaz", 3, 450, 5F, 2, 10);
 	static EnumToolMaterial Flame = EnumHelper.addToolMaterial("Flame", 6, 900, 9F, 7, 16);
 	static EnumToolMaterial Blindonite = EnumHelper.addToolMaterial("Blindonite", 4, 400, 6F, 5, 14);
 	static EnumToolMaterial InfusedBlindonite = EnumHelper.addToolMaterial("InfusedBlindonite", 5, 600, 8F, 7, 15);
@@ -71,7 +72,6 @@ public class Items
 	static EnumToolMaterial Aleris = EnumHelper.addToolMaterial("Aleris", 14, 2400, 14F, 16, 21);
 	static EnumToolMaterial InfusedVravinite = EnumHelper.addToolMaterial("InfusedVravinite", 13, 1000, 13F, 11, 12);
 	static EnumToolMaterial Vravinite = EnumHelper.addToolMaterial("Vravinite", 12, 900, 13F, 10, 12);
-	static EnumToolMaterial Kupinum = EnumHelper.addToolMaterial("Kupinum", 12, 1900, 10F, 13, 14);
 
 	static EnumArmorMaterial InfusedAmethystArmorMaterial = EnumHelper.addArmorMaterial("INFUSEDAMETHYST", 17, new int[] {4, 6, 6, 4}, 20);
 	static EnumArmorMaterial InfusedOnyxArmorMaterial = EnumHelper.addArmorMaterial("INFUSEDONYX", 18, new int[] {5, 6, 6, 5}, 20);
@@ -402,9 +402,11 @@ public class Items
 	public static Item iceWand = (new RioVWand(Config.addItem("Ice Wand"), 0, 1, 1)).setUnlocalizedName("iceWand");
 	public static Item graviWand = (new RioVWand(Config.addItem("Gravi Wand"), 0, 1, 3)).setUnlocalizedName("graviWand");
 	public static Item eosPotion = (new RioVDrinkable(Config.addItem("Eos Potion"), 0, 0, true)).setAlwaysEdible().setUnlocalizedName("eosPotion");
+	public static Item guide = (new ItemGuide(Config.addItem("Starting Guide"))).setUnlocalizedName("guide");
 
 	public static void add()
 	{		
+		MethodUtil.registerItem(guide, "Guide");
 		MethodUtil.registerItem(eosPotion, "Eos Potion");
 		MethodUtil.registerItem(graviWand, "Gravi Wand");
 		MethodUtil.registerItem(iceWand, "Ice Wand");

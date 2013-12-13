@@ -34,7 +34,7 @@ public class HudHandler extends Container implements ITickHandler
 	{
 		final Minecraft minecraft = FMLClientHandler.instance().getClient();
 
-		if(type.equals(EnumSet.of(TickType.CLIENT)) && !TheMistsOfRioV.getInstance().aether)
+		if(type.equals(EnumSet.of(TickType.CLIENT)) && !TheMistsOfRioV.getInstance().aether && Config.mainMenu)
 		{
 			if(minecraft.currentScreen instanceof GuiMainMenu)
 			{
