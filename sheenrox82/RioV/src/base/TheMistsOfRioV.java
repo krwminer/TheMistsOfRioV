@@ -7,7 +7,7 @@ import net.minecraftforge.common.MinecraftForge;
 import sheenrox82.RioV.src.creativetab.CreativeTabRioV;
 import sheenrox82.RioV.src.gui.GuiMagickaBar;
 import sheenrox82.RioV.src.handler.GuiHandler;
-import sheenrox82.RioV.src.handler.MagickaHandler;
+import sheenrox82.RioV.src.handler.EosHandler;
 import sheenrox82.RioV.src.proxy.CommonProxy;
 import sheenrox82.RioV.src.util.Registry;
 import sheenrox82.RioV.src.util.Util;
@@ -22,7 +22,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid= Util.MOD_ID ,name= Util.MOD_NAME, version= Util.VERSION) 
-@NetworkMod(clientSideRequired=true, serverSideRequired=true, channels = {"riovchannel"}, packetHandler = MagickaHandler.class)
+@NetworkMod(clientSideRequired=true, serverSideRequired=true, channels = {"riovchannel"}, packetHandler = EosHandler.class)
 public class TheMistsOfRioV
 {
 	@Instance(Util.MOD_ID)

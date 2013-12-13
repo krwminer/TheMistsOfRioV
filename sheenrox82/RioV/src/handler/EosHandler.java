@@ -11,9 +11,9 @@ import sheenrox82.RioV.src.util.PlayerNBT;
 import cpw.mods.fml.common.network.IPacketHandler;
 import cpw.mods.fml.common.network.Player;
 
-public class MagickaHandler implements IPacketHandler
+public class EosHandler implements IPacketHandler
 {
-	public MagickaHandler() {}
+	public EosHandler() {}
 
 	@Override
 	public void onPacketData(INetworkManager manager, Packet250CustomPayload packet, Player player)
