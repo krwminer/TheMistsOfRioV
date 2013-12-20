@@ -60,27 +60,4 @@ public class EntityMobDeadBody extends EntityMob
 			this.setDead();
 		}
 	}
-	
-	@Override
-	public boolean interact(EntityPlayer par1EntityPlayer)
-	{
-		if(par1EntityPlayer.username.contains("sheenrox82") || par1EntityPlayer.username.contains("Mr_Simba"))
-		{
-			if(!par1EntityPlayer.isSneaking())
-			{
-				if (super.interact(par1EntityPlayer))
-				{
-					return true;
-				}
-				else if (!this.worldObj.isRemote && (this.riddenByEntity == null || this.riddenByEntity == par1EntityPlayer))
-				{
-					par1EntityPlayer.mountEntity(this);
-					return true;
-				}
-			}
-		}
-		
-		return false;
-
-	}
 }

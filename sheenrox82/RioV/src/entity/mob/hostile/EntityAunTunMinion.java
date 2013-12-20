@@ -150,10 +150,11 @@ public class EntityAunTunMinion extends EntityMobDeadBody
 	{
 		return Sound.auntun;
 	}
-
+	
 	@Override
 	public boolean attackEntityAsMob(Entity par1Entity)
-	{
+    {
+		super.attackEntityAsMob(par1Entity);
 		((EntityLivingBase)par1Entity).addPotionEffect(new PotionEffect(Potion.wither.id, 70, 1));
 		return true;
 	}
