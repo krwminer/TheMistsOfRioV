@@ -147,8 +147,8 @@ public class GuiRioVMainMenu extends GuiScreen
 		}
 
 		this.func_130020_g();
-		this.buttonList.add(new GuiRioVButton(0, this.width / 2 - 280, 170, I18n.getString("menu.options")));
-		this.buttonList.add(new GuiRioVButton(4, this.width / 2 - 280, 190, I18n.getString("menu.quit")));
+		this.buttonList.add(new GuiRioVButton(0, this.width / 2 - 280, 150, I18n.getString("menu.options")));
+		this.buttonList.add(new GuiRioVButton(4, this.width / 2 - 280, 170, I18n.getString("menu.quit")));
 		this.buttonList.add(new GuiButtonLanguage(5, 2, 2));
 		Object var4 = this.field_104025_t;
 
@@ -190,8 +190,7 @@ public class GuiRioVMainMenu extends GuiScreen
 		GL11.glPushMatrix();
 		this.buttonList.add(new GuiRioVButton(1, this.width / 2 - 280, 90, I18n.getString("menu.singleplayer")));
 		this.buttonList.add(new GuiRioVButton(2, this.width / 2 - 280, 110, I18n.getString("menu.multiplayer")));
-		this.buttonList.add(new GuiRioVButton(8, this.width / 2 - 280, 130, I18n.getString("RioV Server")));
-		fmlModButton = new GuiRioVButton(6, this.width / 2 - 280, 150, "Mods");
+		fmlModButton = new GuiRioVButton(6, this.width / 2 - 280, 130, "Mods");
 		this.buttonList.add(fmlModButton);
 
 		minecraftRealmsButton = new GuiButton(14, this.width / 2 - 280, 210, I18n.getString("menu.online"));
@@ -256,12 +255,6 @@ public class GuiRioVMainMenu extends GuiScreen
 		if (par1GuiButton.id == 6)
 		{
 			this.mc.displayGuiScreen(new GuiModList(this));
-			WavHandler.stopSound();
-		}
-
-		if (par1GuiButton.id == 8)
-		{
-			this.mc.displayGuiScreen(new GuiConnecting(new GuiRioVMainMenu(), mc, "play.AvondaleRPG.net", 25565));
 			WavHandler.stopSound();
 		}
 

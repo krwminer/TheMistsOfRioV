@@ -82,7 +82,7 @@ public class EntityLoader
 		MethodUtil.registerEntity(EntityDarkMatter.class, "Dark Matter");
 		MethodUtil.registerEntity(EntityPaladin.class, "Paladin");
 		MethodUtil.registerEntity(EntityPinkEssence.class, "Pink Essence");
-
+		
 		MethodUtil.registerEgg(EntityAdv.class);
 		MethodUtil.registerEgg(EntityMage.class);
 		MethodUtil.registerEgg(EntityAltruEssence.class);
