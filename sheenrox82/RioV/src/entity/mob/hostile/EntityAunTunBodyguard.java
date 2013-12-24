@@ -87,8 +87,8 @@ public class EntityAunTunBodyguard extends EntityMobDeadBody
 			}
 
 		}
+		
 		super.onLivingUpdate();
-
 	}
 
 	@Override

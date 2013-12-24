@@ -8,6 +8,7 @@ import net.minecraftforge.common.BiomeDictionary.Type;
 import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntityChickenBoss;
 import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntityCowBoss;
 import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntityPigBoss;
+import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntitySheepBoss;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTun;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTunBodyguard;
 import sheenrox82.RioV.src.entity.mob.hostile.EntityAunTunMinion;
@@ -82,7 +83,8 @@ public class EntityLoader
 		MethodUtil.registerEntity(EntityDarkMatter.class, "Dark Matter");
 		MethodUtil.registerEntity(EntityPaladin.class, "Paladin");
 		MethodUtil.registerEntity(EntityPinkEssence.class, "Pink Essence");
-		
+		MethodUtil.registerEntity(EntitySheepBoss.class, "Sheep - Boss");
+
 		MethodUtil.registerEgg(EntityAdv.class);
 		MethodUtil.registerEgg(EntityMage.class);
 		MethodUtil.registerEgg(EntityAltruEssence.class);
@@ -113,6 +115,7 @@ public class EntityLoader
 		MethodUtil.registerEgg(EntityCowBoss.class);
 		MethodUtil.registerEgg(EntityAunTun.class);
 		MethodUtil.registerEgg(EntityPaladin.class);
+		MethodUtil.registerEgg(EntitySheepBoss.class);
 	}
 
 	public static void addOverworldSpawning()
@@ -133,6 +136,7 @@ public class EntityLoader
 		SpawnListEntry sovSpawn = new SpawnListEntry(EntitySoverianOfficer.class, 1, 2, 4);
 		SpawnListEntry chickBossSpawn = new SpawnListEntry(EntityChickenBoss.class, 1, 1, 2);
 		SpawnListEntry pigBossSpawn = new SpawnListEntry(EntityPigBoss.class, 1, 1, 2);
+		SpawnListEntry sheepBossSpawn = new SpawnListEntry(EntitySheepBoss.class, 1, 1, 2);
 		SpawnListEntry cowBossSpawn = new SpawnListEntry(EntityCowBoss.class, 1, 1, 2);
 		SpawnListEntry paladinSpawn = new SpawnListEntry(EntityPaladin.class, 1, 2, 3);
 
@@ -149,6 +153,7 @@ public class EntityLoader
 				plains[i].getSpawnableList(EnumCreatureType.creature).add(chickBossSpawn);
 				plains[i].getSpawnableList(EnumCreatureType.creature).add(pigBossSpawn);
 				plains[i].getSpawnableList(EnumCreatureType.creature).add(cowBossSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.creature).add(sheepBossSpawn);
 				plains[i].getSpawnableList(EnumCreatureType.monster).add(advSpawn);
 				plains[i].getSpawnableList(EnumCreatureType.monster).add(mageSpawn);
 				plains[i].getSpawnableList(EnumCreatureType.monster).add(darkElfSpawn);
@@ -158,6 +163,7 @@ public class EntityLoader
 				plains[i].getSpawnableList(EnumCreatureType.monster).add(chickBossSpawn);
 				plains[i].getSpawnableList(EnumCreatureType.monster).add(pigBossSpawn);
 				plains[i].getSpawnableList(EnumCreatureType.monster).add(cowBossSpawn);
+				plains[i].getSpawnableList(EnumCreatureType.monster).add(sheepBossSpawn);
 			}
 		}
 		
@@ -174,6 +180,7 @@ public class EntityLoader
 				mountain[i].getSpawnableList(EnumCreatureType.creature).add(pigBossSpawn);
 				mountain[i].getSpawnableList(EnumCreatureType.creature).add(cowBossSpawn);
 				mountain[i].getSpawnableList(EnumCreatureType.creature).add(paladinSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.creature).add(sheepBossSpawn);
 				mountain[i].getSpawnableList(EnumCreatureType.monster).add(advSpawn);
 				mountain[i].getSpawnableList(EnumCreatureType.monster).add(mageSpawn);
 				mountain[i].getSpawnableList(EnumCreatureType.monster).add(darkElfSpawn);
@@ -183,6 +190,7 @@ public class EntityLoader
 				mountain[i].getSpawnableList(EnumCreatureType.monster).add(pigBossSpawn);
 				mountain[i].getSpawnableList(EnumCreatureType.monster).add(cowBossSpawn);
 				mountain[i].getSpawnableList(EnumCreatureType.monster).add(paladinSpawn);
+				mountain[i].getSpawnableList(EnumCreatureType.monster).add(sheepBossSpawn);
 			}
 		}
 		

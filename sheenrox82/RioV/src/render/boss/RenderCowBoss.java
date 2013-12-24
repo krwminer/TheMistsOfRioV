@@ -19,14 +19,14 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderCowBoss extends RenderLiving
 {
-    private static final ResourceLocation texture = new ResourceLocation(Util.MOD_ID + ":" + "textures/entity/CowBoss.png");
+	private static final ResourceLocation texture = new ResourceLocation(Util.MOD_ID + ":" + "textures/entity/CowBoss.png");
 
-    public RenderCowBoss()
-    {
-        super(new ModelCow(), 0.5F);
-    }
+	public RenderCowBoss()
+	{
+		super(new ModelCow(), 0.5F);
+	}
 
-    public void func_82418_a(EntityCowBoss par1, double par2, double par4, double par6, float par8, float par9)
+	public void func_82418_a(EntityCowBoss par1, double par2, double par4, double par6, float par8, float par9)
 	{
 		super.doRenderLiving(par1, par2, par4, par6, par8, par9);
 		BossStatus.setBossStatus(par1, true);
@@ -47,8 +47,8 @@ public class RenderCowBoss extends RenderLiving
 		this.func_82418_a((EntityCowBoss)par1EntityLiving, par2, par4, par6, par8, par9);
 	}
 
-    protected ResourceLocation getEntityTexture(Entity par1Entity)
-    {
-    	   return texture;
-    }
+	protected ResourceLocation getEntityTexture(Entity par1Entity)
+	{
+		return texture;
+	}
 }

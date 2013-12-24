@@ -4,6 +4,7 @@ import org.lwjgl.input.Keyboard;
 
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.content.Sound;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
@@ -23,6 +24,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -31,7 +33,6 @@ public class EntityAltruEssence extends EntityMob
 {
 	public EntityAltruEssence(World par1World)
 	{
-
 		super(par1World);
 		float var2 = 0.56F;
 		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
@@ -43,7 +44,7 @@ public class EntityAltruEssence extends EntityMob
 			isImmuneToFire = true;
 		}
 	}
-	
+
 	@Override
 	public void onLivingUpdate()
 	{
@@ -79,17 +80,17 @@ public class EntityAltruEssence extends EntityMob
 	{
 		return true;
 	}
-	
+
 	@Override
-    protected void entityInit()
-    {
-        super.entityInit();
-        this.dataWatcher.addObject(16, new Byte((byte)0));
-    }
-    
+	protected void entityInit()
+	{
+		super.entityInit();
+		this.dataWatcher.addObject(16, new Byte((byte)0));
+	}
+
 	@Override
-    protected boolean isValidLightLevel()
-    {
-        return true;
-    }
+	protected boolean isValidLightLevel()
+	{
+		return true;
+	}
 }
