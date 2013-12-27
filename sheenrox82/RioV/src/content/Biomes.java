@@ -33,12 +33,21 @@ public class Biomes
 		GameRegistry.addBiome(snowyMountains);
 		GameRegistry.addBiome(savannah);
 		GameRegistry.addBiome(canopyOasis);
-		GameRegistry.addBiome(bambooFields);
 		GameRegistry.addBiome(runes);
+		
+		if(Config.allowBambooBiome)
+		{
+			GameRegistry.addBiome(bambooFields);
+			BiomeDictionary.registerBiomeType(Biomes.bambooFields, Type.PLAINS);
+		}
+		else
+		{
+			
+		}
+		
 		BiomeDictionary.registerBiomeType(Biomes.snowyMountains, Type.FROZEN, Type.MOUNTAIN);
 		BiomeDictionary.registerBiomeType(Biomes.savannah, Type.DESERT, Type.PLAINS);
 		BiomeDictionary.registerBiomeType(Biomes.canopyOasis, Type.FOREST, Type.MOUNTAIN);
-		BiomeDictionary.registerBiomeType(Biomes.bambooFields, Type.PLAINS);
 		BiomeDictionary.registerBiomeType(Biomes.runes, Type.WASTELAND);
 	}
 }

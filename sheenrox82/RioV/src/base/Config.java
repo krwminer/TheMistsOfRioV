@@ -38,6 +38,7 @@ public class Config
 	public static boolean showToolInfo;
 	public static boolean allowBreathing;
 	public static boolean mainMenu;
+	public static boolean allowBambooBiome;
 
 	public static void initialize(FMLPreInitializationEvent event)
 	{
@@ -64,6 +65,7 @@ public class Config
 		runesBiomeID = config.get("Biome IDs", "Runes Biome ID (Overworld Dimension)", 33).getInt(runesBiomeID);
 		posX = config.get("HUD", "Position X of the 'The Mists of RioV - vX.X.X'", 2).getInt(posX);
 		posY = config.get("HUD", "Position Y of the 'The Mists of RioV - vX.X.X'", 2).getInt(posY);
+		allowBambooBiome = config.get("Misc", "Allow Bamboo Biome Generation?", true).getBoolean(allowBambooBiome);
 
 		config.load();
 	}
