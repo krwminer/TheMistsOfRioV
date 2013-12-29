@@ -16,6 +16,7 @@ import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.util.Color;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 
 public class RioVSpade extends ItemSpade
@@ -116,7 +117,7 @@ public class RioVSpade extends ItemSpade
 		if(TheMistsOfRioV.getInstance().natura)
 		{
 			if(itemID == Items.infusedBloodwoodShovel.itemID || itemID == Items.infusedGhostwoodShovel.itemID || itemID == Items.infusedDarkwoodShovel.itemID || itemID == Items.infusedFusewoodShovel.itemID || itemID == Items.infusedNetherquartzShovel.itemID)
-				this.itemIcon = par1IconRegister.registerIcon(this.unlocalizedName);
+				this.itemIcon = par1IconRegister.registerIcon(MethodUtil.getName(this.getUnlocalizedName()));
 		}
 		
 		if(TheMistsOfRioV.getInstance().aether)

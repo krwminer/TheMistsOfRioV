@@ -19,6 +19,8 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Registry;
@@ -333,6 +335,12 @@ public class EntityVraviniteArrow extends EntityCustomArrow implements IProjecti
                         if (movingobjectposition.entityHit instanceof EntityLivingBase)
                         {
                             EntityLivingBase entitylivingbase = (EntityLivingBase)movingobjectposition.entityHit;
+
+                            if (this.shootingEntity != null && this.shootingEntity instanceof EntityPlayer) {
+                            	if (MinecraftForge.EVENT_BUS.post(new AttackEntityEvent((EntityPlayer)this.shootingEntity, entitylivingbase))) {
+                            		return;
+                            	}
+                            }
 
                             if (!this.worldObj.isRemote)
                             {

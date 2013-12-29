@@ -11,6 +11,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -26,11 +27,6 @@ public class ItemRune extends Item
 		this.setCreativeTab(TheMistsOfRioV.getInstance().tab);
 	}
 
-	public String itemName()
-	{
-		return this.unlocalizedName;
-	}
-
 	@Override
 	public boolean hasEffect(ItemStack par1ItemStack)
 	{
@@ -41,7 +37,7 @@ public class ItemRune extends Item
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister)
 	{
-		this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.itemName());
+		this.itemIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
 	}
 
 	@Override

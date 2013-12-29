@@ -11,6 +11,7 @@ import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Particles;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -91,12 +92,7 @@ public class BlockGlimmerGrass extends Block
 	@Override
 	public void registerIcons(IconRegister par1IconRegister)
 	{
-		this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
+		this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
 		this.iconGrassTop = par1IconRegister.registerIcon(Util.MOD_ID + ":" + "glimmerGrassTop");
-	}
-
-	public String getName()
-	{
-		return this.unlocalizedName;
 	}
 }

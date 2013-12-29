@@ -6,6 +6,7 @@ import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.content.Particles;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 
 
@@ -67,11 +68,6 @@ public class BlockBloodRock extends Block
 	@Override
 	public void registerIcons(IconRegister par1IconRegister)
 	{
-		blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
+		blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
 	} 
-
-	public String getName()
-	{
-		return this.unlocalizedName;
-	}
 }

@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Enchantments;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 
 public class RioVShield extends Item
@@ -59,11 +60,6 @@ public class RioVShield extends Item
 	@Override
 	public void registerIcons(IconRegister i)
 	{
-		this.itemIcon = i.registerIcon(Util.MOD_ID + ":" + this.getName());
-	}
-
-	public String getName()
-	{
-		return this.unlocalizedName;
+		this.itemIcon = i.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
 	}
 }

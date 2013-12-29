@@ -2,11 +2,12 @@ package sheenrox82.RioV.src.entity.projectile;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 
 public class EntityPinkEssence extends EntityThrowable
 {
@@ -36,6 +37,13 @@ public class EntityPinkEssence extends EntityThrowable
 	{
 		if(var1.entityHit instanceof EntityLiving)
 		{
+            EntityLivingBase owner = this.getThrower();
+
+            if (owner != null && owner instanceof EntityPlayer) {
+            	if (MinecraftForge.EVENT_BUS.post(new AttackEntityEvent((EntityPlayer)owner, var1.entityHit))) {
+            		return;
+            	}
+            }
 			var1.entityHit.addVelocity(0, 1, 0);
 		}
 	}

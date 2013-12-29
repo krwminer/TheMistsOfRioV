@@ -19,6 +19,7 @@ import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.content.Particles;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 
 public class BlockRioVLeaf extends BlockLeaves implements IShearable
@@ -231,15 +232,10 @@ public class BlockRioVLeaf extends BlockLeaves implements IShearable
 
 	public void registerIcons(IconRegister iconRegister)
 	{
-		this.blockIcon = iconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
-		this.opaqueIcon = iconRegister.registerIcon(Util.MOD_ID + ":" + this.getName() + "_fast");
+		this.blockIcon = iconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
+		this.opaqueIcon = iconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()) + "_fast");
 	}
 	
-	public String getName()
-	{
-		return this.unlocalizedName;
-	}
-
 	public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random)
 	{
 		super.randomDisplayTick(par1World, par2, par3, par4, par5Random);

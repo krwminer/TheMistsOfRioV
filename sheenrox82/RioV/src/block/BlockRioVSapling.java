@@ -11,6 +11,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import sheenrox82.RioV.src.world.feature.WorldGenBloodTree;
 import sheenrox82.RioV.src.world.feature.WorldGenCherryBlossomTree;
@@ -392,11 +393,6 @@ public class BlockRioVSapling extends BlockFlower
 
 	public void registerIcons(IconRegister iconRegister)
 	{
-		this.blockIcon = iconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
-	}
-	
-	public String getName()
-	{
-		return this.unlocalizedName;
+		this.blockIcon = iconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
 	}
 }

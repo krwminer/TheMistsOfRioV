@@ -11,6 +11,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 
 public class BlockSancuatiteStill extends BlockStationary
@@ -24,12 +25,7 @@ public class BlockSancuatiteStill extends BlockStationary
 
 	public void registerIcons(IconRegister i)
 	{
-		this.blockIcon = i.registerIcon(Util.MOD_ID + ":" + this.getName());
-	}
-
-	public String getName()
-	{
-		return this.unlocalizedName;
+		this.blockIcon = i.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
 	}
 
 	public Icon getIcon(int par1, int par2)
