@@ -22,7 +22,7 @@ public class ExpansionChecker
 			TheMistsOfRioV.getInstance().riovValis = false;
 		}
 
-		if(Loader.isModLoaded("Natrua"))
+		if(Loader.isModLoaded("Natura"))
 		{
 			FMLLog.info("Natura detected! You get the Natura Expansion for RioV! :)");
 			TheMistsOfRioV.getInstance().natura = true;

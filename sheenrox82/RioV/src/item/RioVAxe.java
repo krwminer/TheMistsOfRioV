@@ -9,6 +9,7 @@ import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.util.Color;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -107,7 +108,7 @@ public class RioVAxe extends ItemAxe
 		if(TheMistsOfRioV.getInstance().natura)
 		{
 			if(itemID == Items.infusedBloodwoodAxe.itemID || itemID == Items.infusedGhostwoodAxe.itemID || itemID == Items.infusedDarkwoodAxe.itemID || itemID == Items.infusedFusewoodAxe.itemID || itemID == Items.infusedNetherquartzAxe.itemID)
-				this.itemIcon = par1IconRegister.registerIcon(this.unlocalizedName);
+				this.itemIcon = par1IconRegister.registerIcon(MethodUtil.getName(this.getUnlocalizedName()));
 		}
 		
 		if(TheMistsOfRioV.getInstance().aether)

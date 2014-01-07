@@ -30,6 +30,7 @@ import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Enchantments;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.util.Color;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -321,7 +322,7 @@ public class RioVWeapon extends ItemSword
 		if(TheMistsOfRioV.getInstance().natura)
 		{
 			if(itemID == Items.infusedBloodwoodSword.itemID || itemID == Items.infusedGhostwoodSword.itemID || itemID == Items.infusedDarkwoodSword.itemID || itemID == Items.infusedFusewoodSword.itemID || itemID == Items.infusedNetherquartzSword.itemID)
-				this.itemIcon = par1IconRegister.registerIcon(this.unlocalizedName);
+				this.itemIcon = par1IconRegister.registerIcon(MethodUtil.getName(this.getUnlocalizedName()));
 		}
 
 		if(TheMistsOfRioV.getInstance().aether)
@@ -331,10 +332,5 @@ public class RioVWeapon extends ItemSword
 			if(itemID == Items.infusedZaniteSword.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Zanite Sword");	
 			if(itemID == Items.infusedGravititeSword.itemID) this.itemIcon = par1IconRegister.registerIcon("Aether:Gravitite Sword");	
 		}
-	}
-
-	public String getName()
-	{
-		return this.unlocalizedName;
 	}
 }

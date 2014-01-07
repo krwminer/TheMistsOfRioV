@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -126,13 +127,13 @@ public class BlockBlackQuartz extends Block
             }
             else
             {
-                this.quartzblockIcons[i] = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.unlocalizedName + "_" + quartzBlockTextureTypes[i]);
+                this.quartzblockIcons[i] = par1IconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()) + "_" + quartzBlockTextureTypes[i]);
             }
         }
 
-        this.quartzblock_top = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.unlocalizedName + "_" + "top");
-        this.quartzblock_chiseled_top = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.unlocalizedName + "_" + "chiseled_top");
-        this.quartzblock_lines_top = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.unlocalizedName + "_" + "lines_top");
-        this.quartzblock_bottom = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.unlocalizedName + "_" + "bottom");
+        this.quartzblock_top = par1IconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()) + "_" + "top");
+        this.quartzblock_chiseled_top = par1IconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()) + "_" + "chiseled_top");
+        this.quartzblock_lines_top = par1IconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()) + "_" + "lines_top");
+        this.quartzblock_bottom = par1IconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()) + "_" + "bottom");
     }
 }

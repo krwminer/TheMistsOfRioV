@@ -1,6 +1,7 @@
 package sheenrox82.RioV.src.block;
 
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import net.minecraft.block.BlockFlowing;
 import net.minecraft.block.material.Material;
@@ -23,12 +24,7 @@ public class BlockSanctuatiteFlowing extends BlockFlowing
 
 	public void registerIcons(IconRegister i)
 	{
-		this.blockIcon = i.registerIcon(Util.MOD_ID + ":" + this.getName());
-	}
-	
-	public String getName()
-	{
-		return this.unlocalizedName;
+		this.blockIcon = i.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
 	}
 	
     public Icon getIcon(int par1, int par2)

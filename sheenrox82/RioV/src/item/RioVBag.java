@@ -17,6 +17,7 @@ import sheenrox82.RioV.src.container.ContainerBagMedium;
 import sheenrox82.RioV.src.container.ContainerBagSheen;
 import sheenrox82.RioV.src.container.ContainerBagSmall;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
@@ -172,11 +173,6 @@ public class RioVBag extends Item
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister)
 	{
-		this.itemIcon = iconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
-	}
-
-	public String getName()
-	{
-		return this.unlocalizedName;
+		this.itemIcon = iconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
 	}
 }

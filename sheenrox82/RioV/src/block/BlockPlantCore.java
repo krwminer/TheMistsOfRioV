@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 
 public class BlockPlantCore extends BlockFlower
@@ -65,12 +66,7 @@ public class BlockPlantCore extends BlockFlower
 	@Override
 	public void registerIcons(IconRegister par1IconRegister)
 	{
-		this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
-	}
-
-	public String getName()
-	{
-		return this.unlocalizedName;
+		this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
 	}
 
 	protected boolean canThisPlantGrowOnThisBlockID(int par1)

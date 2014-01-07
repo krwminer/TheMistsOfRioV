@@ -1,6 +1,7 @@
 package sheenrox82.RioV.src.item;
 
 import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,6 +13,7 @@ import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.util.Color;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -119,7 +121,7 @@ public class RioVPickaxe extends ItemPickaxe
 		if(TheMistsOfRioV.getInstance().natura)
 		{
 			if(itemID == Items.infusedBloodwoodPickaxe.itemID || itemID == Items.infusedGhostwoodPickaxe.itemID || itemID == Items.infusedDarkwoodPickaxe.itemID || itemID == Items.infusedFusewoodPickaxe.itemID || itemID == Items.infusedNetherquartzPickaxe.itemID)
-				this.itemIcon = par1IconRegister.registerIcon(this.unlocalizedName);
+				this.itemIcon = par1IconRegister.registerIcon(MethodUtil.getName(this.getUnlocalizedName()));
 		}
 		
 		if(TheMistsOfRioV.getInstance().aether)

@@ -8,6 +8,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -109,6 +110,6 @@ public class BlockFloorboard extends Block
     
     public String getName()
     {
-    	return this.unlocalizedName;
+    	return MethodUtil.getName(this.getUnlocalizedName());
     }
 }

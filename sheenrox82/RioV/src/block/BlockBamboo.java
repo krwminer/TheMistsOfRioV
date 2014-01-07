@@ -10,8 +10,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
-import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -143,11 +143,6 @@ public class BlockBamboo extends Block implements IPlantable
     @Override
     public void registerIcons(IconRegister i)
     {
-    	this.blockIcon = i.registerIcon(Util.MOD_ID + ":" + this.getName());
-    }
-    
-    public String getName()
-    {
-    	return this.unlocalizedName;
+    	this.blockIcon = i.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
     }
 }

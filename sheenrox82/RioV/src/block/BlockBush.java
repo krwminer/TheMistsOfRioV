@@ -4,7 +4,6 @@ import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
@@ -16,6 +15,7 @@ import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 
 public class BlockBush extends BlockFlower
@@ -88,13 +88,8 @@ public class BlockBush extends BlockFlower
 		}
 		else
 		{
-			this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getName());
+			this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + MethodUtil.getName(this.getUnlocalizedName()));
 		}
-	}
-
-	public String getName()
-	{
-		return this.unlocalizedName;
 	}
 
 	@Override

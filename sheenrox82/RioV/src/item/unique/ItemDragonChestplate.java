@@ -1,7 +1,7 @@
 package sheenrox82.RioV.src.item.unique;
 
-import java.util.List;
 
+import java.util.List;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
@@ -10,13 +10,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.world.World;
 import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.util.Color;
+import sheenrox82.RioV.src.util.MethodUtil;
 import sheenrox82.RioV.src.util.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -120,7 +118,7 @@ public class ItemDragonChestplate extends ItemArmor
 		if(Config.showToolInfo)
 		{
 			var3.add(Color.GOLD + (var1.getMaxDamage() - var1.getItemDamage()) + " Uses");
-			var3.add(Color.DARK_PURPLE + "Protection: " + material.maxDamageFactor);
+			var3.add(Color.DARK_PURPLE + "Protection: " + MethodUtil.getMaxDamageFactor(this.material));
 		}
 	}
 }

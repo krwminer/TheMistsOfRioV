@@ -10,7 +10,12 @@ public class MaterialCustom extends Material
 	{
 		super(par1MapColor);
 		this.setBurning();
-		this.setTranslucent();
 		this.setNoPushMobility();
 	}
+	
+	@Override
+    public boolean isOpaque()
+    {
+        return false;
+    }
 }
