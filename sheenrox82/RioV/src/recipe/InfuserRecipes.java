@@ -91,7 +91,8 @@ public class InfuserRecipes
         
         if(TheMistsOfRioV.getInstance().aether)
         {
-        	try {
+        	try 
+        	{
 	            Class<?> clAetherItems = Class.forName("net.aetherteam.aether.items.AetherItems");
 	
 	            this.addAltarRecipe(((Item)clAetherItems.getDeclaredField("SkyrootPickaxe").get(null)).itemID, new ItemStack(Items.infusedSkyrootPickaxe, 1));
