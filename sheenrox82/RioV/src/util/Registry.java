@@ -2,7 +2,9 @@ package sheenrox82.RioV.src.util;
 
 import java.util.Arrays;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.MinecraftForge;
 import sheenrox82.RioV.src.base.Config;
 import sheenrox82.RioV.src.base.Crafting;
@@ -13,6 +15,7 @@ import sheenrox82.RioV.src.content.Enchantments;
 import sheenrox82.RioV.src.content.EntityLoader;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.event.Events;
+import sheenrox82.RioV.src.gui.GuiMagickaBar;
 import sheenrox82.RioV.src.handler.ConnectionHandler;
 import sheenrox82.RioV.src.handler.FuelHandler;
 import sheenrox82.RioV.src.handler.HudHandler;
@@ -32,8 +35,11 @@ import sheenrox82.RioV.src.world.provider.WorldProviderBlindOasis;
 import sheenrox82.RioV.src.world.provider.WorldProviderFlamonor;
 import sheenrox82.RioV.src.world.provider.WorldProviderSanctuatite;
 import sheenrox82.RioV.src.world.provider.WorldProviderVaeryn;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -104,5 +110,17 @@ public class Registry
 		BiomeGenBase.forest.theBiomeDecorator.treesPerChunk = 46;
 		BiomeGenBase.plains.theBiomeDecorator.bigMushroomsPerChunk = 1;
 		BiomeGenBase.plains.theBiomeDecorator.flowersPerChunk = 30;
+	}
+	
+	public static void postInit(FMLPostInitializationEvent postInit)
+	{
+		FMLLog.info("[" + Util.MOD_NAME + "] Loading...");
+		if (FMLCommonHandler.instance().getEffectiveSide().isClient())
+		{
+			MinecraftForge.EVENT_BUS.register(new GuiMagickaBar(Minecraft.getMinecraft()));
+		}
+		BiomeDictionary.registerAllBiomes();
+		Config.initPost();
+		FMLLog.info("[" + Util.MOD_NAME + "] Loaded! Have fun!");
 	}
 }
