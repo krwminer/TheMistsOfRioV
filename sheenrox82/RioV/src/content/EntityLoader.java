@@ -279,10 +279,10 @@ public class EntityLoader
 	{
 		BiomeGenBase[] nether = BiomeDictionary.getBiomesForType(Type.NETHER);
 
-		SpawnListEntry skeleHorseSpawn = new SpawnListEntry(EntitySkeletalHorse.class, 12, 10, 50);
-		SpawnListEntry minionSpawn = new SpawnListEntry(EntityAunTunMinion.class, 1, 2, 5);
-		SpawnListEntry bodyguardSpawn = new SpawnListEntry(EntityAunTunBodyguard.class, 1, 2, 5);
-		SpawnListEntry hellhoundSpawn = new SpawnListEntry(EntityHellhound.class, 1, 5, 9);
+		SpawnListEntry skeleHorseSpawn = new SpawnListEntry(EntitySkeletalHorse.class, 4, 4, 8);
+		SpawnListEntry minionSpawn = new SpawnListEntry(EntityAunTunMinion.class, 2, 3, 5);
+		SpawnListEntry bodyguardSpawn = new SpawnListEntry(EntityAunTunBodyguard.class, 2, 3, 5);
+		SpawnListEntry hellhoundSpawn = new SpawnListEntry(EntityHellhound.class, 2, 3, 9);
 
 		for(int i = 0; i < nether.length; i++)
 		{

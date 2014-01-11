@@ -25,12 +25,14 @@ public class TheMistsOfRioV
 
 	@SidedProxy(clientSide="sheenrox82.RioV.src.proxy.ClientProxy", serverSide="sheenrox82.RioV.src.proxy.CommonProxy")
 	public static CommonProxy commonProxy;
+
 	public CreativeTabs tab = new CreativeTabRioV(Util.MOD_ID);
 	public GuiHandler guiHandler = new GuiHandler();
 	public boolean riovValis;
 	public boolean natura;
 	public boolean aether;
 	public boolean thaumcraft;
+	public boolean optifine;
 
 	public static TheMistsOfRioV getInstance()
 	{

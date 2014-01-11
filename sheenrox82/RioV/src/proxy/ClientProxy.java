@@ -3,6 +3,7 @@ package sheenrox82.RioV.src.proxy;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
+import sheenrox82.RioV.src.base.TheMistsOfRioV;
 import sheenrox82.RioV.src.content.Blocks;
 import sheenrox82.RioV.src.content.Items;
 import sheenrox82.RioV.src.entity.mob.bosses.vanilla.EntityChickenBoss;
@@ -182,7 +183,10 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void cape()
 	{
-		DevCapesUtil.addFileUrl("https://dl.dropbox.com/u/126631367/Capes.txt");
+		if(!TheMistsOfRioV.getInstance().optifine)
+		{
+			DevCapesUtil.addFileUrl("https://dl.dropbox.com/u/126631367/Capes.txt");
+		}
 	}
 
 	public static int addArmor(String armorName)

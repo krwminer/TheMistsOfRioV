@@ -21,6 +21,18 @@ public class ExpansionChecker
 			FMLLog.info(Util.MOD_NAME + ": Valis wasn't detected, not initializing.");
 			TheMistsOfRioV.getInstance().riovValis = false;
 		}
+		
+		try
+		{
+			Class.forName("optifine.OptiFineClassTransformer");
+			FMLLog.info("Optifine detected! Disabling RioV capes for safety measures!");
+			TheMistsOfRioV.getInstance().optifine = true;
+		}
+		catch (Throwable var11)
+		{
+			FMLLog.info("Optifine not detected! RioV Capes is activating using DeveloperCapes by Jadar.");
+			TheMistsOfRioV.getInstance().optifine = false;
+		}
 
 		if(Loader.isModLoaded("Natura"))
 		{
